@@ -25,40 +25,7 @@
   --wrap: 1120px;
   --gutter: 24px;
   --section: clamp(64px, 9vw, 112px);
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ground: #10182A;
-    --sheet: #1A2B4C;
-    --ink: #EEF2F8;
-    --secondary: #AEB8CA;
-    --tertiary: #929DB3;
-    --par-avion: #9DB8F2;
-    --on-par-avion: #10182A;
-    --postmark: #C2ADF5;
-    --airmail-red: #FF8478;
-    --seam: #2A3753;
-    --border-red: #E0574C;
-    --border-blue: #6F93E6;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --ground: #10182A;
-  --sheet: #1A2B4C;
-  --ink: #EEF2F8;
-  --secondary: #AEB8CA;
-  --tertiary: #929DB3;
-  --par-avion: #9DB8F2;
-  --on-par-avion: #10182A;
-  --postmark: #C2ADF5;
-  --airmail-red: #FF8478;
-  --seam: #2A3753;
-  --border-red: #E0574C;
-  --border-blue: #6F93E6;
-  color-scheme: dark;
+  color-scheme: light;   /* the site is light only, whatever the device's appearance */
 }
 
 *, *::before, *::after { box-sizing: border-box; }

@@ -2,8 +2,8 @@
    Made with appsforiphoneduo.com/tools/3d-mockup from Tabletop's real screens
    (marketing/07-tai-nguyen/anh-iphone-duo/man-hinh-3d/), source iphone-duo-unfold.mp4 in that folder.
    Encoded to play forward, hold open, play back and hold closed, so the loop never jumps.
-   The video's own background is white fading to light grey: by day it multiplies into the page ground and its
-   edges fade out; at night it sits on its own rounded light panel. Under Reduce Motion a still of it open shows. */
+   The video's own background is white fading to light grey: it multiplies into the page ground and its edges
+   fade out (the site is light only). Under Reduce Motion a still of it open shows. */
 
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -23,17 +23,6 @@
           mask-composite: intersect;
 }
 .duo-still { display: none; }
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .duo-video,
-  :root:not([data-theme="light"]) .duo-still {
-    mix-blend-mode: normal; -webkit-mask-image: none; mask-image: none; border-radius: 24px;
-  }
-}
-:root[data-theme="dark"] .duo-video,
-:root[data-theme="dark"] .duo-still {
-  mix-blend-mode: normal; -webkit-mask-image: none; mask-image: none; border-radius: 24px;
-}
 
 @media (prefers-reduced-motion: reduce) {
   .duo-video { display: none; }

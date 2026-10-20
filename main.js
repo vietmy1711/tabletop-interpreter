@@ -80,3 +80,42 @@
 
   apply(initialLang());
 })();
+
+// The screenshot gallery moves on by itself: one screenshot every 3.5 s, back to the first after the last.
+// It waits while someone points at, touches, scrolls or tabs into it (and for 8 s after), runs only while it is
+// on screen and the tab is visible, and never under Reduce Motion.
+(function () {
+  var gallery = document.querySelector(".gallery");
+  if (!gallery || !window.matchMedia) return;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var onScreen = false, pointerInside = false, holdUntil = 0;
+
+  function hold() { holdUntil = Date.now() + 8000; }
+  gallery.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") pointerInside = true; });
+  gallery.addEventListener("pointerleave", function () { pointerInside = false; hold(); });
+  ["pointerdown", "touchstart", "wheel", "keydown", "focusin"].forEach(function (type) {
+    gallery.addEventListener(type, hold, { passive: true });
+  });
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      onScreen = entries[0].isIntersecting;
+    }, { threshold: 0.4 }).observe(gallery);
+  } else {
+    onScreen = true;
+  }
+
+  function step() {
+    if (reduce.matches || !onScreen || pointerInside || document.hidden || Date.now() < holdUntil) return;
+    var shot = gallery.querySelector("img");
+    var end = gallery.scrollWidth - gallery.clientWidth;
+    if (!shot || end <= 2) return;
+    if (gallery.scrollLeft >= end - 4) {
+      gallery.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      var gap = parseFloat(getComputedStyle(gallery).columnGap) || 20;
+      gallery.scrollBy({ left: shot.getBoundingClientRect().width + gap, behavior: "smooth" });
+    }
+  }
+  setInterval(step, 3500);
+})();
