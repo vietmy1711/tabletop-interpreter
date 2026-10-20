@@ -81,12 +81,11 @@
           </ul>
         </div>
         <figure class="hero__shot held">
-          <!-- An iPhone Duo (two photographs, screens drawn in HTML) that unfolds, turns upright and folds again, see duo.css: closed, the outer display split top and bottom;
-               opened, held sideways, the portrait app runs across the fold, so each half shows one language with
-               its text running vertically; turned upright, the text lies level, the top half facing the other
-               person and the bottom half facing you. -->
+          <!-- An iPhone Duo (two photographs) that unfolds like a book, see duo.css: closed, the outer display split top and
+               bottom (HTML); open flat, a capture of Tabletop's real layout on the opened Duo, their half on the left turned
+               180 degrees, yours on the right. -->
           <div class="fold" role="img" aria-labelledby="fold-desc">
-            <span class="sr-only" id="fold-desc" data-i18n="duo.alt">Illustration: an iPhone Duo. Closed, the outer display splits top and bottom, with the Japanese half turned toward the pharmacist. Opened sideways, each half of the inner display shows one language, its text running vertically. Turned upright, the text lies level: the top half faces the pharmacist in Japanese, the bottom half faces you. You read: How many times a day should I take it? Take it three times a day, after meals.</span>
+            <span class="sr-only" id="fold-desc" data-i18n="duo.alt">Illustration: an iPhone Duo. Closed, its outer display splits the conversation top and bottom, the other person\'s half turned toward them. It unfolds like a book, and open flat the inner display gives each person a side: the left half, turned to face the person across from you, in their language; the right half, in yours.</span>
             <div class="duo-stage" aria-hidden="true">
               <div class="duo-dev">
                 <div class="duo-leaf">
@@ -95,24 +94,7 @@
                       <div class="duo-photo duo-photo--open">
                         <img src="assets/duo/mo-ai.webp" width="1086" height="811" alt="">
                         <div class="duo-screen duo-screen--open">
-                          <div class="fold__app">
-                            <div class="fold__split">
-                              <div class="fold__half fold__half--theirs">
-                                <p class="fold__cue" lang="ja">［聞いています。いつでもどうぞ］</p>
-                                <p class="fold__who" lang="ja" data-i18n="duo.mineInJa">英語</p>
-                                <p class="fold__line" lang="ja">一日に何回飲めばいいですか？</p>
-                                <p class="fold__who" lang="ja">日本語</p>
-                                <p class="fold__line" lang="ja">一日三回、食後に飲んでください。</p>
-                              </div>
-                              <div class="fold__seam"></div>
-                              <div class="fold__half fold__half--mine">
-                                <p class="fold__who" data-i18n="duo.you">YOU</p>
-                                <p class="fold__line"><span data-i18n="duo.ask">How many times a day should I take it?</span><span class="postmark"></span></p>
-                                <p class="fold__who" data-i18n="who.ja">JAPANESE</p>
-                                <p class="fold__line" data-i18n="scenes.1.r">Take it three times a day, after meals.</p>
-                              </div>
-                            </div>
-                          </div>
+                          <img class="duo-shot js-shot" data-shot="duo-open" src="assets/shots/en-duo-open.webp" width="1335" height="939" alt="">
                         </div>
                       </div>
                     </div>
@@ -121,22 +103,7 @@
                     <div class="duo-photo duo-photo--closed">
                       <img src="assets/duo/gap-ai.webp" width="654" height="942" alt="">
                       <div class="duo-screen duo-screen--closed">
-                        <div class="fold__split">
-                          <div class="fold__half fold__half--theirs">
-                            <p class="fold__cue" lang="ja">［聞いています。いつでもどうぞ］</p>
-                            <p class="fold__who" lang="ja" data-i18n="duo.mineInJa">英語</p>
-                            <p class="fold__line" lang="ja">一日に何回飲めばいいですか？</p>
-                            <p class="fold__who" lang="ja">日本語</p>
-                            <p class="fold__line" lang="ja">一日三回、食後に飲んでください。</p>
-                          </div>
-                          <div class="fold__seam"></div>
-                          <div class="fold__half fold__half--mine">
-                            <p class="fold__who" data-i18n="duo.you">YOU</p>
-                            <p class="fold__line"><span data-i18n="duo.ask">How many times a day should I take it?</span><span class="postmark"></span></p>
-                            <p class="fold__who" data-i18n="who.ja">JAPANESE</p>
-                            <p class="fold__line" data-i18n="scenes.1.r">Take it three times a day, after meals.</p>
-                          </div>
-                        </div>
+                        <img class="duo-shot js-shot" data-shot="duo-closed" src="assets/shots/en-duo-closed.webp" width="699" height="1017" alt="">
                       </div>
                     </div>
                   </div>
@@ -146,33 +113,16 @@
                     <div class="duo-photo duo-photo--open">
                       <img src="assets/duo/mo-ai.webp" width="1086" height="811" alt="">
                       <div class="duo-screen duo-screen--open">
-                        <div class="fold__app">
-                          <div class="fold__split">
-                            <div class="fold__half fold__half--theirs">
-                              <p class="fold__cue" lang="ja">［聞いています。いつでもどうぞ］</p>
-                              <p class="fold__who" lang="ja" data-i18n="duo.mineInJa">英語</p>
-                              <p class="fold__line" lang="ja">一日に何回飲めばいいですか？</p>
-                              <p class="fold__who" lang="ja">日本語</p>
-                              <p class="fold__line" lang="ja">一日三回、食後に飲んでください。</p>
-                            </div>
-                            <div class="fold__seam"></div>
-                            <div class="fold__half fold__half--mine">
-                              <p class="fold__who" data-i18n="duo.you">YOU</p>
-                              <p class="fold__line"><span data-i18n="duo.ask">How many times a day should I take it?</span><span class="postmark"></span></p>
-                              <p class="fold__who" data-i18n="who.ja">JAPANESE</p>
-                              <p class="fold__line" data-i18n="scenes.1.r">Take it three times a day, after meals.</p>
-                            </div>
-                          </div>
-                        </div>
+                        <img class="duo-shot js-shot" data-shot="duo-open" src="assets/shots/en-duo-open.webp" width="1335" height="939" alt="">
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <p class="fold__readers" aria-hidden="true" data-i18n="duo.readers">Top half faces them · bottom half faces you</p>
+            <p class="fold__readers" aria-hidden="true" data-i18n="duo.readers">← Their side · Your side →</p>
           </div>
-          <figcaption data-i18n="duo.caption">Illustration on iPhone Duo, not a screenshot. Closed, open or turned upright, Tabletop keeps one conversation split between the two of you. On every other iPhone, the screen splits top and bottom.</figcaption>
+          <figcaption data-i18n="duo.caption">Tabletop on iPhone Duo: closed, then opened flat between you. The device is an illustration; the screen is the app. On every other iPhone, the screen splits top and bottom.</figcaption>
         </figure>
       </div>
     </section>

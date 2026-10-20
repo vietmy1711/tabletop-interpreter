@@ -2,13 +2,15 @@
    The device is two photographs (assets/duo/, made from marketing/07-tai-nguyen/anh-iphone-duo/: cat-anh.py
    keys the background and the green screen, sua-man-hinh-ngoai.py gives the outer display its punch-hole camera,
    the inner one no camera hole, a silver frame and exact screen corners). The conversation is HTML under the
-   glass and follows the EN/VI switch. Proportions from the iPhone Duo simulator (inner display 951 x 669 pt
-   opened, outer 466 x 678 pt). Tabletop runs in portrait only, so the loop (12 s) is:
-     1. Closed: the outer display, split top and bottom; their half (the aerogramme sheet) turned 180 degrees.
+   glass, as two captures that main.js swaps with the EN/VI switch. Proportions from the iPhone Duo simulator (inner display 951 x 669 pt opened, outer 466 x 678 pt).
+   The loop (12 s):
+     1. Closed: the outer display, split top and bottom; their half (the aerogramme sheet) turned 180 degrees
+        (assets/shots/<lang>-duo-closed.webp, rebuilt from marketing/.../nguon/ngoai-*.html to match the capture).
      2. It unfolds like a book: the left half turns on the hinge, its back (the outer display) away from you.
-        Held sideways, the portrait app lies across the inner display, one language each side of the fold.
-     3. Turned upright: the text lies level, the top half facing the other person, the bottom half facing you.
-   Then it turns back and folds shut. Under Reduce Motion it rests upright (3).
+     3. Open flat: the inner display as Tabletop really lays it out on the Duo, the other person's half on the left
+        turned 180 degrees to face them, yours on the right (a capture from the App Store set,
+        assets/shots/<lang>-duo-open.webp, swapped by main.js with the EN/VI switch).
+   Then it folds shut. Under Reduce Motion it rests open (3).
 
    Geometry: .duo-dev is the open device's body (1791 x 1275 px of the open photo). The left half (.duo-leaf)
    carries the left half of the open photo on its front and the closed photo on its back; the closed phone is
@@ -22,14 +24,13 @@
 
 .held { margin: 0; }
 .fold { width: 100%; max-width: 520px; margin: 0 auto; container-type: inline-size; }
-/* Square, so the device fits whether it is closed, open sideways or turned upright. */
-.duo-stage { aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; perspective: 1600px; }
+/* Room for the open device and its shadow. */
+.duo-stage { aspect-ratio: 100 / 76; display: flex; align-items: center; justify-content: center; perspective: 1600px; }
 
 .duo-dev {
   position: relative; flex: none;
   width: 92cqw; aspect-ratio: 1791 / 1275;
   transform-style: preserve-3d;
-  transform: rotate(90deg);
   animation: duo-dev 12s ease-in-out infinite;
 }
 
@@ -60,75 +61,26 @@
 .duo-screen { position: absolute; z-index: 0; overflow: hidden; background: var(--ground); container-type: size; }
 .duo-screen--open   { left: 2.706%; top: 2.735%; width: 94.533%; height: 88.987%; border-radius: 4.965% / 7.06%; }
 .duo-screen--closed { left: 8.991%; top: 2.803%; width: 85.138%; height: 89.873%; border-radius: 9.698% / 6.378%; }
-/* The fold, a faint crease down the middle of the glass. */
-.duo-screen--open::after {
-  content: ""; position: absolute; z-index: 2; top: 0; bottom: 0; left: 50%; width: 1.4%; transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, #000 9%, transparent), transparent);
-}
+/* The capture of Tabletop on the opened Duo fills the inner display (its own seam marks the fold). */
+.duo-shot { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
 
-/* ---- Inside the inner display: one portrait app, turned a quarter left, so its top half (their language)
-        lies on the left half and the split runs down the fold ---- */
-.fold__app {
-  position: absolute; left: 50%; top: 50%;
-  width: 100cqh; height: 100cqw;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  container-type: inline-size;
-}
-
-/* ---- The conversation, top and bottom ---- */
-.fold__split { position: absolute; inset: 0; display: grid; grid-template-rows: 1fr auto 1fr; }
-.fold__half {
-  min-height: 0; overflow: hidden;
-  display: flex; flex-direction: column; gap: 0.5cqw;
-  padding: 4cqw 6cqw;
-}
-.fold__half--theirs { background: var(--sheet); transform: rotate(180deg); }
-.fold__half--mine { background: var(--ground); }
-.duo-screen--closed .fold__half--theirs { padding-bottom: 9cqw; }    /* clear of the punch-hole camera */
-.fold__seam {
-  height: 1.8cqw;
-  background: repeating-linear-gradient(-45deg,
-    var(--border-red) 0 6px, var(--ground) 6px 8px,
-    var(--border-blue) 8px 14px, var(--ground) 14px 16px);
-}
-
-/* ---- Type, in the app's roles: cue, speaker name, line. cqw here is the width of the app's portrait
-        screen (the open one) or of the outer display (the closed one). ---- */
-.fold__cue  { font-weight: 700; font-size: 3.6cqw; color: var(--par-avion); margin: 0 0 1cqw; }
-.fold__who  { font-weight: 700; font-size: 3.1cqw; letter-spacing: 0.06em; color: var(--par-avion); margin: 1.6cqw 0 0; }
-.fold__line { font-weight: 600; font-size: 5cqw; line-height: 1.35; color: var(--ink); margin: 0; text-wrap: pretty; }
-.fold__half--mine .fold__who { color: var(--secondary); }
-.fold__half--theirs .fold__line { word-break: keep-all; overflow-wrap: anywhere; }
-.duo-screen--closed .fold__cue  { font-size: 4.6cqw; }
-.duo-screen--closed .fold__who  { font-size: 4cqw; }
-.duo-screen--closed .fold__line { font-size: 6.2cqw; }
-.fold .postmark {
-  display: inline-block; vertical-align: middle; margin-left: 1.4cqw;
-  width: 4.4cqw; height: 4.4cqw; border-radius: 50%;
-  border: 0.5cqw solid var(--postmark);
-  box-shadow: inset 0 0 0 0.4cqw var(--ground), inset 0 0 0 0.7cqw var(--postmark);
-}
-
-/* Shown while it is upright: who reads which half. */
+/* Shown while it is open: who reads which half. */
 .fold__readers {
   margin: 0; text-align: center;
   font-size: 13px; font-weight: 600; color: var(--secondary);
   animation: duo-readers 12s ease-in-out infinite;
 }
 
-/* ---- The loop: closed 0-10%, unfolds 10-26%, open sideways 26-38%, turns upright 38-50%, upright 50-72%,
-        turns back 72-84%, folds 84-96% ---- */
+/* ---- The loop: closed 0-10%, unfolds 10-26%, open 26-84%, folds 84-96% ---- */
 @keyframes duo-leaf {
   0%, 10%   { transform: rotateY(180deg) translateZ(-2px); }
   26%, 84%  { transform: rotateY(0deg) translateZ(-2px); }
   96%, 100% { transform: rotateY(180deg) translateZ(-2px); }
 }
 @keyframes duo-dev {
-  0%, 10%   { transform: translateX(-24.748%) rotate(0deg); }
-  26%, 38%  { transform: translateX(0) rotate(0deg); }
-  50%, 72%  { transform: translateX(0) rotate(90deg); }
-  84%       { transform: translateX(0) rotate(0deg); }
-  96%, 100% { transform: translateX(-24.748%) rotate(0deg); }
+  0%, 10%   { transform: translateX(-24.748%); }
+  26%, 84%  { transform: translateX(0); }
+  96%, 100% { transform: translateX(-24.748%); }
 }
 @keyframes duo-right {
   0%, 10.5%   { visibility: hidden; }
@@ -136,9 +88,9 @@
   95.5%, 100% { visibility: hidden; }
 }
 @keyframes duo-readers {
-  0%, 44%   { opacity: 0; }
-  52%, 70%  { opacity: 1; }
-  76%, 100% { opacity: 0; }
+  0%, 26%   { opacity: 0; }
+  32%, 80%  { opacity: 1; }
+  85%, 100% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
