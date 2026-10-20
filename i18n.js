@@ -21,9 +21,8 @@ window.TABLETOP_I18N = {
     "hero.fact3": "19 ngôn ngữ",
     "hero.alt": "Tabletop trên iPhone: nửa trên quay về phía người đối diện, hiện ngôn ngữ của họ; nửa dưới là phần của chủ máy, mỗi câu có dấu bưu điện.",
     "demo": "Cuộc trò chuyện minh hoạ",
-    "duo.alt": "Minh hoạ: iPhone Duo. Khi gập, màn hình ngoài chia cuộc trò chuyện trên dưới, nửa của người đối diện quay về phía họ. Máy mở ra như một quyển sách, và khi mở phẳng, màn hình trong chia mỗi người một bên: nửa trái quay về phía người đối diện, bằng ngôn ngữ của họ; nửa phải bằng ngôn ngữ của bạn.",
-    "duo.readers": "← Phía người đối diện · Phía bạn →",
-    "duo.caption": "Tabletop trên iPhone Duo: lúc gập, rồi mở phẳng giữa hai người. Máy là hình minh hoạ, màn hình là ảnh chụp app. Trên các iPhone khác, màn hình chia trên dưới.",
+    "duo.alt": "Video: iPhone Duo mở ra như một quyển sách. Khi gập, màn hình ngoài chia cuộc trò chuyện trên dưới, nửa của người đối diện quay về phía họ. Khi mở, phía người đối diện quay về phía họ bằng ngôn ngữ của họ, phía bạn bằng ngôn ngữ của bạn.",
+    "duo.caption": "Tabletop trên iPhone Duo, lúc gập rồi mở ra. Màn hình là ảnh chụp app, máy là mô hình 3D. Trên các iPhone khác, màn hình chia trên dưới.",
 
     "problem.title": "Người nói chuyện là hai bạn, không phải chiếc điện thoại.",
     "problem.body": "Với phần lớn ứng dụng dịch, hai người phải lần lượt: bấm, nói, xoay màn hình, chờ, rồi xoay lại. Cuộc trò chuyện dừng sau mỗi câu và cả hai cùng cúi nhìn điện thoại. Tabletop nằm gọn trong tay bạn và theo kịp hai người, để hai bạn vẫn nhìn nhau khi nói.",

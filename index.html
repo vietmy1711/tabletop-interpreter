@@ -81,48 +81,18 @@
           </ul>
         </div>
         <figure class="hero__shot held">
-          <!-- An iPhone Duo (two photographs) that unfolds like a book, see duo.css: closed, the outer display split top and
-               bottom (HTML); open flat, a capture of Tabletop's real layout on the opened Duo, their half on the left turned
-               180 degrees, yours on the right. -->
-          <div class="fold" role="img" aria-labelledby="fold-desc">
-            <span class="sr-only" id="fold-desc" data-i18n="duo.alt">Illustration: an iPhone Duo. Closed, its outer display splits the conversation top and bottom, the other person\'s half turned toward them. It unfolds like a book, and open flat the inner display gives each person a side: the left half, turned to face the person across from you, in their language; the right half, in yours.</span>
-            <div class="duo-stage" aria-hidden="true">
-              <div class="duo-dev">
-                <div class="duo-leaf">
-                  <div class="duo-face duo-face--left">
-                    <div class="duo-sheet">
-                      <div class="duo-photo duo-photo--open">
-                        <img src="assets/duo/mo-ai.webp" width="1086" height="811" alt="">
-                        <div class="duo-screen duo-screen--open">
-                          <img class="duo-shot js-shot" data-shot="duo-open" src="assets/shots/en-duo-open.webp" width="1335" height="939" alt="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="duo-face duo-face--outer">
-                    <div class="duo-photo duo-photo--closed">
-                      <img src="assets/duo/gap-ai.webp" width="654" height="942" alt="">
-                      <div class="duo-screen duo-screen--closed">
-                        <img class="duo-shot js-shot" data-shot="duo-closed" src="assets/shots/en-duo-closed.webp" width="699" height="1017" alt="">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="duo-face duo-face--right">
-                  <div class="duo-sheet">
-                    <div class="duo-photo duo-photo--open">
-                      <img src="assets/duo/mo-ai.webp" width="1086" height="811" alt="">
-                      <div class="duo-screen duo-screen--open">
-                        <img class="duo-shot js-shot" data-shot="duo-open" src="assets/shots/en-duo-open.webp" width="1335" height="939" alt="">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p class="fold__readers" aria-hidden="true" data-i18n="duo.readers">← Their side · Your side →</p>
+          <!-- An iPhone Duo unfolding like a book, a 3D mockup (appsforiphoneduo.com/tools/3d-mockup) of Tabletop's
+               real screens: closed, the outer display; open, the other person's half turned toward them. The video plays
+               open then closed; under Reduce Motion a still of it open shows instead. See duo.css. -->
+          <div class="fold">
+            <video class="duo-video" autoplay muted loop playsinline preload="auto" width="1080" height="810"
+                   poster="assets/duo/duo-unfold-dau.webp" aria-labelledby="fold-desc">
+              <source src="assets/duo/duo-unfold.mp4" type="video/mp4">
+            </video>
+            <img class="duo-still" src="assets/duo/duo-unfold-mo.webp" width="1080" height="810" alt="" aria-hidden="true">
+            <span class="sr-only" id="fold-desc" data-i18n="duo.alt">Video: an iPhone Duo unfolds like a book. Closed, its outer display splits the conversation top and bottom, the other person's half turned toward them. Open, the other person's side faces them in their language and your side shows yours.</span>
           </div>
-          <figcaption data-i18n="duo.caption">Tabletop on iPhone Duo: closed, then opened flat between you. The device is an illustration; the screen is the app. On every other iPhone, the screen splits top and bottom.</figcaption>
+          <figcaption data-i18n="duo.caption">Tabletop on iPhone Duo, closed and then unfolding. The screens are the app; the device is a 3D mockup. On every other iPhone, the screen splits top and bottom.</figcaption>
         </figure>
       </div>
     </section>
