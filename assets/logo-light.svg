@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+<rect width="1024" height="1024" fill="#D7E3F3"/>
+<defs><clipPath id="env"><rect x="192" y="272" width="640" height="480" rx="36"/></clipPath></defs>
+<rect x="192" y="272" width="640" height="480" rx="36" fill="#FFFFFF"/>
+<g clip-path="url(#env)"><polygon points="-288,752 -244,752 236,272 192,272" fill="#C8312F"/><polygon points="-228,752 -184,752 296,272 252,272" fill="#1F3F8C"/><polygon points="-168,752 -124,752 356,272 312,272" fill="#C8312F"/><polygon points="-108,752 -64,752 416,272 372,272" fill="#1F3F8C"/><polygon points="-48,752 -4,752 476,272 432,272" fill="#C8312F"/><polygon points="12,752 56,752 536,272 492,272" fill="#1F3F8C"/><polygon points="72,752 116,752 596,272 552,272" fill="#C8312F"/><polygon points="132,752 176,752 656,272 612,272" fill="#1F3F8C"/><polygon points="192,752 236,752 716,272 672,272" fill="#C8312F"/><polygon points="252,752 296,752 776,272 732,272" fill="#1F3F8C"/><polygon points="312,752 356,752 836,272 792,272" fill="#C8312F"/><polygon points="372,752 416,752 896,272 852,272" fill="#1F3F8C"/><polygon points="432,752 476,752 956,272 912,272" fill="#C8312F"/><polygon points="492,752 536,752 1016,272 972,272" fill="#1F3F8C"/><polygon points="552,752 596,752 1076,272 1032,272" fill="#C8312F"/><polygon points="612,752 656,752 1136,272 1092,272" fill="#1F3F8C"/><polygon points="672,752 716,752 1196,272 1152,272" fill="#C8312F"/><polygon points="732,752 776,752 1256,272 1212,272" fill="#1F3F8C"/><polygon points="792,752 836,752 1316,272 1272,272" fill="#C8312F"/><polygon points="852,752 896,752 1376,272 1332,272" fill="#1F3F8C"/><polygon points="912,752 956,752 1436,272 1392,272" fill="#C8312F"/><polygon points="972,752 1016,752 1496,272 1452,272" fill="#1F3F8C"/><polygon points="1032,752 1076,752 1556,272 1512,272" fill="#C8312F"/><polygon points="1092,752 1136,752 1616,272 1572,272" fill="#1F3F8C"/><polygon points="1152,752 1196,752 1676,272 1632,272" fill="#C8312F"/><polygon points="1212,752 1256,752 1736,272 1692,272" fill="#1F3F8C"/><polygon points="1272,752 1316,752 1796,272 1752,272" fill="#C8312F"/></g>
+<rect x="232" y="312" width="560" height="400" rx="10" fill="#FFFFFF"/>
+<g fill="#1F3F8C">
+<path d="M352 372 H436 V412 H392 V612 H436 V652 H352 Z"/>
+<path d="M672 372 H588 V412 H632 V612 H588 V652 H672 Z"/>
+</g>
+<rect x="460" y="468" width="104" height="28" rx="14" fill="#5A3D8E"/>
+<rect x="444" y="528" width="136" height="28" rx="14" fill="#1A2233"/>
+</svg>
