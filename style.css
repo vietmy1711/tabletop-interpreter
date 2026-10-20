@@ -8,5 +8,12 @@ h1{font-size:32px;line-height:1.2;margin:0 0 6px}
 h2{font-size:20px;margin:36px 0 8px}
 p,li{color:var(--ink)} .quiet{color:var(--secondary)}
 a{color:var(--blue)}
-nav{display:flex;gap:16px;margin-bottom:28px;font-size:15px}
-.lang{border-top:1px solid var(--seam);margin-top:48px;padding-top:8px}
+nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:28px;font-size:15px}
+nav a,.langs a{white-space:nowrap}
+
+/* One language at a time: the one in the address (#vi, #ja…), English when there is none. */
+.lang{display:none;border:0;margin:0;padding:0;scroll-margin-top:200px}
+.lang:target{display:block}
+main:not(:has(.lang:target)) #en{display:block}
+.langs{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 20px;font-size:15px}
+footer{margin-top:56px;padding-top:12px;border-top:1px solid var(--seam);font-size:14px}
