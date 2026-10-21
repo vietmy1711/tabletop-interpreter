@@ -590,3 +590,37 @@ details p { padding: 0 0 22px; color: var(--secondary); max-width: 40em; }
 @media (max-width: 900px) {
   :lang(ja) .story__copy h1, :lang(zh-Hans) .story__copy h1, :lang(zh-Hant) .story__copy h1 { font-size: clamp(36px, 12vw, 64px); }
 }
+
+/* ---------- A phone that looks like a phone, on a phone ----------
+   The demo is a true-proportioned iPhone (9:19.5) lying on the table, larger than the window: its centre, the screen's
+   seam, sits on the table's seam at 38% of the table's height, and it is sized from the table's height so its rounded
+   bottom edge and home bar always clear the table's lower edge. The far end of their half runs off under the table's top
+   edge. What matters sits in view: Quick Start's pickers, the camera's sign and the letter's title move down the screen. */
+@media (max-width: 900px) {
+  .story { --table-h: min(56svh, 480px); }
+  .table { height: var(--table-h); }
+  .table__seam { top: 38%; }
+  .side { display: none; }
+  .device {
+    position: absolute; left: 50%; top: 38%; transform: translate(-50%, -50%);
+    height: calc(var(--table-h) * 1.24 - 24px); width: auto; max-width: none; aspect-ratio: 9 / 19.5;
+    border-radius: 15% / 7%; padding: 2.4%;
+  }
+  .dv { border-radius: 13% / 6%; }
+  /* The home bar, where the app keeps clear of it. */
+  .dv::after { content: ""; position: absolute; left: 33%; right: 33%; bottom: 1.8cqw; height: 1.3cqw; border-radius: 1cqw; background: var(--ink); opacity: .82; z-index: 6; pointer-events: none; }
+  .device[data-view="cam"] .dv::after { background: #FFFFFF; }
+  .dv__mine { padding: 4cqw 6cqw 7cqw; }
+  .dv__mine .dv__gloss { display: block; }
+  .dv__prev { display: block; }
+  .dv__theirs { padding: 6cqw 7cqw; }
+  /* Quick Start, the camera and the letter, below the part that runs off the table. */
+  .dv__quick { padding: 30% 7cqw 9cqw; }
+  .dv__brand { display: block; margin-bottom: 6cqw; }
+  .dv__more { display: flex; }
+  .cam__sign { top: 30%; }
+  .cam__slip--1 { top: 55%; }
+  .cam__slip--2 { top: 63%; }
+  .dv__letter { padding: 38% 9cqw 9cqw; }
+  .dv__cl { display: flex; }
+}
