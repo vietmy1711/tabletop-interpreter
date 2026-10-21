@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tabletop: 대면 통역·번역 — 두 사람의 대화를 각자의 언어로</title>
-  <meta name="description" content="기기를 두 사람 사이에 들거나 테이블 위에 내려놓고, 그냥 말하세요. Tabletop은 두 언어를 동시에 듣고, 화면을 반씩 나누어 각자에게 자기 언어로 대화를 보여 줍니다. 프라이버시를 지키며 기기에서 작동하고, 언어 팩을 다운로드하면 오프라인에서도 작동합니다.">
+  <meta name="description" content="휴대폰을 두 사람 사이에 두고 그냥 말하세요. Tabletop은 두 언어를 듣고 각자의 쪽에 자기 언어로 대화를 보여 줍니다. 기기 안에서 프라이빗하게.">
   <meta name="apple-itunes-app" content="app-id=6821405972">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#F8F9FB">
@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Tabletop: 대면 통역·번역 — 두 사람의 대화를 각자의 언어로">
-  <meta property="og:description" content="기기를 두 사람 사이에 들거나 테이블 위에 내려놓고, 그냥 말하세요. Tabletop은 두 언어를 동시에 듣고, 화면을 반씩 나누어 각자에게 자기 언어로 대화를 보여 줍니다. 프라이버시를 지키며 기기에서 작동하고, 언어 팩을 다운로드하면 오프라인에서도 작동합니다.">
+  <meta property="og:description" content="휴대폰을 두 사람 사이에 두고 그냥 말하세요. Tabletop은 두 언어를 듣고 각자의 쪽에 자기 언어로 대화를 보여 줍니다. 기기 안에서 프라이빗하게.">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="ko_KR">
@@ -52,15 +52,14 @@
   <header class="top">
     <div class="wrap top__row">
       <a class="brand" href="/ko/" aria-label="Tabletop">
-        <picture>
-          <img src="/assets/logo-light.svg" alt="" width="36" height="36">
-        </picture>
+        <img src="/assets/logo-light.svg" alt="" width="36" height="36">
         <span>Tabletop</span>
       </a>
       <nav class="top__nav" aria-label="본문" data-i18n-aria="aria.main">
         <a href="#ch1" data-i18n="nav.how">사용 방법</a>
-        <a href="#privacy" data-i18n="nav.privacy">개인정보 보호</a>
-        <a href="#pro" data-i18n="nav.pro">Pro</a>
+        <a href="#languages" data-i18n="nav.languages">언어</a>
+        <a href="#compare" data-i18n="nav.compare">비교</a>
+        <a href="#pro" data-i18n="nav.pro">가격</a>
         <a href="#faq" data-i18n="nav.faq">자주 묻는 질문</a>
       </nav>
       <div class="top__actions">
@@ -81,80 +80,121 @@
   </header>
 
   <main id="main">
-    <!-- One conversation, scrolled: the device on the table receives the conversation line by line, and each chapter
-         delivers the next line. Drawn in HTML from the app's own taxi scene, in the page language's pair (main.js). -->
+    <!-- The page is the app, used once: the device on the table is Tabletop's Quick Start, then its conversation.
+         The visitor picks two languages and presses Start; each chapter moves it on and brackets what it is about. -->
     <section class="story" aria-labelledby="story-title">
       <div class="wrap story__grid">
         <div class="story__copy">
-          <h1 id="story-title" data-i18n-html="hero.title">그냥 말하세요.<br>각자 자기 언어로 읽습니다.</h1>
-          <p class="lede" data-i18n="hero.lede">두 사람 사이에 두세요. Tabletop이 어느 언어로 말했는지 알아듣고 각자에게 자기 쪽 화면을 보여 줍니다.</p>
+          <h1 id="story-title" data-i18n="hero.title">그냥 말하세요.</h1>
+          <p class="lede" data-i18n="hero.lede">휴대폰을 두 사람 사이에 두세요. 각자 자기 언어로 대화를 읽습니다.</p>
           <div class="hero__ctas">
             <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/ko.svg" width="150" height="50" alt="App Store에서 다운로드" data-i18n-alt="cta.store"></a>
-            <a class="btn btn--quiet" href="#ch1" data-i18n="cta.how">사용 방법 보기</a>
+            <a class="btn btn--quiet" href="#ch1" data-i18n="cta.try">사용해 보기</a>
           </div>
         </div>
         <div class="story__stage">
           <figure class="table">
-            <p class="side side--them" data-i18n="hero.them">상대방 · 일본어</p>
+            <p class="side side--them"><span data-i18n="side.them">상대</span> · <span class="js-side-them">Vietnamese</span></p>
             <div class="table__seam" aria-hidden="true"></div>
-            <div class="device js-device" data-step="4" role="img" aria-label="Tabletop 라이브 데모: 택시 안의 대화가 한 화면의 두 절반에 도착합니다. 상대 쪽은 일본어로 상대를 향하고, 내 쪽은 한국어로 보입니다." data-i18n-aria="hero.alt">
+            <div class="device js-device" data-view="talk" data-step="4" data-focus="none" role="group" aria-label="Tabletop 사용해 보기" data-i18n-aria="demo.label">
               <div class="dv">
+                <!-- Quick Start, as the app opens -->
+                <div class="dv__quick">
+                  <p class="dv__brand">Tabletop</p>
+                  <div class="pick">
+                    <span class="pick__k" data-i18n="demo.mine">내 언어</span>
+                    <span class="pick__v"><span class="flag js-flag-me"></span><span class="pick__name js-name-me">English</span><svg class="pick__chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></span>
+                    <select class="js-pick-me" aria-label="내 언어" data-i18n-aria="demo.mine"></select>
+                  </div>
+                  <button type="button" class="dv__swap js-swap" aria-label="언어 바꾸기" data-i18n-aria="demo.swap">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v15M8 4 4.5 7.5M8 4l3.5 3.5M16 20V5m0 15-3.5-3.5M16 20l3.5-3.5"/></svg>
+                  </button>
+                  <div class="pick pick--them">
+                    <span class="pick__k" data-i18n="demo.theirs">상대방 언어</span>
+                    <span class="pick__v"><span class="flag js-flag-them"></span><span class="pick__name js-name-them">Vietnamese</span><svg class="pick__chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></span>
+                    <select class="js-pick-them" aria-label="상대방 언어" data-i18n-aria="demo.theirs"></select>
+                  </div>
+                  <button type="button" class="dv__start js-start" data-i18n="demo.start">대화 시작</button>
+                  <p class="dv__more"><span data-i18n="demo.listen">듣기</span><span data-i18n="demo.camera">카메라로 읽기</span></p>
+                </div>
+                <!-- The conversation: their half turned to face them, yours below the seam -->
                 <div class="dv__theirs" lang="vi">
-                  <p class="dv__cue js-dv-tcue">[Đang nghe, xin mời nói]</p>
+                  <p class="dv__cue js-dv-tcue">[Đang nghe — xin mời nói]</p>
                   <p class="dv__big js-dv-tbig">Khoảng một tiếng.</p>
                   <p class="dv__prev js-dv-tprev">Vâng, đi cao tốc. Mất bao lâu ạ?</p>
                 </div>
                 <div class="dv__seam"></div>
                 <div class="dv__mine">
-                  <p class="dv__bar"><span class="js-dv-pair">English ↔ Vietnamese</span><span class="dv__off js-dv-off">Offline · on this device</span><span class="js-dv-end">End</span><span class="dv__pause js-dv-pause">Pause</span></p>
+                  <p class="dv__bar"><span class="dv__pair js-dv-pair">English ↔ Vietnamese</span><span class="dv__off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V8.5l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-5z"/></svg><span class="js-dv-off">Airplane mode</span></span><span class="dv__end js-dv-end">End</span><span class="dv__pause js-dv-pause">Pause</span></p>
                   <ol class="dv__lines js-dv-lines">
                     <li class="dv__line is-in" data-n="1"><b>YOU</b><span class="dv__text">Please take me to the airport.</span><span class="dv__gloss">Cho tôi đến sân bay.</span><i class="dv__mark"></i></li>
                     <li class="dv__line dv__line--them is-in" data-n="2"><b>VIETNAMESE</b><span class="dv__text">Shall I take the highway?</span><span class="dv__gloss">Mình đi đường cao tốc nhé?</span><i class="dv__mark"></i></li>
                     <li class="dv__line is-in" data-n="3"><b>YOU</b><span class="dv__text">Yes, please. How long will it take?</span><span class="dv__gloss">Vâng, đi cao tốc. Mất bao lâu ạ?</span><i class="dv__mark"></i></li>
                     <li class="dv__line dv__line--them is-in" data-n="4"><b>VIETNAMESE</b><span class="dv__text">About an hour.</span><span class="dv__gloss">Khoảng một tiếng.</span><i class="dv__mark"></i></li>
-                    <li class="dv__line dv__line--returned" data-n="5"><b>YOU</b><span class="dv__text js-dv-rtext">Is there a toll?</span><span class="dv__gloss js-dv-rnote">Not translated. Please say it again.</span><i class="dv__mark"></i></li>
                   </ol>
                   <p class="dv__listen js-dv-listen">[Listening]</p>
                 </div>
+                <!-- Read with Camera: a sign in their language, your language laid over each line -->
+                <div class="dv__cam" aria-hidden="true">
+                  <div class="cam__sign js-cam-sign" lang="vi">
+                    <p class="cam__s1 js-cam-s1">TAXI SÂN BAY</p>
+                    <p class="cam__s2 js-cam-s2">Phí cầu đường trả bằng tiền mặt.</p>
+                  </div>
+                  <p class="cam__slip cam__slip--1 js-cam-t1">AIRPORT TAXI</p>
+                  <p class="cam__slip cam__slip--2 js-cam-t2">Tolls are paid in cash.</p>
+                  <p class="cam__btn js-cam-btn">Read This Page</p>
+                </div>
+                <!-- Kept: the conversation as a letter, its minutes first -->
                 <div class="dv__letter">
                   <p class="dv__lt js-dv-lt">No. 12 · To the airport</p>
                   <p class="dv__lh js-dv-lh">Minutes</p>
                   <p class="dv__pt"><span class="js-dv-p1">You asked to go to the airport.</span><b>↓1</b></p>
                   <p class="dv__pt"><span class="js-dv-p2">They suggested the highway: about an hour.</span><b>↓4</b></p>
-                  <p class="dv__lh js-dv-nx">Next</p>
-                  <p class="dv__pt"><span class="js-dv-p3">→ Ask about the toll again.</span><b>↓5</b></p>
                   <p class="dv__lh js-dv-cv">Conversation</p>
                   <p class="dv__cl"><b>1</b><span class="js-dv-c1">Please take me to the airport.</span></p>
                   <p class="dv__cl"><b>2</b><span class="js-dv-c2">Shall I take the highway?</span></p>
                   <p class="dv__cl"><b>3</b><span class="js-dv-c3">Yes, please. How long will it take?</span></p>
                   <p class="dv__cl"><b>4</b><span class="js-dv-c4">About an hour.</span></p>
-                  <p class="dv__cl dv__cl--returned"><b>5</b><span class="js-dv-c5">Is there a toll?</span></p>
                   <p class="dv__kept"><span class="js-dv-kno">No. 12</span><strong>11:23</strong><span class="js-dv-kk">KEPT</span></p>
                 </div>
+                <!-- The highlight: captioning brackets around what the chapter is about -->
+                <span class="dv__focus" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="dv__focus" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
               </div>
             </div>
-            <p class="side side--you" data-i18n="hero.you">나 · 한국어</p>
+            <p class="side side--you"><span data-i18n="side.you">나</span> · <span class="js-side-you">English</span></p>
           </figure>
         </div>
-        <article class="chapter" id="ch1" data-step="3">
-          <h2 data-i18n="feat.1.t">차례가 없어요</h2>
-          <p data-i18n="feat.1.d">언어마다 하나씩, 두 개의 음성 인식기가 동시에 작동합니다. 차례를 넘기려고 탭할 필요도, 휴대폰을 주고받을 필요도 없습니다.</p>
+
+        <article class="chapter" id="ch1" data-view="quick" data-focus="pick">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-globe"/></svg></span>
+          <h2 data-i18n="ch1.t">두 언어를 고르세요</h2>
+          <p data-i18n="ch1.d">19개 언어 중 어떤 두 언어든. 여기 휴대폰에서 골라 보고 시작을 눌러 보세요.</p>
         </article>
-        <article class="chapter" id="ch2" data-step="4">
-          <h2 data-i18n="feat.2.t">상대 쪽 화면은 상대를 향해요</h2>
-          <p data-i18n="feat.2.d">상대의 언어로 된 큰 자막을 팔 길이 거리에서도 읽을 수 있고, 글자 크기는 상대가 직접 고릅니다. 가격이나 시간을 다시 확인하려면 위로 스크롤해 다시 읽을 수 있습니다.</p>
+        <article class="chapter" id="ch2" data-view="talk" data-step="2" data-focus="both">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-table"/></svg></span>
+          <h2 data-i18n="ch2.t">차례도 버튼도 없이</h2>
+          <p data-i18n="ch2.d">두 사람 모두 원할 때 말하세요. 말한 언어로 누가 말했는지 알아듣습니다.</p>
         </article>
-        <article class="chapter" id="ch3" data-step="5">
-          <h2 data-i18n="feat.4.t">확인 안 된 번역은 보여 주지 않아요</h2>
-          <p data-i18n="feat.4.d">번역을 확인할 수 없으면 Tabletop은 잘못된 숫자가 전달될 위험을 감수하는 대신 그 문장을 숨기고, 누가 다시 말해야 하는지 두 사람 모두에게 알려 줍니다.</p>
+        <article class="chapter" id="ch3" data-view="talk" data-step="4" data-focus="theirs">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-turn"/></svg></span>
+          <h2 data-i18n="ch3.t">상대 쪽은 상대를 향해</h2>
+          <p data-i18n="ch3.d">크고 또렷한 글자를 상대가 읽기 좋은 방향으로. 가격이나 시간을 다시 올려 볼 수 있어요.</p>
         </article>
-        <article class="chapter" id="ch4" data-step="6">
-          <h2 data-i18n="feat.5.t">프라이버시, 설정 후에는 오프라인에서도</h2>
-          <p data-i18n="feat.5.d">음성 인식과 번역은 기기에서 이루어집니다. 언어 팩을 한 번 다운로드하면 인터넷 연결 없이도 작동합니다.</p>
+        <article class="chapter" id="ch4" data-view="cam" data-focus="cam">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-camera"/></svg></span>
+          <h2 data-i18n="ch4.t">표지판에 카메라를 대세요</h2>
+          <p data-i18n="ch4.d">메뉴, 표지판, 서류를 카메라 화면에서 바로 번역합니다.</p>
         </article>
-        <article class="chapter" id="ch5" data-step="7">
-          <h2 data-i18n="story.5.t">남기고, 회의록까지.</h2>
-          <p data-i18n="story.5.d">대화를 편지로 보관하고 나중에 다시 읽을 수 있습니다. Tabletop Pro를 쓰면 기기에서 회의록이 작성됩니다. 누가 무엇을 물었는지, 숫자, 다음에 할 일까지, 각 항목은 원래 말한 문장으로 연결됩니다.</p>
+        <article class="chapter" id="ch5" data-view="talk" data-step="4" data-focus="air">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-seal"/></svg></span>
+          <h2 data-i18n="ch5.t">처음부터 프라이빗하게</h2>
+          <p data-i18n="ch5.d">번역은 모두 휴대폰 안에서. 계정도 로그인도 필요 없고, 에어플레인 모드에서도 됩니다.</p>
+        </article>
+        <article class="chapter" id="ch6" data-view="kept" data-focus="letter">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-letter"/></svg></span>
+          <h2 data-i18n="ch6.t">편지로 보관하세요</h2>
+          <p data-i18n="ch6.d">언제든 다시 읽거나 공유하세요. Pro라면 회의록도 함께.</p>
           <p class="chapter__cta"><a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/ko.svg" width="150" height="50" alt="App Store에서 다운로드" data-i18n-alt="cta.store"></a></p>
         </article>
       </div>
@@ -162,14 +202,115 @@
 
     <div class="airmail" role="presentation"></div>
 
+    <!-- Languages: a sheet of stamps. Tapping one puts it on the phone above as the other person's language. -->
+    <section class="section sheet langs" id="languages" aria-labelledby="langs-title">
+      <div class="wrap langs__grid">
+        <div class="langs__copy">
+          <svg class="globe" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="globe-ring" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1-160 0"/></defs>
+            <circle cx="100" cy="100" r="94" class="globe__rim"/>
+            <circle cx="100" cy="100" r="66" class="globe__rim"/>
+            <text class="globe__text"><textPath href="#globe-ring" textLength="490" data-i18n="langs.ring">PAR AVION · 19개 언어 · PAR AVION ·</textPath></text>
+            <g class="globe__earth">
+              <circle cx="100" cy="100" r="54"/>
+              <ellipse cx="100" cy="100" rx="22" ry="54"/>
+              <ellipse cx="100" cy="100" rx="42" ry="54"/>
+              <path d="M46 100h108M53 73h94M53 127h94"/>
+            </g>
+          </svg>
+          <h2 id="langs-title" data-i18n="langs.title">19개 언어. 어떤 두 언어든.</h2>
+          <p class="lede" data-i18n="langs.lede">우표를 누르면 휴대폰에서 바로 써 볼 수 있어요.</p>
+          <p class="small langs__ui" data-i18n-html="langs.ui">앱 자체는 <span class="nw">English</span>, <span class="nw">Tiếng Việt</span>, <span class="nw">日本語</span>, <span class="nw">한국어</span>, <span class="nw">简体中文</span>, <span class="nw">繁體中文</span>으로 제공됩니다.</p>
+        </div>
+        <ul class="stamps js-stamps">
+          <li><button type="button" class="lstamp" data-code="en"><img src="/assets/flags/us.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="en">English</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="vi"><img src="/assets/flags/vn.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="vi">Tiếng Việt</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="ja"><img src="/assets/flags/jp.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="ja">日本語</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="ko"><img src="/assets/flags/kr.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="ko">한국어</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="zh-Hans"><span class="seal" lang="zh-Hans">简</span><span class="lstamp__n" lang="zh-Hans">简体中文</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="zh-Hant"><span class="seal" lang="zh-Hant">繁</span><span class="lstamp__n" lang="zh-Hant">繁體中文</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="th"><img src="/assets/flags/th.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="th">ไทย</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="id"><img src="/assets/flags/id.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="id">Bahasa Indonesia</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="hi"><img src="/assets/flags/in.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="hi">हिन्दी</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="ar"><img src="/assets/flags/sa.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="ar" dir="rtl">العربية</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="es"><img src="/assets/flags/es.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="es">Español</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="fr"><img src="/assets/flags/fr.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="fr">Français</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="de"><img src="/assets/flags/de.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="de">Deutsch</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="it"><img src="/assets/flags/it.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="it">Italiano</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="pt"><img src="/assets/flags/br.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="pt">Português</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="ru"><img src="/assets/flags/ru.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="ru">Русский</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="tr"><img src="/assets/flags/tr.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="tr">Türkçe</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="nl"><img src="/assets/flags/nl.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="nl">Nederlands</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="pl"><img src="/assets/flags/pl.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="pl">Polski</span><span class="lstamp__l"></span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Compare: checked against each maker's own pages, dated, sources listed -->
+    <section class="section compare" id="compare" aria-labelledby="compare-title">
+      <div class="wrap">
+        <h2 id="compare-title" data-i18n="cmp.title">다른 앱과 비교</h2>
+        <p class="lede" data-i18n="cmp.lede">지금 쓰는 번역 앱도 훌륭합니다. Tabletop이 다른 점은 이렇습니다.</p>
+        <p class="cmp__hint" data-i18n="cmp.swipe">표를 밀어서 모든 앱을 보세요.</p>
+        <div class="cmp" tabindex="0" role="region" aria-labelledby="compare-title">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col" class="cmp__us">Tabletop</th>
+                <th scope="col">Apple Translate</th>
+                <th scope="col">Google Translate</th>
+                <th scope="col">Microsoft Translator</th>
+                <th scope="col">DeepL Voice</th>
+                <th scope="col">Papago</th>
+                <th scope="col">iTranslate Converse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row" data-i18n="cmp.r1">상대 쪽이 상대를 향함</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="u"></td><td data-v="u"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r2">버튼 없이 대화</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="u"></td><td data-v="n"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r3">오프라인 대화</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="n"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td><td data-v="n"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r4">휴대폰에서 번역</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="p"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td><td data-v="n"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r5">추측하지 않고 다시 묻기</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r6">대화 보관</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="u"></td><td data-v="n"></td><td data-v="p"></td><td data-v="u"></td><td data-v="u"></td><td data-v="y"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r7">회의록 작성</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="n"></td><td data-v="n"></td><td data-v="n"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r8">가격</th>
+                <td class="cmp__us cmp__txt" data-i18n-html="cmp.free.us"><span class="nw">무료 ·</span> <span class="nw">Pro 선택</span></td><td class="cmp__txt" data-i18n="cmp.free">무료</td><td class="cmp__txt" data-i18n="cmp.free">무료</td><td class="cmp__txt" data-i18n="cmp.free">무료</td><td class="cmp__txt" data-i18n="cmp.paid">유료 요금제</td><td class="cmp__txt" data-i18n="cmp.free">무료</td><td class="cmp__txt" data-i18n="cmp.sub">구독</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="cmp__key"><span class="nw"><span data-v="y"></span><span data-i18n="cmp.k.y">예</span></span><span class="nw"><span data-v="p"></span><span data-i18n="cmp.k.p">일부</span></span><span class="nw"><span data-v="n"></span><span data-i18n="cmp.k.n">아니요</span></span><span class="nw"><span data-v="u"></span><span data-i18n="cmp.k.u">제작사 언급 없음</span></span></p>
+        <details class="cmp__src">
+          <summary data-i18n="cmp.src">2026년 10월 21일 각 앱의 iPhone 버전으로 확인. 출처</summary>
+          <ul>
+            <li><a href="https://apps.apple.com/us/app/translate/id1514844618">Apple Translate, App Store</a> · <a href="https://www.apple.com/legal/privacy/data/en/translation/">Translation &amp; Privacy</a></li>
+            <li><a href="https://support.google.com/translate/answer/6142474">Google Translate Help: live translate</a> · <a href="https://apps.apple.com/us/app/google-translate/id414706506">App Store</a></li>
+            <li><a href="https://apps.apple.com/us/app/translator/id1018949559">Microsoft Translator, App Store</a> · <a href="https://www.microsoft.com/en-us/translator/apps/features/">Features</a></li>
+            <li><a href="https://support.deepl.com/hc/en-us/articles/17090280797596">DeepL Voice: conversations</a></li>
+            <li><a href="https://apps.apple.com/kr/app/id1147874819">Papago, App Store</a></li>
+            <li><a href="https://apps.apple.com/us/app/itranslate-converse/id1241264761">iTranslate Converse, App Store</a></li>
+          </ul>
+          <p data-i18n="cmp.fix">바뀐 점이 있나요? support@trytabletop.app으로 알려 주시면 고치겠습니다.</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="airmail" role="presentation"></div>
 
     <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
          once it is on screen, never under Reduce Motion, and Pause stops it. -->
     <section class="section duo">
       <div class="wrap duo__grid">
         <div>
-          <h2 data-i18n="duo.title">iPhone Duo를 염두에 두고 디자인했습니다. 모든 iPhone에서 작동합니다.</h2>
-          <p data-i18n="duo.body">Duo를 펼치면 두 화면이 접히는 부분 양쪽에 자연스럽게 놓입니다. iOS 26 이상을 사용하는 모든 iPhone에서도 화면이 같은 방식으로 나뉩니다. Siri와 단축어로 대화를 시작하고 끝낼 수 있으며, 양쪽 화면 모두 VoiceOver와 Dynamic Type을 지원합니다.</p>
+          <h2 data-i18n="duo.title">iPhone Duo를 위해 만들었습니다</h2>
+          <p data-i18n="duo.body">책처럼 펼치면 한쪽씩 나눠 봅니다. 다른 iPhone에서는 화면이 둘로 나뉩니다.</p>
         </div>
         <figure class="held">
           <div class="fold">
@@ -183,182 +324,64 @@
           <div class="controls controls--center">
             <button type="button" class="ctl ctl--text js-video-pause" aria-label="동영상 일시 정지" data-i18n-aria="motion.video.pause"><span data-i18n="motion.pause">일시 정지</span></button>
           </div>
-          <figcaption data-i18n="duo.caption">iPhone Duo에서 실행 중인 Tabletop, 접힌 상태에서 펼쳐지는 모습. 화면은 실제 앱이며, 기기는 3D 목업입니다.</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="section">
+    <!-- Also: one line each, said once -->
+    <section class="section also-section">
       <div class="wrap">
-        <h2 data-i18n="feat.title">마주 앉은 상대를 위해 만들었습니다</h2>
+        <h2 data-i18n="also.title">Tabletop의 다른 기능</h2>
         <div class="also">
-          <article>
-            <h3 data-i18n="feat.3.t">모든 언어에서 정중하게</h3>
-            <p data-i18n="feat.3.d">“다시 말씀해 주세요”, “조금 더 천천히 말씀해 주세요” 같은 준비된 요청은 사람이 직접, 정중한 말투로 19개 언어 모두에 맞춰 썼습니다.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.6.t">이름은 쓴 그대로</h3>
-            <p data-i18n="feat.6.d">절대 번역되면 안 되는 이름과 용어를 추가해 두세요. “Mai”는 Mai 그대로, 회사 이름은 회사 이름 그대로 남습니다.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.7.t">떠나기 전에 준비하는 문구</h3>
-            <p data-i18n="feat.7.d">주소나 예약 내용을 미리 적어 두었다가 전체 화면으로, 똑바로, 들어가는 만큼 크게 보여 주세요. 또는 문장을 기기에서 번역해 상대가 읽게 될 내용을 확인할 수도 있습니다.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.8.t">누군가 나에게 말할 때는 듣기</h3>
-            <p data-i18n="feat.8.d">가이드의 설명, 안내 방송, 누군가의 설명을 내 언어로 된 한 방향 자막으로 보여 줍니다. 대답하고 싶을 때 대답하기를 탭하세요.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.9.t">한 번 눌러 시작</h3>
-            <p data-i18n="feat.9.d">제어 센터, 잠금 화면 또는 동작 버튼에서 시작하세요. 다른 앱으로 전환하거나 휴대폰을 잠가도 Tabletop은 계속 통역하며, 잠금 화면에서 일시 정지와 종료를 할 수 있습니다.</p>
-          </article>
+          <article><h3 data-i18n="also.1.t">듣기</h3><p data-i18n="also.1.d">누군가 말을 걸 때 내 언어로 자막을 보여 줍니다. 가이드, 설명, 안내 방송에.</p></article>
+          <article><h3 data-i18n="also.2.t">문구</h3><p data-i18n="also.2.d">호텔 주소를 전체 화면으로 바로 보여 줄 수 있어요.</p></article>
+          <article><h3 data-i18n="also.3.t">이름</h3><p data-i18n="also.3.d">이름은 쓴 그대로. Mai는 Mai로.</p></article>
+          <article><h3 data-i18n="also.4.t">한 번에 시작</h3><p data-i18n="also.4.d">잠금 화면이나 동작 버튼에서 시작하세요.</p></article>
         </div>
-      </div>
-    </section>
-
-    <!-- Screenshots -->
-    <section class="section sheet gallery-section" aria-labelledby="gallery-title">
-      <div class="wrap">
-        <h2 id="gallery-title" data-i18n="gallery.title">손 안에서 직접 보세요</h2>
-        <p class="muted" data-i18n="gallery.note">App Store 스크린샷입니다. 상대 쪽 화면은 나에게 거꾸로 보이므로, 상대에게는 바로 보입니다.</p>
-      </div>
-      <div class="gallery" id="gallery" tabindex="0" role="region" aria-label="스크린샷" data-i18n-aria="aria.gallery">
-        <img class="js-shot" data-shot="1" src="/assets/shots/ko-1.webp" width="660" height="1434" loading="lazy" alt="내려놓고, 그냥 말하세요." data-i18n-alt="gallery.a1">
-        <img class="js-shot" data-shot="2" src="/assets/shots/ko-2.webp" width="660" height="1434" loading="lazy" alt="상대 쪽 화면은 상대를 향해요." data-i18n-alt="gallery.a2">
-        <img class="js-shot" data-shot="3" src="/assets/shots/ko-3.webp" width="660" height="1434" loading="lazy" alt="프라이버시. 오프라인에서도." data-i18n-alt="gallery.a3">
-        <img class="js-shot" data-shot="4" src="/assets/shots/ko-4.webp" width="660" height="1434" loading="lazy" alt="확인 안 된 번역은 보여 주지 않아요." data-i18n-alt="gallery.a4">
-        <img class="js-shot" data-shot="5" src="/assets/shots/ko-5.webp" width="660" height="1434" loading="lazy" alt="남기고, 회의록까지." data-i18n-alt="gallery.a5">
-        <img class="js-shot" data-shot="6" src="/assets/shots/ko-6.webp" width="660" height="1434" loading="lazy" alt="듣기만 해도 돼요." data-i18n-alt="gallery.a6">
-        <img class="js-shot" data-shot="7" src="/assets/shots/ko-7.webp" width="660" height="1434" loading="lazy" alt="19개 언어로, 얼굴을 마주 보고." data-i18n-alt="gallery.a7">
-      </div>
-      <div class="wrap controls">
-        <button type="button" class="ctl js-prev" aria-controls="gallery" aria-label="이전 스크린샷" data-i18n-aria="gallery.prev">
-          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <button type="button" class="ctl ctl--text js-gallery-pause" aria-controls="gallery" aria-label="스크린샷 일시 정지" data-i18n-aria="motion.gallery.pause"><span data-i18n="motion.pause">일시 정지</span></button>
-        <span class="count js-count" aria-hidden="true">1 / 7</span>
-        <button type="button" class="ctl js-next" aria-controls="gallery" aria-label="다음 스크린샷" data-i18n-aria="gallery.next">
-          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </section>
-
-    <!-- Scenes: scripted demonstrations, labelled as such -->
-    <section class="section" id="scenes">
-      <div class="wrap">
-        <h2 data-i18n="scenes.title">실제 대화를 위해 만들었습니다</h2>
-        <p class="muted" data-i18n="scenes.note">시연 예시이며, 실제 고객 사례가 아닙니다.</p>
-        <div class="scenes">
-          <article class="scene">
-            <h3 data-i18n="scenes.1.t">도쿄의 호텔 프런트</h3>
-            <p class="line"><span class="who" data-i18n="scenes.1.who">일본어</span><span lang="ja" data-i18n="scenes.1.src" data-i18n-lang="scenes.1.lang">チェックアウトは午前11時です。</span></p>
-            <p class="line line--mine"><span class="who" data-i18n="scenes.you">내가 읽는 내용</span><span data-i18n="scenes.1.r">체크아웃은 오전 11시입니다.</span></p>
-          </article>
-          <article class="scene">
-            <h3 data-i18n="scenes.2.t">호찌민시의 택시</h3>
-            <p class="line"><span class="who" data-i18n="scenes.2.who">베트남어</span><span lang="vi" data-i18n="scenes.2.src" data-i18n-lang="scenes.2.lang">Đến khách sạn khoảng hai mươi phút ạ.</span></p>
-            <p class="line line--mine"><span class="who" data-i18n="scenes.you">내가 읽는 내용</span><span data-i18n="scenes.2.r">호텔까지 20분 정도 걸립니다.</span></p>
-          </article>
-          <article class="scene">
-            <h3 data-i18n="scenes.3.t">하노이의 일본 거래처</h3>
-            <p class="line"><span class="who" data-i18n="scenes.3.who">일본어</span><span lang="ja" data-i18n="scenes.3.src" data-i18n-lang="scenes.3.lang">サンプルは来週の火曜日までにハノイへお送りします。</span></p>
-            <p class="line line--mine"><span class="who" data-i18n="scenes.you">내가 읽는 내용</span><span data-i18n="scenes.3.r">샘플은 다음 주 화요일까지 하노이로 보내 드리겠습니다.</span></p>
-          </article>
-          <article class="scene">
-            <h3 data-i18n="scenes.4.t">선전에서의 공급업체 미팅</h3>
-            <p class="line"><span class="who" data-i18n="scenes.4.who">중국어</span><span lang="zh-Hans" data-i18n="scenes.4.src" data-i18n-lang="scenes.4.lang">五百件的话，下周五可以交货。</span></p>
-            <p class="line line--mine"><span class="who" data-i18n="scenes.you">내가 읽는 내용</span><span data-i18n="scenes.4.r">500개라면 다음 주 금요일에 납품할 수 있습니다.</span></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="airmail" role="presentation"></div>
-
-    <!-- Privacy -->
-    <section class="section privacy" id="privacy">
-      <div class="wrap privacy__grid">
-        <div>
-          <h2 data-i18n="privacy.title">기본적으로 프라이버시 보호</h2>
-          <p class="lede" data-i18n="privacy.lede">낯선 사람의 말은 내가 어딘가로 보낼 수 있는 것이 아닙니다. Tabletop은 그 말을 기기 안에 둡니다.</p>
-        </div>
-        <ul class="checks">
-          <li data-i18n="privacy.1">음성 인식과 번역은 기기에서 이루어집니다.</li>
-          <li data-i18n="privacy.2">대화는 저희 서버나 다른 누구의 서버로도 전송되지 않습니다. 보관을 선택하면 기기에 저장되고 본인의 iCloud로 동기화됩니다. App Store 개인정보 보호 라벨: 데이터가 수집되지 않음.</li>
-          <li data-i18n="privacy.3">언어 팩을 다운로드하면 오프라인에서도 작동합니다. 택시 안에서도, 시장에서도, 데이터 없이 해외에서도요.</li>
-          <li data-i18n="privacy.4">대화 보관은 직접 켜기 전까지 꺼져 있으며, 켜져 있을 때는 상대에게도 알려 줍니다.</li>
-        </ul>
       </div>
     </section>
 
     <!-- Free and Pro -->
-    <section class="section pricing" id="pro">
+    <section class="section sheet pricing" id="pro">
       <div class="wrap">
-        <h2 data-i18n="pro.title">무료로 사용하세요. 회의록이 필요하면 Pro.</h2>
+        <h2 data-i18n="pro.title">무료. 회의록은 Pro가 씁니다.</h2>
         <div class="plans">
           <div class="plan">
             <h3 data-i18n="pro.free.t">무료</h3>
-            <p data-i18n="pro.free.d">모든 대화를 제한 없이. 듣기, 카메라로 읽기, 문구, 이름까지. 상대방은 결제 화면을 볼 일이 없습니다.</p>
+            <p data-i18n="pro.free.d">모든 대화를 제한 없이, 카메라, 듣기, 문구까지.</p>
           </div>
           <div class="plan plan--pro">
             <h3 data-i18n="pro.pro.t">Tabletop Pro</h3>
-            <p data-i18n="pro.pro.d">보관한 대화의 회의록: 누가 무엇을 물었는지, 숫자, 다음에 할 일을 짧게 정리하고, 각 항목은 원래 말한 문장으로 연결됩니다. 기기에서 작성됩니다. 처음 세 개는 무료입니다.</p>
-            <p class="small muted" data-i18n="pro.pro.terms">연간 구독(무료 체험 포함) 또는 한 번 구매로 계속 사용. 가격은 App Store에 표시됩니다. Pro는 Apple Intelligence를 지원하는 기기가 필요합니다.</p>
+            <p data-i18n="pro.pro.d">보관한 대화마다 짧은 기록. 합의한 내용, 숫자, 다음 할 일. 처음 세 번은 무료입니다.</p>
+            <p class="small" data-i18n="pro.pro.terms">무료 체험이 포함된 연간 구독 또는 한 번 구매. 가격은 App Store에서 확인하세요.</p>
           </div>
         </div>
-        <p class="small"><a class="js-terms" href="/terms.html#ko" data-i18n="foot.terms">이용 약관</a></p>
       </div>
     </section>
 
-    <!-- Languages -->
-    <section class="section sheet" id="languages">
-      <div class="wrap">
-        <h2 data-i18n="lang.title">19개 대화 언어</h2>
-        <p class="muted" data-i18n="lang.note">어떤 두 언어든 고르세요. 사용 가능 여부는 Apple의 온디바이스 언어 팩에 따라 다릅니다. 스페인어와 포르투갈어처럼 아주 비슷한 언어는 구별하기가 더 어렵습니다.</p>
-        <ul class="languages">
-          <li lang="en">English</li><li lang="vi">Tiếng Việt</li><li lang="ja">日本語</li><li lang="ko">한국어</li>
-          <li lang="zh-Hans">简体中文</li><li lang="zh-Hant">繁體中文</li><li lang="th">ไทย</li><li lang="id">Bahasa Indonesia</li>
-          <li lang="hi">हिन्दी</li><li lang="ar"><bdi dir="rtl">العربية</bdi></li><li lang="es">Español</li><li lang="fr">Français</li>
-          <li lang="de">Deutsch</li><li lang="it">Italiano</li><li lang="pt">Português</li><li lang="ru">Русский</li>
-          <li lang="tr">Türkçe</li><li lang="nl">Nederlands</li><li lang="pl">Polski</li>
-        </ul>
-        <p class="muted small" data-i18n="lang.ui">앱 자체는 English, Tiếng Việt, 日本語, 한국어, 简体中文, 繁體中文으로 제공됩니다.</p>
-      </div>
-    </section>
-
-
-    <!-- FAQ -->
-    <section class="section sheet" id="faq">
+    <!-- FAQ: what the page didn't already say -->
+    <section class="section" id="faq">
       <div class="wrap narrow">
         <h2 data-i18n="faq.title">자주 묻는 질문</h2>
         <details>
-          <summary data-i18n="faq.1.q">번역이 정확한가요?</summary>
-          <p data-i18n="faq.1.a">Tabletop은 기계 번역을 사용하므로 실수가 있을 수 있습니다. 확인할 수 없는 문장은 숨기고, 두 사람 모두 정중하게 다시 말해 달라고 요청할 수 있게 해 줍니다. 의료, 법률 또는 안전과 직결된 대화에는 전문 통역사를 이용해 주세요.</p>
+          <summary data-i18n="faq.1.q">상대방도 앱이 있어야 하나요?</summary>
+          <p data-i18n="faq.1.a">아니요. 모든 것이 내 휴대폰에서 이루어집니다. 상대 쪽 화면이 상대의 언어로 인사합니다.</p>
         </details>
         <details>
-          <summary data-i18n="faq.2.q">인터넷 없이도 작동하나요?</summary>
-          <p data-i18n="faq.2.a">네, 두 언어의 음성 팩과 번역 팩을 다운로드해 두었다면 작동합니다. 여행 전에 Wi‑Fi에서 다운로드해 두세요.</p>
+          <summary data-i18n="faq.2.q">여행 전에 무엇을 해 두면 되나요?</summary>
+          <p data-i18n="faq.2.a">Wi‑Fi로 두 언어를 내려받으세요. 그다음엔 연결이 필요 없습니다.</p>
         </details>
         <details>
           <summary data-i18n="faq.3.q">어떤 iPhone에서 사용할 수 있나요?</summary>
-          <p data-i18n="faq.3.a">iOS 26 이상을 사용하는 모든 iPhone에서 사용할 수 있습니다. iPhone Duo를 중심으로 디자인했습니다.</p>
+          <p data-i18n="faq.3.a">iOS 26 이상의 모든 iPhone에서 쓸 수 있어요. Pro 회의록에는 Apple Intelligence가 필요합니다.</p>
         </details>
         <details>
-          <summary data-i18n="faq.4.q">비용은 얼마인가요?</summary>
-          <p data-i18n="faq.4.a">Tabletop은 무료로 다운로드할 수 있고, 모든 대화가 제한 없이 무료입니다. 듣기, 카메라, 문구도 마찬가지이며, 상대는 결제 화면을 볼 일이 전혀 없습니다. Tabletop Pro는 선택 사항으로, 보관한 대화의 회의록을 작성해 줍니다(처음 세 번은 무료). 무료 체험이 포함된 연간 구독 또는 일회성 구입으로 이용할 수 있습니다. 가격은 App Store에 표시됩니다.</p>
+          <summary data-i18n="faq.4.q">녹음되거나 기록되는 것이 있나요?</summary>
+          <p data-i18n="faq.4.a">대화 보관을 선택했을 때만요. 대화는 내 휴대폰과 내 iCloud에 저장되며, 상대방에게도 저장 중이라고 표시됩니다.</p>
         </details>
         <details>
-          <summary data-i18n="faq.5.q">상대도 앱이 있어야 하나요?</summary>
-          <p data-i18n="faq.5.a">아니요. 모든 것이 내 휴대폰에서 이루어집니다. 상대 쪽 화면은 상대의 언어로 인사하고, 기계 번역이라는 점을 알려 줍니다.</p>
-        </details>
-        <details>
-          <summary data-i18n="faq.6.q">녹음되거나 기록되는 것이 있나요?</summary>
-          <p data-i18n="faq.6.a">기본적으로는 없습니다. 대화를 보관하기로 선택하면 내 기기와 내 iCloud에 저장되며, 상대에게도 대화가 저장되고 있다는 것이 표시됩니다.</p>
-        </details>
-        <details>
-          <summary data-i18n="faq.7.q">다른 앱으로 전환하거나 휴대폰을 잠가도 계속 작동하나요?</summary>
-          <p data-i18n="faq.7.a">네. 대화를 시작하면 종료할 때까지 Tabletop이 계속 듣고 번역하므로, 지도나 계산기를 확인해도 됩니다. 실시간 현황에 듣고 있다는 것이 표시되며, 일시 정지와 종료도 할 수 있습니다.</p>
+          <summary data-i18n="faq.5.q">번역이 정확한가요?</summary>
+          <p data-i18n="faq.5.a">기계 번역이라 틀릴 수 있습니다. 확인하지 못한 문장은 추측을 보여 주지 않고 다시 말해 달라고 합니다. 의료나 법률 대화에는 전문 통역사를 이용하세요.</p>
         </details>
       </div>
     </section>
@@ -366,10 +389,8 @@
     <!-- Final CTA -->
     <section class="section final" id="get">
       <div class="wrap narrow center">
-        <h2 data-i18n="final.title">두 사람 사이에 놓고, 말을 시작하세요.</h2>
-        <p class="lede" data-i18n="final.lede">무료로 다운로드할 수 있고, 모든 대화가 무료입니다. 원하시면 Pro가 회의록을 작성해 드립니다. 실제 대화에서 사용해 보시고, 어떠셨는지 알려 주세요.</p>
+        <h2 data-i18n="final.title">다음 대화, 준비되셨나요?</h2>
         <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/ko.svg" width="150" height="50" alt="App Store에서 다운로드" data-i18n-alt="cta.store"></a>
-        <p class="honest" data-i18n="honest">기계 번역이며, 공인 통역사가 아닙니다.</p>
       </div>
     </section>
   </main>
@@ -377,7 +398,7 @@
   <div class="airmail airmail--thin" role="presentation"></div>
   <footer class="foot">
     <div class="wrap foot__row">
-      <p>© 2026 Tabletop</p>
+      <p>© 2026 Tabletop · <span data-i18n="honest">기계 번역이며, 공인 통역사가 아닙니다.</span></p>
       <nav aria-label="바닥글" data-i18n-aria="aria.footer">
         <a class="js-privacy" href="/privacy.html#ko" data-i18n="foot.privacy">개인정보 처리방침</a>
         <a class="js-support" href="/support.html#ko" data-i18n="foot.support">지원</a>
@@ -386,6 +407,71 @@
       </nav>
     </div>
   </footer>
+
+  <!-- The chapter stamps: postage stamps drawn in Par Avion blue on the stamp's paper, one idea each -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="stamp-frame" viewBox="0 0 120 144">
+        <rect class="st-paper" x="0" y="0" width="120" height="144"/>
+        <rect class="st-line" x="10" y="10" width="100" height="124" rx="2"/>
+      </symbol>
+      <symbol id="stamp-globe" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <circle class="st-ink" cx="60" cy="62" r="32"/>
+        <ellipse class="st-ink" cx="60" cy="62" rx="13" ry="32"/>
+        <path class="st-ink" d="M28 62h64M32 46h56M32 78h56"/>
+        <path class="st-red" d="M18 38c18-14 66-14 84 0"/>
+        <path class="st-fill-red" d="M98 33l7 5-8 3z"/></g>
+      </symbol>
+      <symbol id="stamp-table" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <circle class="st-ink-fill" cx="60" cy="20" r="8"/><path class="st-ink-fill" d="M38 40c0-8 10-12 22-12s22 4 22 12z"/>
+        <rect class="st-table" x="24" y="42" width="72" height="40" rx="6"/>
+        <rect class="st-phone" x="50" y="48" width="20" height="28" rx="4"/>
+        <path class="st-red" d="M50 62h20"/>
+        <path class="st-ink-fill" d="M38 84c0 8 10 12 22 12s22-4 22-12z"/><circle class="st-ink-fill" cx="60" cy="104" r="8"/></g>
+      </symbol>
+      <symbol id="stamp-turn" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <rect class="st-phone-big" x="38" y="20" width="44" height="84" rx="8"/>
+        <path class="st-red" d="M38 62h44"/>
+        <text class="st-glyph" x="60" y="52" transform="rotate(180 60 44)">Aa</text>
+        <text class="st-glyph" x="60" y="92">Aa</text>
+        <path class="st-ink" d="M92 40a16 16 0 0 1 0 44"/><path class="st-fill" d="M88 84l6 4 1-7z"/></g>
+      </symbol>
+      <symbol id="stamp-camera" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <rect class="st-card" x="30" y="34" width="60" height="52" rx="2" transform="rotate(-6 60 60)"/>
+        <path class="st-ink" d="M38 48h40M38 58h44M38 68h30" transform="rotate(-6 60 60)"/>
+        <path class="st-corner-blue" d="M22 34v-10h10M98 34v-10h-10M22 88v10h10M98 88v10h-10"/></g>
+      </symbol>
+      <symbol id="stamp-seal" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <rect class="st-env" x="24" y="34" width="72" height="50" rx="3"/>
+        <path class="st-ink" d="M24 36l36 28 36-28"/>
+        <circle class="st-ink-fill" cx="60" cy="66" r="12"/>
+        <circle class="st-seal-mark-ring" cx="60" cy="63.5" r="3"/><path class="st-seal-mark" d="M60 66.5v5"/></g>
+      </symbol>
+      <symbol id="stamp-letter" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <rect class="st-card" x="30" y="24" width="52" height="68" rx="2"/>
+        <path class="st-ink" d="M38 38h30M38 48h36M38 58h24M38 68h32"/>
+        <circle class="st-violet" cx="80" cy="82" r="16"/><circle class="st-violet" cx="80" cy="82" r="11"/></g>
+      </symbol>
+    </defs>
+  </svg>
 
   <script src="/i18n.js"></script>
   <script src="/main.js"></script>

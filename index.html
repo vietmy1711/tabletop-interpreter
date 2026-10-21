@@ -50,15 +50,14 @@
   <header class="top">
     <div class="wrap top__row">
       <a class="brand" href="/" aria-label="Tabletop">
-        <picture>
-          <img src="/assets/logo-light.svg" alt="" width="36" height="36">
-        </picture>
+        <img src="/assets/logo-light.svg" alt="" width="36" height="36">
         <span>Tabletop</span>
       </a>
       <nav class="top__nav" aria-label="Main" data-i18n-aria="aria.main">
         <a href="#ch1" data-i18n="nav.how">How it works</a>
-        <a href="#privacy" data-i18n="nav.privacy">Privacy</a>
-        <a href="#pro" data-i18n="nav.pro">Pro</a>
+        <a href="#languages" data-i18n="nav.languages">Languages</a>
+        <a href="#compare" data-i18n="nav.compare">Compare</a>
+        <a href="#pro" data-i18n="nav.pro">Pricing</a>
         <a href="#faq" data-i18n="nav.faq">Questions</a>
       </nav>
       <div class="top__actions">
@@ -79,80 +78,121 @@
   </header>
 
   <main id="main">
-    <!-- One conversation, scrolled: the device on the table receives the conversation line by line, and each chapter
-         delivers the next line. Drawn in HTML from the app's own taxi scene, in the page language's pair (main.js). -->
+    <!-- The page is the app, used once: the device on the table is Tabletop's Quick Start, then its conversation.
+         The visitor picks two languages and presses Start; each chapter moves it on and brackets what it is about. -->
     <section class="story" aria-labelledby="story-title">
       <div class="wrap story__grid">
         <div class="story__copy">
-          <h1 id="story-title" data-i18n-html="hero.title">Just talk.<br>Each of you reads your own language.</h1>
-          <p class="lede" data-i18n="hero.lede">Set it between you: Tabletop hears which language was spoken and gives each of you your own half.</p>
+          <h1 id="story-title" data-i18n="hero.title">Just talk.</h1>
+          <p class="lede" data-i18n="hero.lede">Set your phone between you. Each of you reads the conversation in your own language.</p>
           <div class="hero__ctas">
             <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/en.svg" width="150" height="50" alt="Download on the App Store" data-i18n-alt="cta.store"></a>
-            <a class="btn btn--quiet" href="#ch1" data-i18n="cta.how">See how it works</a>
+            <a class="btn btn--quiet" href="#ch1" data-i18n="cta.try">Try it</a>
           </div>
         </div>
         <div class="story__stage">
           <figure class="table">
-            <p class="side side--them" data-i18n="hero.them">Them · Vietnamese</p>
+            <p class="side side--them"><span data-i18n="side.them">Them</span> · <span class="js-side-them">Vietnamese</span></p>
             <div class="table__seam" aria-hidden="true"></div>
-            <div class="device js-device" data-step="4" role="img" aria-label="A live demonstration of Tabletop: a taxi conversation arriving on two halves of one screen, theirs in Vietnamese turned to face them, yours in English." data-i18n-aria="hero.alt">
+            <div class="device js-device" data-view="talk" data-step="4" data-focus="none" role="group" aria-label="Try Tabletop" data-i18n-aria="demo.label">
               <div class="dv">
+                <!-- Quick Start, as the app opens -->
+                <div class="dv__quick">
+                  <p class="dv__brand">Tabletop</p>
+                  <div class="pick">
+                    <span class="pick__k" data-i18n="demo.mine">I speak</span>
+                    <span class="pick__v"><span class="flag js-flag-me"></span><span class="pick__name js-name-me">English</span><svg class="pick__chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></span>
+                    <select class="js-pick-me" aria-label="I speak" data-i18n-aria="demo.mine"></select>
+                  </div>
+                  <button type="button" class="dv__swap js-swap" aria-label="Swap languages" data-i18n-aria="demo.swap">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v15M8 4 4.5 7.5M8 4l3.5 3.5M16 20V5m0 15-3.5-3.5M16 20l3.5-3.5"/></svg>
+                  </button>
+                  <div class="pick pick--them">
+                    <span class="pick__k" data-i18n="demo.theirs">They speak</span>
+                    <span class="pick__v"><span class="flag js-flag-them"></span><span class="pick__name js-name-them">Vietnamese</span><svg class="pick__chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></span>
+                    <select class="js-pick-them" aria-label="They speak" data-i18n-aria="demo.theirs"></select>
+                  </div>
+                  <button type="button" class="dv__start js-start" data-i18n="demo.start">Start Conversation</button>
+                  <p class="dv__more"><span data-i18n="demo.listen">Listen</span><span data-i18n="demo.camera">Read with Camera</span></p>
+                </div>
+                <!-- The conversation: their half turned to face them, yours below the seam -->
                 <div class="dv__theirs" lang="vi">
-                  <p class="dv__cue js-dv-tcue">[Đang nghe, xin mời nói]</p>
+                  <p class="dv__cue js-dv-tcue">[Đang nghe — xin mời nói]</p>
                   <p class="dv__big js-dv-tbig">Khoảng một tiếng.</p>
                   <p class="dv__prev js-dv-tprev">Vâng, đi cao tốc. Mất bao lâu ạ?</p>
                 </div>
                 <div class="dv__seam"></div>
                 <div class="dv__mine">
-                  <p class="dv__bar"><span class="js-dv-pair">English ↔ Vietnamese</span><span class="dv__off js-dv-off">Offline · on this device</span><span class="js-dv-end">End</span><span class="dv__pause js-dv-pause">Pause</span></p>
+                  <p class="dv__bar"><span class="dv__pair js-dv-pair">English ↔ Vietnamese</span><span class="dv__off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V8.5l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-5z"/></svg><span class="js-dv-off">Airplane mode</span></span><span class="dv__end js-dv-end">End</span><span class="dv__pause js-dv-pause">Pause</span></p>
                   <ol class="dv__lines js-dv-lines">
                     <li class="dv__line is-in" data-n="1"><b>YOU</b><span class="dv__text">Please take me to the airport.</span><span class="dv__gloss">Cho tôi đến sân bay.</span><i class="dv__mark"></i></li>
                     <li class="dv__line dv__line--them is-in" data-n="2"><b>VIETNAMESE</b><span class="dv__text">Shall I take the highway?</span><span class="dv__gloss">Mình đi đường cao tốc nhé?</span><i class="dv__mark"></i></li>
                     <li class="dv__line is-in" data-n="3"><b>YOU</b><span class="dv__text">Yes, please. How long will it take?</span><span class="dv__gloss">Vâng, đi cao tốc. Mất bao lâu ạ?</span><i class="dv__mark"></i></li>
                     <li class="dv__line dv__line--them is-in" data-n="4"><b>VIETNAMESE</b><span class="dv__text">About an hour.</span><span class="dv__gloss">Khoảng một tiếng.</span><i class="dv__mark"></i></li>
-                    <li class="dv__line dv__line--returned" data-n="5"><b>YOU</b><span class="dv__text js-dv-rtext">Is there a toll?</span><span class="dv__gloss js-dv-rnote">Not translated. Please say it again.</span><i class="dv__mark"></i></li>
                   </ol>
                   <p class="dv__listen js-dv-listen">[Listening]</p>
                 </div>
+                <!-- Read with Camera: a sign in their language, your language laid over each line -->
+                <div class="dv__cam" aria-hidden="true">
+                  <div class="cam__sign js-cam-sign" lang="vi">
+                    <p class="cam__s1 js-cam-s1">TAXI SÂN BAY</p>
+                    <p class="cam__s2 js-cam-s2">Phí cầu đường trả bằng tiền mặt.</p>
+                  </div>
+                  <p class="cam__slip cam__slip--1 js-cam-t1">AIRPORT TAXI</p>
+                  <p class="cam__slip cam__slip--2 js-cam-t2">Tolls are paid in cash.</p>
+                  <p class="cam__btn js-cam-btn">Read This Page</p>
+                </div>
+                <!-- Kept: the conversation as a letter, its minutes first -->
                 <div class="dv__letter">
                   <p class="dv__lt js-dv-lt">No. 12 · To the airport</p>
                   <p class="dv__lh js-dv-lh">Minutes</p>
                   <p class="dv__pt"><span class="js-dv-p1">You asked to go to the airport.</span><b>↓1</b></p>
                   <p class="dv__pt"><span class="js-dv-p2">They suggested the highway: about an hour.</span><b>↓4</b></p>
-                  <p class="dv__lh js-dv-nx">Next</p>
-                  <p class="dv__pt"><span class="js-dv-p3">→ Ask about the toll again.</span><b>↓5</b></p>
                   <p class="dv__lh js-dv-cv">Conversation</p>
                   <p class="dv__cl"><b>1</b><span class="js-dv-c1">Please take me to the airport.</span></p>
                   <p class="dv__cl"><b>2</b><span class="js-dv-c2">Shall I take the highway?</span></p>
                   <p class="dv__cl"><b>3</b><span class="js-dv-c3">Yes, please. How long will it take?</span></p>
                   <p class="dv__cl"><b>4</b><span class="js-dv-c4">About an hour.</span></p>
-                  <p class="dv__cl dv__cl--returned"><b>5</b><span class="js-dv-c5">Is there a toll?</span></p>
                   <p class="dv__kept"><span class="js-dv-kno">No. 12</span><strong>11:23</strong><span class="js-dv-kk">KEPT</span></p>
                 </div>
+                <!-- The highlight: captioning brackets around what the chapter is about -->
+                <span class="dv__focus" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span class="dv__focus" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
               </div>
             </div>
-            <p class="side side--you" data-i18n="hero.you">You · English</p>
+            <p class="side side--you"><span data-i18n="side.you">You</span> · <span class="js-side-you">English</span></p>
           </figure>
         </div>
-        <article class="chapter" id="ch1" data-step="3">
-          <h2 data-i18n="feat.1.t">No turns</h2>
-          <p data-i18n="feat.1.d">Two listeners run at once, one per language. Nobody taps to take a turn and nobody passes the phone around.</p>
+
+        <article class="chapter" id="ch1" data-view="quick" data-focus="pick">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-globe"/></svg></span>
+          <h2 data-i18n="ch1.t">Pick two languages</h2>
+          <p data-i18n="ch1.d">Any two of 19. Try it on the phone here, then press Start.</p>
         </article>
-        <article class="chapter" id="ch2" data-step="4">
-          <h2 data-i18n="feat.2.t">Their half faces them</h2>
-          <p data-i18n="feat.2.d">Large captions in their own language, readable at arm’s length, at a size they choose themselves. They can scroll back to re-read a price or a time.</p>
+        <article class="chapter" id="ch2" data-view="talk" data-step="2" data-focus="both">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-table"/></svg></span>
+          <h2 data-i18n="ch2.t">No turns, no buttons</h2>
+          <p data-i18n="ch2.d">Both of you speak whenever you like. Tabletop knows who spoke by the language.</p>
         </article>
-        <article class="chapter" id="ch3" data-step="5">
-          <h2 data-i18n="feat.4.t">Never shows an unchecked line</h2>
-          <p data-i18n="feat.4.d">If a translation can't be confirmed, Tabletop hides it rather than risk a wrong number, and tells both of you who should say it again.</p>
+        <article class="chapter" id="ch3" data-view="talk" data-step="4" data-focus="theirs">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-turn"/></svg></span>
+          <h2 data-i18n="ch3.t">Their half faces them</h2>
+          <p data-i18n="ch3.d">Big, clear words, the right way up for them. They can scroll back to a price or a time.</p>
         </article>
-        <article class="chapter" id="ch4" data-step="6">
-          <h2 data-i18n="feat.5.t">Private, and offline once set up</h2>
-          <p data-i18n="feat.5.d">Speech recognition and translation run on your device. After a one-time language pack download it works with no connection.</p>
+        <article class="chapter" id="ch4" data-view="cam" data-focus="cam">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-camera"/></svg></span>
+          <h2 data-i18n="ch4.t">Point it at a sign</h2>
+          <p data-i18n="ch4.d">Menus, signs and forms, translated live in your camera.</p>
         </article>
-        <article class="chapter" id="ch5" data-step="7">
-          <h2 data-i18n="story.5.t">Keep it. Get the minutes.</h2>
-          <p data-i18n="story.5.d">Keep a conversation as a letter and read it again later. With Tabletop Pro, minutes are written on your device: who asked what, the figures, and what to do next, each linked to the line it came from.</p>
+        <article class="chapter" id="ch5" data-view="talk" data-step="4" data-focus="air">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-seal"/></svg></span>
+          <h2 data-i18n="ch5.t">Private by default</h2>
+          <p data-i18n="ch5.d">Everything is translated on your phone. No account, no sign-in, and it works in airplane mode.</p>
+        </article>
+        <article class="chapter" id="ch6" data-view="kept" data-focus="letter">
+          <span class="stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-letter"/></svg></span>
+          <h2 data-i18n="ch6.t">Keep it as a letter</h2>
+          <p data-i18n="ch6.d">Read it again anytime, or share it. With Pro, it comes with minutes.</p>
           <p class="chapter__cta"><a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/en.svg" width="150" height="50" alt="Download on the App Store" data-i18n-alt="cta.store"></a></p>
         </article>
       </div>
@@ -160,14 +200,115 @@
 
     <div class="airmail" role="presentation"></div>
 
+    <!-- Languages: a sheet of stamps. Tapping one puts it on the phone above as the other person's language. -->
+    <section class="section sheet langs" id="languages" aria-labelledby="langs-title">
+      <div class="wrap langs__grid">
+        <div class="langs__copy">
+          <svg class="globe" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="globe-ring" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1-160 0"/></defs>
+            <circle cx="100" cy="100" r="94" class="globe__rim"/>
+            <circle cx="100" cy="100" r="66" class="globe__rim"/>
+            <text class="globe__text"><textPath href="#globe-ring" textLength="490" data-i18n="langs.ring">PAR AVION · 19 LANGUAGES · PAR AVION ·</textPath></text>
+            <g class="globe__earth">
+              <circle cx="100" cy="100" r="54"/>
+              <ellipse cx="100" cy="100" rx="22" ry="54"/>
+              <ellipse cx="100" cy="100" rx="42" ry="54"/>
+              <path d="M46 100h108M53 73h94M53 127h94"/>
+            </g>
+          </svg>
+          <h2 id="langs-title" data-i18n="langs.title">19 languages. Any two.</h2>
+          <p class="lede" data-i18n="langs.lede">Tap a stamp to try it on the phone.</p>
+          <p class="small langs__ui" data-i18n-html="langs.ui">The app itself is in <span class="nw">English</span>, <span class="nw">Tiếng Việt</span>, <span class="nw">日本語</span>, <span class="nw">한국어</span>, <span class="nw">简体中文</span> and <span class="nw">繁體中文</span>.</p>
+        </div>
+        <ul class="stamps js-stamps">
+          <li><button type="button" class="lstamp" data-code="en"><img src="/assets/flags/us.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="en">English</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="vi"><img src="/assets/flags/vn.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="vi">Tiếng Việt</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="ja"><img src="/assets/flags/jp.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="ja">日本語</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="ko"><img src="/assets/flags/kr.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="ko">한국어</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="zh-Hans"><span class="seal" lang="zh-Hans">简</span><span class="lstamp__n" lang="zh-Hans">简体中文</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="zh-Hant"><span class="seal" lang="zh-Hant">繁</span><span class="lstamp__n" lang="zh-Hant">繁體中文</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="th"><img src="/assets/flags/th.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="th">ไทย</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="id"><img src="/assets/flags/id.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="id">Bahasa Indonesia</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="hi"><img src="/assets/flags/in.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="hi">हिन्दी</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="ar"><img src="/assets/flags/sa.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="ar" dir="rtl">العربية</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="es"><img src="/assets/flags/es.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="es">Español</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="fr"><img src="/assets/flags/fr.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="fr">Français</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="de"><img src="/assets/flags/de.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="de">Deutsch</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="it"><img src="/assets/flags/it.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="it">Italiano</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="pt"><img src="/assets/flags/br.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="pt">Português</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="ru"><img src="/assets/flags/ru.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="ru">Русский</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="tr"><img src="/assets/flags/tr.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="tr">Türkçe</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="nl"><img src="/assets/flags/nl.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="nl">Nederlands</span><span class="lstamp__l"></span></button></li>
+          <li><button type="button" class="lstamp" data-code="pl"><img src="/assets/flags/pl.svg" alt="" width="48" height="36" loading="lazy"><span class="lstamp__n" lang="pl">Polski</span><span class="lstamp__l"></span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Compare: checked against each maker's own pages, dated, sources listed -->
+    <section class="section compare" id="compare" aria-labelledby="compare-title">
+      <div class="wrap">
+        <h2 id="compare-title" data-i18n="cmp.title">How Tabletop compares</h2>
+        <p class="lede" data-i18n="cmp.lede">The translators you already have are good. Here is where Tabletop differs.</p>
+        <p class="cmp__hint" data-i18n="cmp.swipe">Swipe the table to see every app.</p>
+        <div class="cmp" tabindex="0" role="region" aria-labelledby="compare-title">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col" class="cmp__us">Tabletop</th>
+                <th scope="col">Apple Translate</th>
+                <th scope="col">Google Translate</th>
+                <th scope="col">Microsoft Translator</th>
+                <th scope="col">DeepL Voice</th>
+                <th scope="col">Papago</th>
+                <th scope="col">iTranslate Converse</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row" data-i18n="cmp.r1">Their half faces them</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="u"></td><td data-v="u"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r2">Talk without pressing a button</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="u"></td><td data-v="n"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r3">Conversations work offline</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="n"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td><td data-v="n"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r4">Translates on your phone</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="p"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td><td data-v="n"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r5">Asks again instead of guessing</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r6">Keeps the conversation</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="u"></td><td data-v="n"></td><td data-v="p"></td><td data-v="u"></td><td data-v="u"></td><td data-v="y"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r7">Writes the minutes</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="n"></td><td data-v="n"></td><td data-v="n"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r8">Price</th>
+                <td class="cmp__us cmp__txt" data-i18n-html="cmp.free.us"><span class="nw">Free ·</span> <span class="nw">Pro optional</span></td><td class="cmp__txt" data-i18n="cmp.free">Free</td><td class="cmp__txt" data-i18n="cmp.free">Free</td><td class="cmp__txt" data-i18n="cmp.free">Free</td><td class="cmp__txt" data-i18n="cmp.paid">Paid plan</td><td class="cmp__txt" data-i18n="cmp.free">Free</td><td class="cmp__txt" data-i18n="cmp.sub">Subscription</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="cmp__key"><span class="nw"><span data-v="y"></span><span data-i18n="cmp.k.y">Yes</span></span><span class="nw"><span data-v="p"></span><span data-i18n="cmp.k.p">Partly</span></span><span class="nw"><span data-v="n"></span><span data-i18n="cmp.k.n">No</span></span><span class="nw"><span data-v="u"></span><span data-i18n="cmp.k.u">Not stated by the maker</span></span></p>
+        <details class="cmp__src">
+          <summary data-i18n="cmp.src">Checked 21 October 2026 on each app's iPhone version. Sources</summary>
+          <ul>
+            <li><a href="https://apps.apple.com/us/app/translate/id1514844618">Apple Translate, App Store</a> · <a href="https://www.apple.com/legal/privacy/data/en/translation/">Translation &amp; Privacy</a></li>
+            <li><a href="https://support.google.com/translate/answer/6142474">Google Translate Help: live translate</a> · <a href="https://apps.apple.com/us/app/google-translate/id414706506">App Store</a></li>
+            <li><a href="https://apps.apple.com/us/app/translator/id1018949559">Microsoft Translator, App Store</a> · <a href="https://www.microsoft.com/en-us/translator/apps/features/">Features</a></li>
+            <li><a href="https://support.deepl.com/hc/en-us/articles/17090280797596">DeepL Voice: conversations</a></li>
+            <li><a href="https://apps.apple.com/kr/app/id1147874819">Papago, App Store</a></li>
+            <li><a href="https://apps.apple.com/us/app/itranslate-converse/id1241264761">iTranslate Converse, App Store</a></li>
+          </ul>
+          <p data-i18n="cmp.fix">Something changed? Tell us at support@trytabletop.app and we'll correct it.</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="airmail" role="presentation"></div>
 
     <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
          once it is on screen, never under Reduce Motion, and Pause stops it. -->
     <section class="section duo">
       <div class="wrap duo__grid">
         <div>
-          <h2 data-i18n="duo.title">Designed with iPhone Duo in mind. Works on every iPhone.</h2>
-          <p data-i18n="duo.body">Open a Duo and the two halves sit naturally on either side of the fold. On any iPhone with iOS 26 or later, the screen splits the same way. Siri and Shortcuts can start and end a conversation; VoiceOver and Dynamic Type are supported on both halves.</p>
+          <h2 data-i18n="duo.title">Made for iPhone Duo</h2>
+          <p data-i18n="duo.body">Open it like a book and each of you gets a side. On any other iPhone, the screen splits in two.</p>
         </div>
         <figure class="held">
           <div class="fold">
@@ -181,182 +322,64 @@
           <div class="controls controls--center">
             <button type="button" class="ctl ctl--text js-video-pause" aria-label="Pause the video" data-i18n-aria="motion.video.pause"><span data-i18n="motion.pause">Pause</span></button>
           </div>
-          <figcaption data-i18n="duo.caption">Tabletop on iPhone Duo, closed and then unfolding. The screens are the app; the device is a 3D mockup.</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="section">
+    <!-- Also: one line each, said once -->
+    <section class="section also-section">
       <div class="wrap">
-        <h2 data-i18n="feat.title">Built for the person across from you</h2>
+        <h2 data-i18n="also.title">Also in Tabletop</h2>
         <div class="also">
-          <article>
-            <h3 data-i18n="feat.3.t">Polite in every language</h3>
-            <p data-i18n="feat.3.d">Ready-made requests such as “Please repeat” and “Please speak more slowly” are written by people, in a courteous register, in all 19 languages.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.6.t">Names kept as written</h3>
-            <p data-i18n="feat.6.d">Add the names and terms that must never be translated, so “Mai” stays Mai and your company stays your company.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.7.t">Phrases ready before you go</h3>
-            <p data-i18n="feat.7.d">Write an address or a booking ahead of time and show it full screen, upright and as large as it fits. Or have a sentence translated on your device and check what they will read.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.8.t">Listen, when someone talks to you</h3>
-            <p data-i18n="feat.8.d">One-way captions in your language for a guide, an announcement or someone explaining. Tap Talk Back when you want to answer.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.9.t">One press to start</h3>
-            <p data-i18n="feat.9.d">Start from Control Center, the Lock Screen or the Action button. Tabletop keeps interpreting if you switch apps or lock the phone, with Pause and End on the Lock Screen.</p>
-          </article>
+          <article><h3 data-i18n="also.1.t">Listen</h3><p data-i18n="also.1.d">Captions in your language when someone talks to you: a guide, a briefing, an announcement.</p></article>
+          <article><h3 data-i18n="also.2.t">Phrases</h3><p data-i18n="also.2.d">Your hotel address, ready to show full screen.</p></article>
+          <article><h3 data-i18n="also.3.t">Names</h3><p data-i18n="also.3.d">Names stay as written: Mai stays Mai.</p></article>
+          <article><h3 data-i18n="also.4.t">One press</h3><p data-i18n="also.4.d">Start from the Lock Screen or the Action button.</p></article>
         </div>
-      </div>
-    </section>
-
-    <!-- Screenshots -->
-    <section class="section sheet gallery-section" aria-labelledby="gallery-title">
-      <div class="wrap">
-        <h2 id="gallery-title" data-i18n="gallery.title">See it in your hand</h2>
-        <p class="muted" data-i18n="gallery.note">App Store screenshots. The other person's half is upside down to you, so it reads the right way up for them.</p>
-      </div>
-      <div class="gallery" id="gallery" tabindex="0" role="region" aria-label="Screenshots" data-i18n-aria="aria.gallery">
-        <img class="js-shot" data-shot="1" src="/assets/shots/en-1.webp" width="660" height="1434" loading="lazy" alt="Set it down. Both of you just talk." data-i18n-alt="gallery.a1">
-        <img class="js-shot" data-shot="2" src="/assets/shots/en-2.webp" width="660" height="1434" loading="lazy" alt="Their half faces them." data-i18n-alt="gallery.a2">
-        <img class="js-shot" data-shot="3" src="/assets/shots/en-3.webp" width="660" height="1434" loading="lazy" alt="Private. Works offline." data-i18n-alt="gallery.a3">
-        <img class="js-shot" data-shot="4" src="/assets/shots/en-4.webp" width="660" height="1434" loading="lazy" alt="Never shows an unchecked line." data-i18n-alt="gallery.a4">
-        <img class="js-shot" data-shot="5" src="/assets/shots/en-5.webp" width="660" height="1434" loading="lazy" alt="Keep it. Get the minutes." data-i18n-alt="gallery.a5">
-        <img class="js-shot" data-shot="6" src="/assets/shots/en-6.webp" width="660" height="1434" loading="lazy" alt="Or just listen." data-i18n-alt="gallery.a6">
-        <img class="js-shot" data-shot="7" src="/assets/shots/en-7.webp" width="660" height="1434" loading="lazy" alt="19 languages, face to face." data-i18n-alt="gallery.a7">
-      </div>
-      <div class="wrap controls">
-        <button type="button" class="ctl js-prev" aria-controls="gallery" aria-label="Previous screenshot" data-i18n-aria="gallery.prev">
-          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <button type="button" class="ctl ctl--text js-gallery-pause" aria-controls="gallery" aria-label="Pause the screenshots" data-i18n-aria="motion.gallery.pause"><span data-i18n="motion.pause">Pause</span></button>
-        <span class="count js-count" aria-hidden="true">1 / 7</span>
-        <button type="button" class="ctl js-next" aria-controls="gallery" aria-label="Next screenshot" data-i18n-aria="gallery.next">
-          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </section>
-
-    <!-- Scenes: scripted demonstrations, labelled as such -->
-    <section class="section" id="scenes">
-      <div class="wrap">
-        <h2 data-i18n="scenes.title">Made for real conversations</h2>
-        <p class="muted" data-i18n="scenes.note">Demonstrations, not customer stories.</p>
-        <div class="scenes">
-          <article class="scene">
-            <h3 data-i18n="scenes.1.t">A hotel desk in Tokyo</h3>
-            <p class="line"><span class="who" data-i18n="scenes.1.who">JAPANESE</span><span lang="ja" data-i18n="scenes.1.src" data-i18n-lang="scenes.1.lang">チェックアウトは午前11時です。</span></p>
-            <p class="line line--mine"><span class="who" data-i18n="scenes.you">YOU READ</span><span data-i18n="scenes.1.r">Check-out is at 11 a.m.</span></p>
-          </article>
-          <article class="scene">
-            <h3 data-i18n="scenes.2.t">A taxi in Ho Chi Minh City</h3>
-            <p class="line"><span class="who" data-i18n="scenes.2.who">VIETNAMESE</span><span lang="vi" data-i18n="scenes.2.src" data-i18n-lang="scenes.2.lang">Đến khách sạn khoảng hai mươi phút ạ.</span></p>
-            <p class="line line--mine"><span class="who" data-i18n="scenes.you">YOU READ</span><span data-i18n="scenes.2.r">It's about twenty minutes to the hotel.</span></p>
-          </article>
-          <article class="scene">
-            <h3 data-i18n="scenes.3.t">A Korean partner in Hanoi</h3>
-            <p class="line"><span class="who" data-i18n="scenes.3.who">KOREAN</span><span lang="ko" data-i18n="scenes.3.src" data-i18n-lang="scenes.3.lang">샘플은 다음 주 화요일까지 하노이로 보내 드리겠습니다.</span></p>
-            <p class="line line--mine"><span class="who" data-i18n="scenes.you">YOU READ</span><span data-i18n="scenes.3.r">We'll send the samples to Hanoi by next Tuesday.</span></p>
-          </article>
-          <article class="scene">
-            <h3 data-i18n="scenes.4.t">A supplier meeting in Shenzhen</h3>
-            <p class="line"><span class="who" data-i18n="scenes.4.who">CHINESE</span><span lang="zh-Hans" data-i18n="scenes.4.src" data-i18n-lang="scenes.4.lang">五百件的话，下周五可以交货。</span></p>
-            <p class="line line--mine"><span class="who" data-i18n="scenes.you">YOU READ</span><span data-i18n="scenes.4.r">For five hundred pieces, we can deliver next Friday.</span></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="airmail" role="presentation"></div>
-
-    <!-- Privacy -->
-    <section class="section privacy" id="privacy">
-      <div class="wrap privacy__grid">
-        <div>
-          <h2 data-i18n="privacy.title">Private by default</h2>
-          <p class="lede" data-i18n="privacy.lede">A stranger's words are not yours to send anywhere. Tabletop keeps them on your device.</p>
-        </div>
-        <ul class="checks">
-          <li data-i18n="privacy.1">Speech recognition and translation run on your device.</li>
-          <li data-i18n="privacy.2">Conversations never go to our servers, or anyone else's. If you choose to keep them, they stay on your device and sync through your own iCloud. App Store privacy label: Data Not Collected.</li>
-          <li data-i18n="privacy.3">Works offline once the language packs are downloaded: in a taxi, at a market, abroad without data.</li>
-          <li data-i18n="privacy.4">Keeping conversations is off until you turn it on, and the other person is told when it is.</li>
-        </ul>
       </div>
     </section>
 
     <!-- Free and Pro -->
-    <section class="section pricing" id="pro">
+    <section class="section sheet pricing" id="pro">
       <div class="wrap">
-        <h2 data-i18n="pro.title">Free to use. Pro, if you want the minutes.</h2>
+        <h2 data-i18n="pro.title">Free. Pro writes the minutes.</h2>
         <div class="plans">
           <div class="plan">
             <h3 data-i18n="pro.free.t">Free</h3>
-            <p data-i18n="pro.free.d">Every conversation, with no limit, and Listen, reading with the camera, phrases and names. The other person never meets a paywall.</p>
+            <p data-i18n="pro.free.d">Every conversation, with no limit, and the camera, Listen and phrases.</p>
           </div>
           <div class="plan plan--pro">
             <h3 data-i18n="pro.pro.t">Tabletop Pro</h3>
-            <p data-i18n="pro.pro.d">Minutes for the conversations you keep: a short written record of who asked what, the figures and what to do next, each point linked to the line it came from. Written on your device. Your first three are free.</p>
-            <p class="small muted" data-i18n="pro.pro.terms">Yearly with a free trial, or once for good. Prices are shown in the App Store. Pro needs a device with Apple Intelligence.</p>
+            <p data-i18n="pro.pro.d">A short written record of each conversation you keep: what was agreed, the figures, what's next. The first three are free.</p>
+            <p class="small" data-i18n="pro.pro.terms">Yearly with a free trial, or once for good. Prices are in the App Store.</p>
           </div>
         </div>
-        <p class="small"><a class="js-terms" href="/terms.html" data-i18n="foot.terms">Terms of Use</a></p>
       </div>
     </section>
 
-    <!-- Languages -->
-    <section class="section sheet" id="languages">
-      <div class="wrap">
-        <h2 data-i18n="lang.title">19 conversation languages</h2>
-        <p class="muted" data-i18n="lang.note">Pick any two. Availability depends on Apple's on-device language packs. Very similar languages, such as Spanish and Portuguese, are harder to tell apart.</p>
-        <ul class="languages">
-          <li lang="en">English</li><li lang="vi">Tiếng Việt</li><li lang="ja">日本語</li><li lang="ko">한국어</li>
-          <li lang="zh-Hans">简体中文</li><li lang="zh-Hant">繁體中文</li><li lang="th">ไทย</li><li lang="id">Bahasa Indonesia</li>
-          <li lang="hi">हिन्दी</li><li lang="ar"><bdi dir="rtl">العربية</bdi></li><li lang="es">Español</li><li lang="fr">Français</li>
-          <li lang="de">Deutsch</li><li lang="it">Italiano</li><li lang="pt">Português</li><li lang="ru">Русский</li>
-          <li lang="tr">Türkçe</li><li lang="nl">Nederlands</li><li lang="pl">Polski</li>
-        </ul>
-        <p class="muted small" data-i18n="lang.ui">The app itself is in English, Tiếng Việt, 日本語, 한국어, 简体中文 and 繁體中文.</p>
-      </div>
-    </section>
-
-
-    <!-- FAQ -->
-    <section class="section sheet" id="faq">
+    <!-- FAQ: what the page didn't already say -->
+    <section class="section" id="faq">
       <div class="wrap narrow">
         <h2 data-i18n="faq.title">Questions</h2>
         <details>
-          <summary data-i18n="faq.1.q">Is it accurate?</summary>
-          <p data-i18n="faq.1.a">Tabletop uses machine translation, so it can make mistakes. It hides any line it can't confirm and gives both people a polite way to ask for a repeat. For medical, legal or safety-critical conversations, please use a professional interpreter.</p>
+          <summary data-i18n="faq.1.q">Does the other person need the app?</summary>
+          <p data-i18n="faq.1.a">No. Everything happens on your phone. Their half greets them in their language.</p>
         </details>
         <details>
-          <summary data-i18n="faq.2.q">Does it work without internet?</summary>
-          <p data-i18n="faq.2.a">Yes, once you have downloaded the speech and translation packs for both languages. Download them over Wi‑Fi before you travel.</p>
+          <summary data-i18n="faq.2.q">What should I do before I travel?</summary>
+          <p data-i18n="faq.2.a">Download your two languages over Wi‑Fi. After that, no connection is needed.</p>
         </details>
         <details>
           <summary data-i18n="faq.3.q">Which iPhones does it run on?</summary>
-          <p data-i18n="faq.3.a">Any iPhone with iOS 26 or later. iPhone Duo is the device it was designed around.</p>
+          <p data-i18n="faq.3.a">Any iPhone with iOS 26 or later. Pro's minutes need Apple Intelligence.</p>
         </details>
         <details>
-          <summary data-i18n="faq.4.q">What does it cost?</summary>
-          <p data-i18n="faq.4.a">Tabletop is free to download, and every conversation is free, with no limit: Listen, the camera and phrases too, and the other person never meets a paywall. Tabletop Pro is optional: it writes minutes of the conversations you keep (your first three are free), as a yearly subscription with a free trial or a one-time purchase. Prices are shown in the App Store.</p>
+          <summary data-i18n="faq.4.q">Is anything recorded?</summary>
+          <p data-i18n="faq.4.a">Only if you choose to keep conversations. They stay on your phone and in your own iCloud, and the other person sees that it's being saved.</p>
         </details>
         <details>
-          <summary data-i18n="faq.5.q">Does the other person need the app?</summary>
-          <p data-i18n="faq.5.a">No. Everything happens on your phone. Their half greets them in their language and tells them it is machine translation.</p>
-        </details>
-        <details>
-          <summary data-i18n="faq.6.q">Is anything recorded?</summary>
-          <p data-i18n="faq.6.a">Not by default. If you choose to keep conversations, they are saved on your device and in your own iCloud, and the other person sees that the conversation is being saved.</p>
-        </details>
-        <details>
-          <summary data-i18n="faq.7.q">Does it keep going if I switch apps or lock the phone?</summary>
-          <p data-i18n="faq.7.a">Yes. Once you start a conversation, Tabletop keeps listening and translating until you end it, so you can check a map or a calculator. A Live Activity shows that it is listening, with Pause and End.</p>
+          <summary data-i18n="faq.5.q">How accurate is it?</summary>
+          <p data-i18n="faq.5.a">It's machine translation, so it can make mistakes. When it can't confirm a line, it asks for it again instead of showing a guess. For medical or legal conversations, use a professional interpreter.</p>
         </details>
       </div>
     </section>
@@ -364,10 +387,8 @@
     <!-- Final CTA -->
     <section class="section final" id="get">
       <div class="wrap narrow center">
-        <h2 data-i18n="final.title">Set it between you. Start talking.</h2>
-        <p class="lede" data-i18n="final.lede">Free to download, and every conversation is free. Pro, if you want it, writes the minutes. Take it into a real conversation, and tell us how it went.</p>
+        <h2 data-i18n="final.title">Ready for your next conversation?</h2>
         <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/en.svg" width="150" height="50" alt="Download on the App Store" data-i18n-alt="cta.store"></a>
-        <p class="honest" data-i18n="honest">Machine translation, not a certified interpreter.</p>
       </div>
     </section>
   </main>
@@ -375,7 +396,7 @@
   <div class="airmail airmail--thin" role="presentation"></div>
   <footer class="foot">
     <div class="wrap foot__row">
-      <p>© 2026 Tabletop</p>
+      <p>© 2026 Tabletop · <span data-i18n="honest">Machine translation, not a certified interpreter.</span></p>
       <nav aria-label="Footer" data-i18n-aria="aria.footer">
         <a class="js-privacy" href="/privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
         <a class="js-support" href="/support.html" data-i18n="foot.support">Support</a>
@@ -384,6 +405,71 @@
       </nav>
     </div>
   </footer>
+
+  <!-- The chapter stamps: postage stamps drawn in Par Avion blue on the stamp's paper, one idea each -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="stamp-frame" viewBox="0 0 120 144">
+        <rect class="st-paper" x="0" y="0" width="120" height="144"/>
+        <rect class="st-line" x="10" y="10" width="100" height="124" rx="2"/>
+      </symbol>
+      <symbol id="stamp-globe" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <circle class="st-ink" cx="60" cy="62" r="32"/>
+        <ellipse class="st-ink" cx="60" cy="62" rx="13" ry="32"/>
+        <path class="st-ink" d="M28 62h64M32 46h56M32 78h56"/>
+        <path class="st-red" d="M18 38c18-14 66-14 84 0"/>
+        <path class="st-fill-red" d="M98 33l7 5-8 3z"/></g>
+      </symbol>
+      <symbol id="stamp-table" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <circle class="st-ink-fill" cx="60" cy="20" r="8"/><path class="st-ink-fill" d="M38 40c0-8 10-12 22-12s22 4 22 12z"/>
+        <rect class="st-table" x="24" y="42" width="72" height="40" rx="6"/>
+        <rect class="st-phone" x="50" y="48" width="20" height="28" rx="4"/>
+        <path class="st-red" d="M50 62h20"/>
+        <path class="st-ink-fill" d="M38 84c0 8 10 12 22 12s22-4 22-12z"/><circle class="st-ink-fill" cx="60" cy="104" r="8"/></g>
+      </symbol>
+      <symbol id="stamp-turn" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <rect class="st-phone-big" x="38" y="20" width="44" height="84" rx="8"/>
+        <path class="st-red" d="M38 62h44"/>
+        <text class="st-glyph" x="60" y="52" transform="rotate(180 60 44)">Aa</text>
+        <text class="st-glyph" x="60" y="92">Aa</text>
+        <path class="st-ink" d="M92 40a16 16 0 0 1 0 44"/><path class="st-fill" d="M88 84l6 4 1-7z"/></g>
+      </symbol>
+      <symbol id="stamp-camera" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <rect class="st-card" x="30" y="34" width="60" height="52" rx="2" transform="rotate(-6 60 60)"/>
+        <path class="st-ink" d="M38 48h40M38 58h44M38 68h30" transform="rotate(-6 60 60)"/>
+        <path class="st-corner-blue" d="M22 34v-10h10M98 34v-10h-10M22 88v10h10M98 88v10h-10"/></g>
+      </symbol>
+      <symbol id="stamp-seal" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <rect class="st-env" x="24" y="34" width="72" height="50" rx="3"/>
+        <path class="st-ink" d="M24 36l36 28 36-28"/>
+        <circle class="st-ink-fill" cx="60" cy="66" r="12"/>
+        <circle class="st-seal-mark-ring" cx="60" cy="63.5" r="3"/><path class="st-seal-mark" d="M60 66.5v5"/></g>
+      </symbol>
+      <symbol id="stamp-letter" viewBox="0 0 120 144">
+        <use href="#stamp-frame"/>
+        <rect class="st-sky" x="14" y="14" width="92" height="116"/>
+        <g transform="translate(0 10)">
+        <rect class="st-card" x="30" y="24" width="52" height="68" rx="2"/>
+        <path class="st-ink" d="M38 38h30M38 48h36M38 58h24M38 68h32"/>
+        <circle class="st-violet" cx="80" cy="82" r="16"/><circle class="st-violet" cx="80" cy="82" r="11"/></g>
+      </symbol>
+    </defs>
+  </svg>
 
   <script src="/i18n.js"></script>
   <script src="/main.js"></script>
