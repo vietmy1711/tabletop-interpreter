@@ -536,3 +536,57 @@ details p { padding: 0 0 22px; color: var(--secondary); max-width: 40em; }
   .cmp__txt { white-space: normal; font-size: 12px; }
   [data-v]::before { width: 20px; height: 20px; }
 }
+
+/* ---------- Both sides of the table: accessibility ----------
+   Two columns divided by the airmail seam, as the screen is: what the person across the table gets, and what you get.
+   Their column carries a live Aa: the sample line grows a step at each press and the dots show where it is. */
+.access .lede { max-width: 32em; margin-bottom: 40px; }
+.access__grid { display: grid; grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1fr); gap: 0 clamp(28px, 4vw, 56px); align-items: start; }
+.access__seam {
+  align-self: stretch; width: 14px; border-radius: 2px;
+  background: repeating-linear-gradient(-45deg, var(--border-red) 0 12px, var(--sheet) 12px 17px, var(--border-blue) 17px 29px, var(--sheet) 29px 34px);
+}
+.access__who { font-weight: 700; font-size: 15px; color: var(--par-avion); margin-bottom: 18px; }
+.access__list article { padding: 16px 0; border-top: 1px solid color-mix(in srgb, var(--par-avion) 25%, transparent); }
+.access__list h3 { font-size: 19px; margin-bottom: 4px; }
+.access__list p { color: var(--secondary); font-size: 17px; max-width: 28em; text-wrap: balance; }
+.access__soon { margin-top: 18px; padding-top: 16px; border-top: 1px dashed color-mix(in srgb, var(--par-avion) 45%, transparent); color: var(--secondary); font-size: 16px; text-wrap: pretty; }
+.soon { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--par-avion);
+  border: 1.5px dashed var(--par-avion); border-radius: 6px; padding: 2px 8px; margin-right: 6px; vertical-align: 1px; }
+:lang(ja) .soon, :lang(ko) .soon, :lang(zh-Hans) .soon, :lang(zh-Hant) .soon { letter-spacing: 0; }
+
+/* The live Aa: their half's sheet, the app's own control. */
+.aa-demo { margin: 0 0 22px; background: var(--ground); border-radius: 18px; overflow: hidden; box-shadow: 0 1px 0 rgba(26,34,51,.04), 0 10px 24px rgba(10,18,36,.08); }
+.aa-demo__sheet { min-height: 168px; display: flex; align-items: center; justify-content: center; padding: 24px; background: color-mix(in srgb, var(--sheet) 70%, var(--ground)); }
+.aa-demo__text { font: 700 22px/1.25 var(--display); color: var(--ink); text-align: center; transition: font-size .35s cubic-bezier(.16, 1, .3, 1); }
+.js-aa[data-step="1"] .aa-demo__text { font-size: 27px; }
+.js-aa[data-step="2"] .aa-demo__text { font-size: 33px; }
+.js-aa[data-step="3"] .aa-demo__text { font-size: 41px; }
+.aa-demo__bar { display: flex; align-items: center; gap: 14px; padding: 12px 16px; }
+.aa-demo figcaption { margin: 0; text-align: left; font-size: 14px; color: var(--secondary); }
+.aa {
+  flex: none; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  min-width: 56px; min-height: 48px; padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  background: var(--ground); color: var(--par-avion); border: 1px solid var(--control-edge);
+}
+.aa:hover { border-color: var(--par-avion); }
+.aa:focus-visible { outline: 2px solid var(--par-avion); outline-offset: 3px; }
+.aa svg { width: 26px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.aa__dots { display: flex; gap: 3px; }
+.aa__dots i { width: 5px; height: 5px; border-radius: 50%; background: color-mix(in srgb, var(--tertiary) 45%, transparent); }
+.js-aa[data-step="0"] .aa__dots i:nth-child(-n+1),
+.js-aa[data-step="1"] .aa__dots i:nth-child(-n+2),
+.js-aa[data-step="2"] .aa__dots i:nth-child(-n+3),
+.js-aa[data-step="3"] .aa__dots i { background: var(--par-avion); }
+.aa__dots i:first-child { background: var(--par-avion); }
+@media (prefers-reduced-motion: reduce) { .aa-demo__text { transition: none; } }
+@media (max-width: 800px) {
+  .access__grid { grid-template-columns: 1fr; }
+  .access__seam { width: auto; height: 12px; margin: 28px 0; }
+}
+
+/* Japanese and Chinese headlines are one phrase that can't break: sized so "ただ話すだけ。" fits its column whole. */
+:lang(ja) .story__copy h1, :lang(zh-Hans) .story__copy h1, :lang(zh-Hant) .story__copy h1 { font-size: clamp(44px, 5.6vw, 80px); }
+@media (max-width: 900px) {
+  :lang(ja) .story__copy h1, :lang(zh-Hans) .story__copy h1, :lang(zh-Hant) .story__copy h1 { font-size: clamp(36px, 12vw, 64px); }
+}

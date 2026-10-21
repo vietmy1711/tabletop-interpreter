@@ -58,6 +58,7 @@
       <nav class="top__nav" aria-label="メイン" data-i18n-aria="aria.main">
         <a href="#ch1" data-i18n="nav.how">使い方</a>
         <a href="#languages" data-i18n="nav.languages">言語</a>
+        <a href="#access" data-i18n="nav.access">アクセシビリティ</a>
         <a href="#compare" data-i18n="nav.compare">比較</a>
         <a href="#pro" data-i18n="nav.pro">料金</a>
         <a href="#faq" data-i18n="nav.faq">よくある質問</a>
@@ -302,6 +303,49 @@
       </div>
     </section>
 
+    <!-- Both sides of the table: accessibility for the person across the table and for the owner, said once, with a
+         live Aa the visitor can press. The airmail seam divides the two, as it divides the screen. -->
+    <section class="section sheet access" id="access" aria-labelledby="access-title">
+      <div class="wrap">
+        <h2 id="access-title" data-i18n="acc.title">どの読み手にも、両側で</h2>
+        <p class="lede" data-i18n="acc.lede">TabletopはVoiceOverと大きな文字に対応しています。あなたにも、向かいの相手にも。</p>
+        <div class="access__grid">
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.them">相手のために</p>
+            <figure class="aa-demo js-aa" aria-labelledby="aa-caption">
+              <div class="aa-demo__sheet">
+                <p class="aa-demo__text js-aa-text" lang="en" data-i18n="acc.sample" data-i18n-lang="acc.sampleLang">Please take me to the airport.</p>
+              </div>
+              <div class="aa-demo__bar">
+                <button type="button" class="aa js-aa-button" aria-label="相手側の文字サイズ" data-i18n-aria="acc.aa">
+                  <svg viewBox="0 0 28 20" aria-hidden="true"><path d="M2 17 7.5 3h1L14 17M4.3 12h7.4M16 17l4-10h1l4 10M17.6 13.5h5.8"/></svg>
+                  <span class="aa__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                </button>
+                <figcaption id="aa-caption" data-i18n="acc.try">Aaを押してみてください。4つのサイズから相手が選べます。</figcaption>
+              </div>
+            </figure>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.t1.t">相手だけの文字サイズ</h3><p data-i18n="acc.t1.d">Aaを押すたびに、相手の文字が大きくなります。あなたの側は変わりません。</p></article>
+              <article><h3 data-i18n="acc.t2.t">読むだけでなく、聞ける</h3><p data-i18n="acc.t2.d">あいさつと、必要ならすべての文を、相手の言語で読み上げます。</p></article>
+              <article><h3 data-i18n="acc.t3.t">ていねいなお願い</h3><p data-i18n="acc.t3.d">「もう一度お願いします」「もう少しゆっくり話してください」を、相手の言語でワンタップ。</p></article>
+              <article><h3 data-i18n="acc.t4.t">相手のタップは必ず届く</h3><p data-i18n="acc.t4.d">あなたのVoiceOverがオンでも、相手のボタンは1回のタッチで反応します。</p></article>
+            </div>
+          </div>
+          <div class="access__seam" aria-hidden="true"></div>
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.you">あなたのために</p>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.y1.t">VoiceOverに隅々まで</h3><p data-i18n="acc.y1.d">すべての操作にラベル付き。新しい文はやさしい音で知らせ、マジックタップで相手の最新の文をもう一度。</p></article>
+              <article><h3 data-i18n="acc.y2.t">あなたの文字は、あなたの設定で</h3><p data-i18n="acc.y2.d">あなたの側は、iPhoneの文字サイズ、文字を太くする、コントラスト、視差効果を減らすに従います。</p></article>
+              <article><h3 data-i18n="acc.y3.t">聞く、字幕で</h3><p data-i18n="acc.y3.d">話しかけられたとき、あなたの言語の字幕で読めます。ガイド、説明、アナウンスに。</p></article>
+              <article><h3 data-i18n="acc.y4.t">相手に読み上げる</h3><p data-i18n="acc.y4.d">「翻訳を読み上げる」で、あなたの文を一つずつ相手の言語で読み上げます。</p></article>
+            </div>
+            <p class="access__soon"><span class="soon" data-i18n="acc.soon">近日公開</span> <span data-i18n="acc.split">イヤホンを分け合う：1組のイヤホンを共有し、片耳ずつそれぞれの言語で聞けます。</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="airmail" role="presentation"></div>
 
     <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
@@ -333,10 +377,12 @@
       <div class="wrap">
         <h2 data-i18n="also.title">そのほかの機能</h2>
         <div class="also">
-          <article><h3 data-i18n="also.1.t">聞く</h3><p data-i18n="also.1.d">話しかけられたとき、あなたの言語で字幕を表示します。ガイド、説明、アナウンスに。</p></article>
           <article><h3 data-i18n="also.2.t">フレーズ</h3><p data-i18n="also.2.d">ホテルの住所を、全画面ですぐに見せられます。</p></article>
+          <article><h3 data-i18n="also.5.t">単語帳</h3><p data-i18n="also.5.d">会話に出てきた新しい単語を、読み方と簡単な復習つきで。</p></article>
           <article><h3 data-i18n="also.3.t">名前</h3><p data-i18n="also.3.d">名前は書いたとおりに。「Mai」は「Mai」のまま。</p></article>
-          <article><h3 data-i18n="also.4.t">ワンタッチ</h3><p data-i18n="also.4.d">ロック画面やアクションボタンから開始できます。</p></article>
+          <article><h3 data-i18n="also.6.t">Siri</h3><p data-i18n="also.6.d">Siriに頼んでフレーズや手紙を開けます。Spotlightでも見つかります。</p></article>
+          <article><h3 data-i18n="also.7.t">どのマイクでも</h3><p data-i18n="also.7.d">有線、USB、イヤホンのマイクが使えます。</p></article>
+          <article><h3 data-i18n="also.4.t">ワンタッチ</h3><p data-i18n="also.4.d">ロック画面やアクションボタンから開始。画面をロックしても続きます。</p></article>
         </div>
       </div>
     </section>

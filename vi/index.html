@@ -58,6 +58,7 @@
       <nav class="top__nav" aria-label="Chính" data-i18n-aria="aria.main">
         <a href="#ch1" data-i18n="nav.how">Cách dùng</a>
         <a href="#languages" data-i18n="nav.languages">Ngôn ngữ</a>
+        <a href="#access" data-i18n="nav.access">Trợ năng</a>
         <a href="#compare" data-i18n="nav.compare">So sánh</a>
         <a href="#pro" data-i18n="nav.pro">Giá</a>
         <a href="#faq" data-i18n="nav.faq">Câu hỏi</a>
@@ -302,6 +303,49 @@
       </div>
     </section>
 
+    <!-- Both sides of the table: accessibility for the person across the table and for the owner, said once, with a
+         live Aa the visitor can press. The airmail seam divides the two, as it divides the screen. -->
+    <section class="section sheet access" id="access" aria-labelledby="access-title">
+      <div class="wrap">
+        <h2 id="access-title" data-i18n="acc.title">Cho mọi người đọc, ở cả hai phía</h2>
+        <p class="lede" data-i18n="acc.lede">Tabletop dùng được với VoiceOver và chữ lớn, cho bạn và cho người đối diện.</p>
+        <div class="access__grid">
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.them">Cho người đối diện</p>
+            <figure class="aa-demo js-aa" aria-labelledby="aa-caption">
+              <div class="aa-demo__sheet">
+                <p class="aa-demo__text js-aa-text" lang="ja" data-i18n="acc.sample" data-i18n-lang="acc.sampleLang">空港までお願いします。</p>
+              </div>
+              <div class="aa-demo__bar">
+                <button type="button" class="aa js-aa-button" aria-label="Cỡ chữ của họ" data-i18n-aria="acc.aa">
+                  <svg viewBox="0 0 28 20" aria-hidden="true"><path d="M2 17 7.5 3h1L14 17M4.3 12h7.4M16 17l4-10h1l4 10M17.6 13.5h5.8"/></svg>
+                  <span class="aa__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                </button>
+                <figcaption id="aa-caption" data-i18n="acc.try">Bấm Aa: bốn cỡ chữ, tùy họ chọn.</figcaption>
+              </div>
+            </figure>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.t1.t">Cỡ chữ của riêng họ</h3><p data-i18n="acc.t1.d">Một lần bấm Aa là chữ của họ to hơn. Cỡ chữ của bạn không đổi.</p></article>
+              <article><h3 data-i18n="acc.t2.t">Nghe được, không chỉ đọc</h3><p data-i18n="acc.t2.d">Lời chào, và nếu bạn muốn thì mọi câu, được đọc to bằng ngôn ngữ của họ.</p></article>
+              <article><h3 data-i18n="acc.t3.t">Lời nhờ lịch sự</h3><p data-i18n="acc.t3.d">“Xin vui lòng nhắc lại” và “Xin vui lòng nói chậm hơn”, một chạm, bằng ngôn ngữ của họ.</p></article>
+              <article><h3 data-i18n="acc.t4.t">Họ chạm là được</h3><p data-i18n="acc.t4.d">Khi VoiceOver của bạn đang bật, nút của họ vẫn nhận một lần chạm.</p></article>
+            </div>
+          </div>
+          <div class="access__seam" aria-hidden="true"></div>
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.you">Cho bạn</p>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.y1.t">VoiceOver trọn vẹn</h3><p data-i18n="acc.y1.d">Mọi nút đều có nhãn. Câu mới đến bằng một âm báo nhẹ, và Chạm ma thuật đọc lại câu mới nhất của họ.</p></article>
+              <article><h3 data-i18n="acc.y2.t">Chữ theo ý bạn</h3><p data-i18n="acc.y2.d">Phía bạn theo cỡ chữ, Chữ đậm, độ tương phản và Giảm chuyển động của iPhone.</p></article>
+              <article><h3 data-i18n="acc.y3.t">Nghe, thành phụ đề</h3><p data-i18n="acc.y3.d">Khi ai đó nói với bạn, đọc lời họ bằng ngôn ngữ của bạn: hướng dẫn viên, buổi giới thiệu, thông báo.</p></article>
+              <article><h3 data-i18n="acc.y4.t">Đọc to cho họ nghe</h3><p data-i18n="acc.y4.d">Đọc to bản dịch đọc từng câu của bạn cho họ nghe, bằng ngôn ngữ của họ.</p></article>
+            </div>
+            <p class="access__soon"><span class="soon" data-i18n="acc.soon">Sắp có</span> <span data-i18n="acc.split">Chia tai nghe: dùng chung một cặp tai nghe, mỗi người nghe ngôn ngữ của mình ở một bên tai.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="airmail" role="presentation"></div>
 
     <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
@@ -333,10 +377,12 @@
       <div class="wrap">
         <h2 data-i18n="also.title">Còn có trong Tabletop</h2>
         <div class="also">
-          <article><h3 data-i18n="also.1.t">Nghe</h3><p data-i18n="also.1.d">Phụ đề bằng ngôn ngữ của bạn khi ai đó nói với bạn: hướng dẫn viên, buổi giới thiệu, thông báo.</p></article>
           <article><h3 data-i18n="also.2.t">Câu soạn sẵn</h3><p data-i18n="also.2.d">Địa chỉ khách sạn, sẵn sàng hiện toàn màn hình.</p></article>
+          <article><h3 data-i18n="also.5.t">Từ</h3><p data-i18n="also.5.d">Từ mới trong các cuộc trò chuyện của bạn, kèm cách đọc và phần ôn nhanh.</p></article>
           <article><h3 data-i18n="also.3.t">Tên riêng</h3><p data-i18n="also.3.d">Tên giữ nguyên như đã viết: Mai vẫn là Mai.</p></article>
-          <article><h3 data-i18n="also.4.t">Một lần bấm</h3><p data-i18n="also.4.d">Bắt đầu từ màn hình khoá hoặc nút Tác vụ.</p></article>
+          <article><h3 data-i18n="also.6.t">Siri</h3><p data-i18n="also.6.d">Nhờ Siri mở một câu mẫu hay một lá thư; tìm chúng trong Spotlight.</p></article>
+          <article><h3 data-i18n="also.7.t">Micro nào cũng được</h3><p data-i18n="also.7.d">Dùng micro có dây, USB hoặc micro của tai nghe.</p></article>
+          <article><h3 data-i18n="also.4.t">Một lần bấm</h3><p data-i18n="also.4.d">Bắt đầu từ màn hình khoá hoặc nút Tác vụ. Vẫn chạy khi khoá màn hình.</p></article>
         </div>
       </div>
     </section>

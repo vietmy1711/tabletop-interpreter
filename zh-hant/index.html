@@ -58,6 +58,7 @@
       <nav class="top__nav" aria-label="主要內容" data-i18n-aria="aria.main">
         <a href="#ch1" data-i18n="nav.how">使用方式</a>
         <a href="#languages" data-i18n="nav.languages">語言</a>
+        <a href="#access" data-i18n="nav.access">輔助使用</a>
         <a href="#compare" data-i18n="nav.compare">比較</a>
         <a href="#pro" data-i18n="nav.pro">價格</a>
         <a href="#faq" data-i18n="nav.faq">常見問題</a>
@@ -302,6 +303,49 @@
       </div>
     </section>
 
+    <!-- Both sides of the table: accessibility for the person across the table and for the owner, said once, with a
+         live Aa the visitor can press. The airmail seam divides the two, as it divides the screen. -->
+    <section class="section sheet access" id="access" aria-labelledby="access-title">
+      <div class="wrap">
+        <h2 id="access-title" data-i18n="acc.title">為每一位讀者，兩邊都照顧到</h2>
+        <p class="lede" data-i18n="acc.lede">Tabletop 支援旁白和大字體，為你，也為桌子對面的人。</p>
+        <div class="access__grid">
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.them">為對方</p>
+            <figure class="aa-demo js-aa" aria-labelledby="aa-caption">
+              <div class="aa-demo__sheet">
+                <p class="aa-demo__text js-aa-text" lang="ja" data-i18n="acc.sample" data-i18n-lang="acc.sampleLang">空港までお願いします。</p>
+              </div>
+              <div class="aa-demo__bar">
+                <button type="button" class="aa js-aa-button" aria-label="對方的文字大小" data-i18n-aria="acc.aa">
+                  <svg viewBox="0 0 28 20" aria-hidden="true"><path d="M2 17 7.5 3h1L14 17M4.3 12h7.4M16 17l4-10h1l4 10M17.6 13.5h5.8"/></svg>
+                  <span class="aa__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                </button>
+                <figcaption id="aa-caption" data-i18n="acc.try">按一下 Aa：四種大小，由對方選擇。</figcaption>
+              </div>
+            </figure>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.t1.t">對方自己的文字大小</h3><p data-i18n="acc.t1.d">每按一次 Aa，對方的字就變大一些。你這邊不變。</p></article>
+              <article><h3 data-i18n="acc.t2.t">不只看，也能聽</h3><p data-i18n="acc.t2.d">問候語，以及你願意的話每一句，都用對方的語言朗讀。</p></article>
+              <article><h3 data-i18n="acc.t3.t">禮貌的請求</h3><p data-i18n="acc.t3.d">「請再說一次」和「請說慢一點」，用對方的語言，一點即可。</p></article>
+              <article><h3 data-i18n="acc.t4.t">對方一點就靈</h3><p data-i18n="acc.t4.d">即使你開著旁白，對方的按鈕也只需輕點一下。</p></article>
+            </div>
+          </div>
+          <div class="access__seam" aria-hidden="true"></div>
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.you">為你</p>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.y1.t">全面支援旁白</h3><p data-i18n="acc.y1.d">每個控制項都有標籤。新的一句以輕柔的提示音送達，用「魔術點兩下」可重聽對方最新的一句。</p></article>
+              <article><h3 data-i18n="acc.y2.t">你的文字，依你的設定</h3><p data-i18n="acc.y2.d">你這邊會依照 iPhone 的文字大小、粗體文字、對比和減少動態效果。</p></article>
+              <article><h3 data-i18n="acc.y3.t">聆聽，變成字幕</h3><p data-i18n="acc.y3.d">有人對你說話時，用你的語言讀到他們說的話：導覽、說明、廣播。</p></article>
+              <article><h3 data-i18n="acc.y4.t">朗讀給對方聽</h3><p data-i18n="acc.y4.d">「朗讀譯文」會用對方的語言，把你的每一句讀給對方聽。</p></article>
+            </div>
+            <p class="access__soon"><span class="soon" data-i18n="acc.soon">即將推出</span> <span data-i18n="acc.split">共用耳機：兩人共用一副耳機，各自一隻耳朵聽自己的語言。</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="airmail" role="presentation"></div>
 
     <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
@@ -333,10 +377,12 @@
       <div class="wrap">
         <h2 data-i18n="also.title">Tabletop 還能</h2>
         <div class="also">
-          <article><h3 data-i18n="also.1.t">聆聽</h3><p data-i18n="also.1.d">有人對你說話時，用你的語言顯示字幕：導覽、說明、廣播。</p></article>
           <article><h3 data-i18n="also.2.t">常用語</h3><p data-i18n="also.2.d">飯店地址，隨時全螢幕出示。</p></article>
+          <article><h3 data-i18n="also.5.t">單字</h3><p data-i18n="also.5.d">對話中的新單字，附讀音和快速複習。</p></article>
           <article><h3 data-i18n="also.3.t">名字</h3><p data-i18n="also.3.d">名字照寫不譯：Mai 還是 Mai。</p></article>
-          <article><h3 data-i18n="also.4.t">一鍵開始</h3><p data-i18n="also.4.d">從鎖定畫面或動作按鈕開始。</p></article>
+          <article><h3 data-i18n="also.6.t">Siri</h3><p data-i18n="also.6.d">請 Siri 打開一句短語或一封信；也能在 Spotlight 中找到。</p></article>
+          <article><h3 data-i18n="also.7.t">任何麥克風</h3><p data-i18n="also.7.d">可以使用有線、USB 或耳機的麥克風。</p></article>
+          <article><h3 data-i18n="also.4.t">一鍵開始</h3><p data-i18n="also.4.d">從鎖定畫面或動作按鈕開始。鎖定螢幕後也會繼續。</p></article>
         </div>
       </div>
     </section>

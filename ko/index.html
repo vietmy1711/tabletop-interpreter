@@ -58,6 +58,7 @@
       <nav class="top__nav" aria-label="본문" data-i18n-aria="aria.main">
         <a href="#ch1" data-i18n="nav.how">사용 방법</a>
         <a href="#languages" data-i18n="nav.languages">언어</a>
+        <a href="#access" data-i18n="nav.access">손쉬운 사용</a>
         <a href="#compare" data-i18n="nav.compare">비교</a>
         <a href="#pro" data-i18n="nav.pro">가격</a>
         <a href="#faq" data-i18n="nav.faq">자주 묻는 질문</a>
@@ -302,6 +303,49 @@
       </div>
     </section>
 
+    <!-- Both sides of the table: accessibility for the person across the table and for the owner, said once, with a
+         live Aa the visitor can press. The airmail seam divides the two, as it divides the screen. -->
+    <section class="section sheet access" id="access" aria-labelledby="access-title">
+      <div class="wrap">
+        <h2 id="access-title" data-i18n="acc.title">모든 독자를 위해, 양쪽 모두에서</h2>
+        <p class="lede" data-i18n="acc.lede">Tabletop은 VoiceOver와 큰 글자를 지원합니다. 당신에게도, 맞은편 사람에게도.</p>
+        <div class="access__grid">
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.them">상대를 위해</p>
+            <figure class="aa-demo js-aa" aria-labelledby="aa-caption">
+              <div class="aa-demo__sheet">
+                <p class="aa-demo__text js-aa-text" lang="ja" data-i18n="acc.sample" data-i18n-lang="acc.sampleLang">空港までお願いします。</p>
+              </div>
+              <div class="aa-demo__bar">
+                <button type="button" class="aa js-aa-button" aria-label="상대방 글자 크기" data-i18n-aria="acc.aa">
+                  <svg viewBox="0 0 28 20" aria-hidden="true"><path d="M2 17 7.5 3h1L14 17M4.3 12h7.4M16 17l4-10h1l4 10M17.6 13.5h5.8"/></svg>
+                  <span class="aa__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                </button>
+                <figcaption id="aa-caption" data-i18n="acc.try">Aa를 눌러 보세요. 네 가지 크기, 상대가 고릅니다.</figcaption>
+              </div>
+            </figure>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.t1.t">상대만의 글자 크기</h3><p data-i18n="acc.t1.d">Aa를 한 번 누를 때마다 상대의 글자가 커집니다. 당신 쪽은 그대로입니다.</p></article>
+              <article><h3 data-i18n="acc.t2.t">읽는 것만이 아니라 들리게</h3><p data-i18n="acc.t2.d">인사말과, 원하면 모든 문장을 상대의 언어로 소리 내어 읽어 줍니다.</p></article>
+              <article><h3 data-i18n="acc.t3.t">정중한 요청</h3><p data-i18n="acc.t3.d">“다시 말씀해 주세요”, “조금 더 천천히 말씀해 주세요”를 상대의 언어로 한 번에.</p></article>
+              <article><h3 data-i18n="acc.t4.t">상대의 탭은 항상 작동</h3><p data-i18n="acc.t4.d">당신의 VoiceOver가 켜져 있어도 상대의 버튼은 한 번의 터치에 반응합니다.</p></article>
+            </div>
+          </div>
+          <div class="access__seam" aria-hidden="true"></div>
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.you">당신을 위해</p>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.y1.t">VoiceOver를 끝까지</h3><p data-i18n="acc.y1.d">모든 컨트롤에 레이블이 있습니다. 새 문장은 부드러운 소리로 알리고, 매직 탭으로 상대의 마지막 문장을 다시 듣습니다.</p></article>
+              <article><h3 data-i18n="acc.y2.t">당신의 글자는 당신의 설정대로</h3><p data-i18n="acc.y2.d">당신 쪽은 iPhone의 글자 크기, 볼드체 텍스트, 대비, 동작 줄이기를 따릅니다.</p></article>
+              <article><h3 data-i18n="acc.y3.t">듣기, 자막으로</h3><p data-i18n="acc.y3.d">누군가 말을 걸면 내 언어로 읽을 수 있어요. 가이드, 설명, 안내 방송에.</p></article>
+              <article><h3 data-i18n="acc.y4.t">상대에게 읽어 주기</h3><p data-i18n="acc.y4.d">‘번역 읽어 주기’가 당신의 문장을 하나씩 상대의 언어로 읽어 줍니다.</p></article>
+            </div>
+            <p class="access__soon"><span class="soon" data-i18n="acc.soon">출시 예정</span> <span data-i18n="acc.split">이어폰 나눠 쓰기: 이어폰 한 쌍을 함께 쓰고, 한쪽 귀로 각자의 언어를 듣습니다.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="airmail" role="presentation"></div>
 
     <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
@@ -333,10 +377,12 @@
       <div class="wrap">
         <h2 data-i18n="also.title">Tabletop의 다른 기능</h2>
         <div class="also">
-          <article><h3 data-i18n="also.1.t">듣기</h3><p data-i18n="also.1.d">누군가 말을 걸 때 내 언어로 자막을 보여 줍니다. 가이드, 설명, 안내 방송에.</p></article>
           <article><h3 data-i18n="also.2.t">문구</h3><p data-i18n="also.2.d">호텔 주소를 전체 화면으로 바로 보여 줄 수 있어요.</p></article>
+          <article><h3 data-i18n="also.5.t">단어장</h3><p data-i18n="also.5.d">대화 속 새 단어를 읽는 법과 간단한 복습과 함께.</p></article>
           <article><h3 data-i18n="also.3.t">이름</h3><p data-i18n="also.3.d">이름은 쓴 그대로. Mai는 Mai로.</p></article>
-          <article><h3 data-i18n="also.4.t">한 번에 시작</h3><p data-i18n="also.4.d">잠금 화면이나 동작 버튼에서 시작하세요.</p></article>
+          <article><h3 data-i18n="also.6.t">Siri</h3><p data-i18n="also.6.d">Siri에게 문구나 편지를 열어 달라고 하세요. Spotlight에서도 찾을 수 있어요.</p></article>
+          <article><h3 data-i18n="also.7.t">어떤 마이크든</h3><p data-i18n="also.7.d">유선, USB, 이어폰 마이크를 쓸 수 있어요.</p></article>
+          <article><h3 data-i18n="also.4.t">한 번에 시작</h3><p data-i18n="also.4.d">잠금 화면이나 동작 버튼에서 시작하세요. 화면을 잠가도 계속됩니다.</p></article>
         </div>
       </div>
     </section>

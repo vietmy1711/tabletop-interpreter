@@ -56,6 +56,7 @@
       <nav class="top__nav" aria-label="Main" data-i18n-aria="aria.main">
         <a href="#ch1" data-i18n="nav.how">How it works</a>
         <a href="#languages" data-i18n="nav.languages">Languages</a>
+        <a href="#access" data-i18n="nav.access">Accessibility</a>
         <a href="#compare" data-i18n="nav.compare">Compare</a>
         <a href="#pro" data-i18n="nav.pro">Pricing</a>
         <a href="#faq" data-i18n="nav.faq">Questions</a>
@@ -300,6 +301,49 @@
       </div>
     </section>
 
+    <!-- Both sides of the table: accessibility for the person across the table and for the owner, said once, with a
+         live Aa the visitor can press. The airmail seam divides the two, as it divides the screen. -->
+    <section class="section sheet access" id="access" aria-labelledby="access-title">
+      <div class="wrap">
+        <h2 id="access-title" data-i18n="acc.title">For every reader, on both sides</h2>
+        <p class="lede" data-i18n="acc.lede">Tabletop works with VoiceOver and large text, for you and for the person across the table.</p>
+        <div class="access__grid">
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.them">For them</p>
+            <figure class="aa-demo js-aa" aria-labelledby="aa-caption">
+              <div class="aa-demo__sheet">
+                <p class="aa-demo__text js-aa-text" lang="vi" data-i18n="acc.sample" data-i18n-lang="acc.sampleLang">Cho tôi đến sân bay.</p>
+              </div>
+              <div class="aa-demo__bar">
+                <button type="button" class="aa js-aa-button" aria-label="Their text size" data-i18n-aria="acc.aa">
+                  <svg viewBox="0 0 28 20" aria-hidden="true"><path d="M2 17 7.5 3h1L14 17M4.3 12h7.4M16 17l4-10h1l4 10M17.6 13.5h5.8"/></svg>
+                  <span class="aa__dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                </button>
+                <figcaption id="aa-caption" data-i18n="acc.try">Press Aa: four sizes, their choice.</figcaption>
+              </div>
+            </figure>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.t1.t">Their own text size</h3><p data-i18n="acc.t1.d">One press on Aa, and their words grow. It never changes yours.</p></article>
+              <article><h3 data-i18n="acc.t2.t">Heard as well as read</h3><p data-i18n="acc.t2.d">Their greeting, and every line if you like, read aloud in their language.</p></article>
+              <article><h3 data-i18n="acc.t3.t">Polite requests</h3><p data-i18n="acc.t3.d">“Please repeat” and “Please speak more slowly”, one tap, in their language.</p></article>
+              <article><h3 data-i18n="acc.t4.t">Their taps always work</h3><p data-i18n="acc.t4.d">With your VoiceOver on, their buttons still answer a single touch.</p></article>
+            </div>
+          </div>
+          <div class="access__seam" aria-hidden="true"></div>
+          <div class="access__side">
+            <p class="access__who" data-i18n="acc.you">For you</p>
+            <div class="access__list">
+              <article><h3 data-i18n="acc.y1.t">VoiceOver, all the way</h3><p data-i18n="acc.y1.d">Every control is labelled. A new line arrives as a soft sound, and Magic Tap repeats their last one.</p></article>
+              <article><h3 data-i18n="acc.y2.t">Your text, your way</h3><p data-i18n="acc.y2.d">Your side follows your iPhone’s text size, Bold Text, contrast and Reduce Motion.</p></article>
+              <article><h3 data-i18n="acc.y3.t">Listen, as captions</h3><p data-i18n="acc.y3.d">When someone talks to you, read what they say in your language: a guide, a briefing, an announcement.</p></article>
+              <article><h3 data-i18n="acc.y4.t">Read aloud to them</h3><p data-i18n="acc.y4.d">Speak Translations reads each of your lines aloud to them, in their language.</p></article>
+            </div>
+            <p class="access__soon"><span class="soon" data-i18n="acc.soon">Coming soon</span> <span data-i18n="acc.split">Split Earbuds: share one pair, and each of you hears your own language in one ear.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="airmail" role="presentation"></div>
 
     <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
@@ -331,10 +375,12 @@
       <div class="wrap">
         <h2 data-i18n="also.title">Also in Tabletop</h2>
         <div class="also">
-          <article><h3 data-i18n="also.1.t">Listen</h3><p data-i18n="also.1.d">Captions in your language when someone talks to you: a guide, a briefing, an announcement.</p></article>
           <article><h3 data-i18n="also.2.t">Phrases</h3><p data-i18n="also.2.d">Your hotel address, ready to show full screen.</p></article>
+          <article><h3 data-i18n="also.5.t">Words</h3><p data-i18n="also.5.d">New words from your conversations, with their readings and a quick review.</p></article>
           <article><h3 data-i18n="also.3.t">Names</h3><p data-i18n="also.3.d">Names stay as written: Mai stays Mai.</p></article>
-          <article><h3 data-i18n="also.4.t">One press</h3><p data-i18n="also.4.d">Start from the Lock Screen or the Action button.</p></article>
+          <article><h3 data-i18n="also.6.t">Siri</h3><p data-i18n="also.6.d">Ask Siri to open a phrase or a letter; find them in Spotlight.</p></article>
+          <article><h3 data-i18n="also.7.t">Any microphone</h3><p data-i18n="also.7.d">Use a wired, USB or earbud microphone.</p></article>
+          <article><h3 data-i18n="also.4.t">One press</h3><p data-i18n="also.4.d">Start from the Lock Screen or the Action button. It keeps going with the screen locked.</p></article>
         </div>
       </div>
     </section>

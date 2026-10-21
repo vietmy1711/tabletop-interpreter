@@ -473,3 +473,19 @@ function tabletopLabelPause(button, paused, what) {
     window.addEventListener("resize", function () { clearTimeout(resized); resized = setTimeout(watch, 200); });
   }
 })();
+
+// The live Aa in "For every reader": each press is a step larger, the fourth back to the first, as in the app. The
+// button names its step for screen readers ("Their text size, 2 of 4"), in the page's language.
+(function () {
+  var demo = document.querySelector(".js-aa");
+  if (!demo) return;
+  var button = demo.querySelector(".js-aa-button");
+  var base = button.getAttribute("aria-label");
+  var step = 0;
+  function show() {
+    demo.dataset.step = String(step);
+    button.setAttribute("aria-label", base + ", " + (step + 1) + " / 4");
+  }
+  button.addEventListener("click", function () { step = (step + 1) % 4; show(); });
+  show();
+})();
