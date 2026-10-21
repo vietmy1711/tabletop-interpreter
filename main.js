@@ -8,7 +8,8 @@
 
   var dict = window.TABLETOP_I18N || {};
   // English for the words this script writes itself (the rest is read from the page).
-  var en = { "motion.pause": "Pause", "motion.play": "Play" };
+  var en = { "motion.pause": "Pause", "motion.play": "Play",
+             "motion.gallery.play": "Play the screenshots", "motion.video.play": "Play the video" };
   var nodes = {
     text: document.querySelectorAll("[data-i18n]"),
     html: document.querySelectorAll("[data-i18n-html]"),
@@ -49,7 +50,12 @@
     if (canonical) canonical.href = "https://trytabletop.app/" + (current === "en" ? "" : "?lang=" + current);
 
     // The hero and the screenshots are the app itself in this language, with its own language pair.
-    document.querySelectorAll(".js-hero").forEach(function (img) { img.src = "assets/hero/" + current + ".webp"; });
+    document.querySelectorAll(".js-hero").forEach(function (img) {
+      var src = "assets/hero/" + current + ".webp";
+      if (img.getAttribute("src") !== src) img.src = src;
+    });
+    // Apple's own badge, in the page's language.
+    document.querySelectorAll(".js-badge").forEach(function (img) { img.src = "assets/badges/" + current + ".svg"; });
     document.querySelectorAll(".js-shot").forEach(function (img) {
       img.src = "assets/shots/" + current + "-" + img.dataset.shot + ".webp";
     });
@@ -105,17 +111,19 @@
   apply(initialLang());
 })();
 
-// A Pause button's words follow its state, in the page's language.
-function tabletopLabelPause(button, paused) {
+// A Pause button's words follow its state, in the page's language: "Pause" or "Play" on the button, and what it
+// pauses for a screen reader ("Pause the video"). The words carry the state, so there is no pressed state as well.
+function tabletopLabelPause(button, paused, what) {
   var span = button.querySelector("span");
   span.dataset.i18n = paused ? "motion.play" : "motion.pause";
   span.textContent = window.TABLETOP_T(span.dataset.i18n);
-  button.setAttribute("aria-pressed", String(paused));
+  button.dataset.i18nAria = "motion." + what + (paused ? ".play" : ".pause");
+  button.setAttribute("aria-label", window.TABLETOP_T(button.dataset.i18nAria));
 }
 
 // The screenshot gallery moves on by itself: one screenshot every 3.5 s, back to the first after the last.
 // Pause stops it for good; Previous and Next step by hand. It also waits while someone points at, touches, scrolls
-// or tabs into it (and for 8 s after), runs only while it is on screen and the tab is visible, and never under
+// or tabs into it (and for 15 s after), runs only while it is on screen and the tab is visible, and never under
 // Reduce Motion (where Pause, with nothing to stop, is hidden).
 (function () {
   var gallery = document.querySelector(".gallery");
@@ -124,7 +132,8 @@ function tabletopLabelPause(button, paused) {
   var pauseButton = document.querySelector(".js-gallery-pause");
   var onScreen = false, pointerInside = false, holdUntil = 0, paused = false;
 
-  function hold() { holdUntil = Date.now() + 8000; }
+  // After a touch it waits long enough to read a screenshot, not to have it moved from under the thumb.
+  function hold() { holdUntil = Date.now() + 15000; }
   gallery.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") pointerInside = true; });
   gallery.addEventListener("pointerleave", function () { pointerInside = false; hold(); });
   ["pointerdown", "touchstart", "wheel", "keydown", "focusin"].forEach(function (type) {
@@ -165,10 +174,24 @@ function tabletopLabelPause(button, paused) {
   if (pauseButton) {
     pauseButton.addEventListener("click", function () {
       paused = !paused;
-      tabletopLabelPause(pauseButton, paused);
+      tabletopLabelPause(pauseButton, paused, "gallery");
     });
-    document.addEventListener("tabletop:lang", function () { tabletopLabelPause(pauseButton, paused); });
+    document.addEventListener("tabletop:lang", function () { tabletopLabelPause(pauseButton, paused, "gallery"); });
   }
+
+  // Where you are: "3 / 7", beside the controls.
+  var count = document.querySelector(".js-count");
+  var shots = gallery.querySelectorAll("img").length;
+  function showCount() {
+    if (!count) return;
+    var shot = gallery.querySelector("img");
+    var gap = parseFloat(getComputedStyle(gallery).columnGap) || 20;
+    var at = shot ? Math.round(gallery.scrollLeft / (shot.getBoundingClientRect().width + gap)) + 1 : 1;
+    if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 4) at = shots;
+    count.textContent = Math.min(Math.max(at, 1), shots) + " / " + shots;
+  }
+  gallery.addEventListener("scroll", function () { window.requestAnimationFrame(showCount); }, { passive: true });
+  showCount();
 
   setInterval(function () {
     if (paused || reduce.matches || !onScreen || pointerInside || document.hidden || Date.now() < holdUntil) return;
@@ -207,10 +230,10 @@ function tabletopLabelPause(button, paused) {
   if (button) {
     button.addEventListener("click", function () {
       paused = !paused;
-      tabletopLabelPause(button, paused);
+      tabletopLabelPause(button, paused, "video");
       update();
     });
-    document.addEventListener("tabletop:lang", function () { tabletopLabelPause(button, paused); });
+    document.addEventListener("tabletop:lang", function () { tabletopLabelPause(button, paused, "video"); });
   }
   update();
 })();
