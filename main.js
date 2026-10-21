@@ -237,3 +237,185 @@ function tabletopLabelPause(button, paused, what) {
   }
   update();
 })();
+
+// One conversation, scrolled: the device on the table receives the app's own taxi scene in the page language's pair.
+// On load it delivers the first two lines (under five seconds, then it stops); each chapter, as it reaches the middle of
+// the screen, takes the conversation to its step. Steps: 1-4 the four lines, 5 a line that could not be confirmed,
+// 6 offline, 7 the conversation kept as a letter with its minutes. Under Reduce Motion lines arrive without typing.
+// Without JavaScript the HTML shows the four lines delivered.
+(function () {
+  var device = document.querySelector(".js-device");
+  if (!device || !window.matchMedia) return;
+  document.documentElement.classList.add("js");
+  // The table sticks flush under the header: its height measured, not assumed, so nothing shows between them.
+  var header = document.querySelector(".top");
+  function measureBar() { if (header) document.documentElement.style.setProperty("--bar", header.offsetHeight + "px"); }
+  measureBar();
+  window.addEventListener("resize", measureBar);
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var L = {
+    airport: { en: "Please take me to the airport.", vi: "Cho tôi đến sân bay.", ja: "空港までお願いします。", ko: "공항까지 가 주세요.", "zh-Hans": "请送我去机场。", "zh-Hant": "請送我去機場。" },
+    highway: { en: "Shall I take the highway?", vi: "Mình đi đường cao tốc nhé?", ja: "高速道路を使いますか？", ko: "고속도로로 갈까요?", "zh-Hans": "要走高速吗？", "zh-Hant": "要走高速公路嗎？" },
+    howLong: { en: "Yes, please. How long will it take?", vi: "Vâng, đi cao tốc. Mất bao lâu ạ?", ja: "はい、お願いします。どのくらいかかりますか？", ko: "네, 그렇게 해 주세요. 얼마나 걸려요?", "zh-Hans": "好的，麻烦了。要多长时间？", "zh-Hant": "好的，麻煩了。要多久？" },
+    anHour: { en: "About an hour.", vi: "Khoảng một tiếng.", ja: "一時間ほどです。", ko: "한 시간 정도요.", "zh-Hans": "大约一个小时。", "zh-Hant": "大約一個小時。" },
+    toll: { en: "Is there a toll?", vi: "Có mất phí cầu đường không?", ja: "有料道路ですか？", ko: "통행료가 있나요?", "zh-Hans": "要付过路费吗？", "zh-Hant": "要付過路費嗎？" },
+    // The other person's cue, in their language, as their half shows it.
+    cue: { en: "[Listening — speak any time]", vi: "[Đang nghe — xin mời nói]", ja: "［聞き取り中 — いつでもお話しください］", ko: "[듣고 있어요 — 언제든 말씀하세요]", "zh-Hans": "［正在收听 — 随时可以说］", "zh-Hant": "［聆聽中 — 隨時都可以說］" },
+    wait: { en: "[One moment, please]", vi: "[Xin chờ một chút]", ja: "［少々お待ちください］", ko: "[잠시만 기다려 주세요]", "zh-Hans": "［请稍等］", "zh-Hant": "［請稍候］" }
+  };
+  // The owner's side, in the page's language (the app's own words), and the language they are talking with.
+  var OWNER = {
+    en: { cv: "Conversation", kk: "KEPT", kno: "No. 12", them: "vi", you: "YOU", lang: "VIETNAMESE", pair: "English ↔ Vietnamese", end: "End", pause: "Pause", listen: "[Listening]",
+          off: "Offline · on this device", note: "Not translated. Please say it again.", lt: "No. 12 · To the airport", lh: "Minutes", nx: "Next",
+          p1: "You asked to go to the airport.", p2: "They suggested the highway: about an hour.", p3: "→ Ask about the toll again." },
+    vi: { cv: "Cuộc trò chuyện", kk: "ĐÃ LƯU", kno: "Số 12", them: "ja", you: "BẠN", lang: "TIẾNG NHẬT", pair: "Việt ↔ Nhật", end: "Kết thúc", pause: "Tạm dừng", listen: "[Đang nghe]",
+          off: "Ngoại tuyến · ngay trên máy", note: "Chưa dịch được. Xin nói lại.", lt: "Số 12 · Ra sân bay", lh: "Biên bản", nx: "Kế tiếp",
+          p1: "Bạn nhờ đưa đến sân bay.", p2: "Tài xế đề nghị đi cao tốc: khoảng một tiếng.", p3: "→ Hỏi lại về phí cầu đường." },
+    ja: { cv: "会話", kk: "保存", kno: "No. 12", them: "en", you: "自分", lang: "英語", pair: "日本語 ↔ 英語", end: "終了", pause: "一時停止", listen: "［聞き取り中］",
+          off: "オフライン · この端末で", note: "翻訳できませんでした。もう一度お話しください。", lt: "No. 12 · 空港まで", lh: "議事メモ", nx: "次",
+          p1: "空港までお願いしました。", p2: "高速道路を提案されました。約1時間です。", p3: "→ 通行料についてもう一度聞く。" },
+    ko: { cv: "대화", kk: "보관", kno: "No. 12", them: "ja", you: "나", lang: "일본어", pair: "한국어 ↔ 일본어", end: "종료", pause: "일시 정지", listen: "[듣는 중]",
+          off: "오프라인 · 이 기기에서", note: "번역되지 않았어요. 다시 말씀해 주세요.", lt: "No. 12 · 공항까지", lh: "회의록", nx: "다음",
+          p1: "공항까지 가 달라고 했습니다.", p2: "고속도로를 제안받았습니다. 약 한 시간입니다.", p3: "→ 통행료를 다시 묻기." },
+    "zh-Hans": { cv: "对话", kk: "已保存", kno: "第 12 号", them: "en", you: "我", lang: "英语", pair: "简体中文 ↔ 英语", end: "结束", pause: "暂停", listen: "［正在收听］",
+          off: "离线 · 在本机上", note: "未能翻译，请再说一遍。", lt: "第 12 号 · 去机场", lh: "纪要", nx: "下一步",
+          p1: "你请司机送你去机场。", p2: "司机建议走高速，大约一小时。", p3: "→ 再问一次过路费。" },
+    "zh-Hant": { cv: "對話", kk: "已儲存", kno: "第 12 號", them: "ja", you: "我", lang: "日文", pair: "繁體中文 ↔ 日文", end: "結束", pause: "暫停", listen: "［聆聽中］",
+          off: "離線 · 在本機上", note: "未能翻譯，請再說一遍。", lt: "第 12 號 · 去機場", lh: "會議紀錄", nx: "下一步",
+          p1: "你請司機送你去機場。", p2: "司機建議走高速公路，大約一小時。", p3: "→ 再問一次過路費。" }
+  };
+  var SCRIPT = [["me", "airport"], ["them", "highway"], ["me", "howLong"], ["them", "anHour"]];
+  var mine = "en", o = OWNER.en, step = 0, typing = null;
+  var $ = function (sel) { return device.querySelector(sel); };
+  var lines = device.querySelectorAll(".dv__line");
+
+  function render() {
+    mine = document.documentElement.lang in OWNER ? document.documentElement.lang : "en";
+    o = OWNER[mine];
+    var them = o.them;
+    $(".dv__theirs").lang = them;
+    $(".js-dv-pair").textContent = o.pair; $(".js-dv-end").textContent = o.end; $(".js-dv-pause").textContent = o.pause;
+    $(".js-dv-listen").textContent = o.listen; $(".js-dv-off").textContent = o.off;
+    $(".js-dv-lt").textContent = o.lt; $(".js-dv-lh").textContent = o.lh; $(".js-dv-nx").textContent = o.nx;
+    $(".js-dv-p1").textContent = o.p1; $(".js-dv-p2").textContent = o.p2; $(".js-dv-p3").textContent = o.p3;
+    $(".js-dv-cv").textContent = o.cv; $(".js-dv-kk").textContent = o.kk; $(".js-dv-kno").textContent = o.kno;
+    $(".js-dv-c1").textContent = L.airport[mine]; $(".js-dv-c2").textContent = L.highway[mine];
+    $(".js-dv-c3").textContent = L.howLong[mine]; $(".js-dv-c4").textContent = L.anHour[mine]; $(".js-dv-c5").textContent = L.toll[mine];
+    SCRIPT.forEach(function (s, i) {
+      var li = lines[i];
+      li.querySelector("b").textContent = s[0] === "me" ? o.you : o.lang;
+      li.querySelector(".dv__text").textContent = L[s[1]][mine];
+      li.querySelector(".dv__text").lang = mine;
+      li.querySelector(".dv__gloss").textContent = L[s[1]][them];
+      li.querySelector(".dv__gloss").lang = them;
+    });
+    lines[4].querySelector("b").textContent = o.you;
+    $(".js-dv-rtext").textContent = L.toll[mine];
+    $(".js-dv-rnote").textContent = o.note;
+    show(step, false);
+  }
+
+  // Their half: the newest line in their language, large; the one before it small; the cue above.
+  function theirHalf(n) {
+    var them = o.them;
+    var last = Math.min(n, 4);
+    $(".js-dv-tcue").textContent = n === 5 ? L.wait[them] : L.cue[them];
+    $(".js-dv-tbig").textContent = last ? L[SCRIPT[last - 1][1]][them] : "";
+    $(".js-dv-tprev").textContent = last > 1 ? L[SCRIPT[last - 2][1]][them] : "";
+  }
+
+  function show(n, animate) {
+    if (typing) { clearInterval(typing); typing = null; }
+    var from = step;
+    step = n;
+    device.dataset.step = String(n);
+    document.querySelectorAll(".chapter").forEach(function (c) { c.classList.toggle("is-on", Number(c.dataset.step) === n); });
+    lines.forEach(function (li) {
+      var k = Number(li.dataset.n);
+      li.classList.toggle("is-in", k <= n);
+      li.classList.remove("is-new");
+      li.querySelector(".dv__text").textContent = k === 5 ? L.toll[mine] : L[SCRIPT[k - 1][1]][mine];
+    });
+    theirHalf(n);
+    fit();
+    // A line arriving one step forward types in, then is postmarked; anything else lands at once.
+    if (animate && !reduce.matches && n === from + 1 && n <= 5) {
+      var li = lines[n - 1], text = li.querySelector(".dv__text"), full = text.textContent, i = 0;
+      li.classList.add("is-new");
+      text.textContent = "";
+      var chars = Array.from(full), per = Math.max(18, Math.min(40, 900 / chars.length));
+      typing = setInterval(function () {
+        i += 1;
+        text.textContent = chars.slice(0, i).join("");
+        if (i >= chars.length) { clearInterval(typing); typing = null; li.classList.remove("is-new"); }
+      }, per);
+    }
+  }
+
+  // Only whole lines: set aside the oldest delivered lines until the newest fit.
+  var list = device.querySelector(".js-dv-lines");
+  function fit() {
+    lines.forEach(function (li) { li.classList.remove("is-gone"); });
+    var shown = Array.prototype.filter.call(lines, function (li) { return li.classList.contains("is-in"); });
+    // A bottom-anchored list doesn't report what spills over its top, so add the lines' own heights.
+    var room = list.clientHeight, total = 0;
+    for (var i = shown.length - 1; i >= 0; i--) {
+      total += shown[i].offsetHeight;
+      if (total > room + 1 && i < shown.length - 1) { for (var j = i; j >= 0; j--) shown[j].classList.add("is-gone"); break; }
+    }
+  }
+  window.addEventListener("resize", fit);
+
+  document.addEventListener("tabletop:lang", render);
+  render();
+  show(0, false);
+
+  // The opening: two lines within five seconds, once, when the device is first seen.
+  var opened = false;
+  function open() {
+    if (opened) return;
+    opened = true;
+    if (reduce.matches) { show(2, false); return; }
+    setTimeout(function () { if (step === 0) show(1, true); }, 400);
+    setTimeout(function () { if (step === 1) show(2, true); }, 2200);
+  }
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) { if (entries[0].isIntersecting) open(); }, { threshold: 0.4 }).observe(device);
+    // Each chapter takes the conversation to its step as it crosses the middle of the screen; above the first
+    // chapter, the opening's two lines.
+    var chapters = document.querySelectorAll(".chapter");
+    var copy = document.querySelector(".story__copy");
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var target = e.target === copy ? 2 : Number(e.target.dataset.step);
+        if (target !== step) show(target, true);
+      });
+    }, { rootMargin: "-45% 0px -45% 0px" }).observe(copy);
+    // A chapter counts when it reaches the readable band: the middle of the screen beside the table on a wide
+    // screen; on a phone, the band below the sticky table (measured, and measured again when the size changes),
+    // so the device never shows a chapter whose words are hidden under it.
+    var stage = document.querySelector(".story__stage"), watchers = [];
+    function watch() {
+      watchers.forEach(function (w) { w.disconnect(); });
+      var phone = window.matchMedia("(max-width: 900px)").matches;
+      var below = phone ? Math.round(parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--bar")) + stage.offsetHeight) : 0;
+      var band = phone ? "-" + (below + 24) + "px 0px -12% 0px" : "-45% 0px -45% 0px";
+      watchers = Array.prototype.map.call(chapters, function (c) {
+        var w = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && Number(c.dataset.step) !== step) show(Number(c.dataset.step), true);
+          });
+        }, { rootMargin: band });
+        w.observe(c);
+        return w;
+      });
+    }
+    watch();
+    var resized;
+    window.addEventListener("resize", function () { clearTimeout(resized); resized = setTimeout(watch, 200); });
+  } else {
+    show(4, false);
+  }
+})();

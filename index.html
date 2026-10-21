@@ -56,7 +56,7 @@
         <span>Tabletop</span>
       </a>
       <nav class="top__nav" aria-label="Main" data-i18n-aria="aria.main">
-        <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#ch1" data-i18n="nav.how">How it works</a>
         <a href="#privacy" data-i18n="nav.privacy">Privacy</a>
         <a href="#pro" data-i18n="nav.pro">Pro</a>
         <a href="#faq" data-i18n="nav.faq">Questions</a>
@@ -79,86 +79,87 @@
   </header>
 
   <main id="main">
-    <!-- Hero: the aerogramme. Copy on the ground, the phone on the sheet. -->
-    <section class="hero">
-      <div class="wrap hero__grid">
-        <div class="hero__copy">
-          <p class="cue" data-i18n="hero.cue">[Listening — speak any time]</p>
-          <h1 data-i18n-html="hero.title">Just talk.<br>Each of you reads your own language.</h1>
-          <p class="lede" data-i18n="hero.lede">Hold your device between you, or set it on the table. Tabletop listens in both languages at once, works out which one was spoken, and shows each person the conversation on their own half of the screen: yours facing you, theirs turned to face them.</p>
+    <!-- One conversation, scrolled: the device on the table receives the conversation line by line, and each chapter
+         delivers the next line. Drawn in HTML from the app's own taxi scene, in the page language's pair (main.js). -->
+    <section class="story" aria-labelledby="story-title">
+      <div class="wrap story__grid">
+        <div class="story__copy">
+          <h1 id="story-title" data-i18n-html="hero.title">Just talk.<br>Each of you reads your own language.</h1>
+          <p class="lede" data-i18n="hero.lede">Set it between you: Tabletop hears which language was spoken and gives each of you your own half.</p>
           <div class="hero__ctas">
             <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="assets/badges/en.svg" width="150" height="50" alt="Download on the App Store" data-i18n-alt="cta.store"></a>
-            <a class="btn btn--quiet" href="#how" data-i18n="cta.how">See how it works</a>
+            <a class="btn btn--quiet" href="#ch1" data-i18n="cta.how">See how it works</a>
           </div>
-          <ul class="facts" aria-label="Key facts" data-i18n-aria="aria.facts">
-            <li data-i18n="hero.fact1">No turns, no tapping</li>
-            <li data-i18n="hero.fact2">Free to download</li>
-            <li data-i18n="hero.fact3">19 languages</li>
-          </ul>
         </div>
-        <figure class="hero__shot">
-          <!-- The opened iPhone Duo's inner display, captured from the app (assets/appstore in the app repo), in the
-               page language's own pair: their half on the left, turned to face them; yours on the right. -->
-          <div class="spread">
-            <img class="js-hero" width="1400" height="985" fetchpriority="high"
-                 alt="Tabletop on an opened iPhone Duo, in a taxi. On the left, the other person's half, turned to face them, in Vietnamese. On the right, your half: the same conversation in English."
-                 data-i18n-alt="hero.alt">
-            <!-- The page's language is known before the image loads, so only its own hero is downloaded. -->
-            <script>
-              (function () {
-                var L = ["en", "vi", "ja", "ko", "zh-Hans", "zh-Hant"], q = new URLSearchParams(location.search).get("lang"),
-                    h = location.hash.slice(1), s = null, n = (navigator.languages || [navigator.language || "en"]), l = null, i, c;
-                try { s = localStorage.getItem("tabletop.lang"); } catch (e) {}
-                if (L.indexOf(q) >= 0) l = q; else if (L.indexOf(h) >= 0) l = h; else if (L.indexOf(s) >= 0) l = s;
-                for (i = 0; !l && i < n.length; i++) {
-                  c = (n[i] || "").toLowerCase();
-                  if (c.indexOf("zh") === 0) l = /hant|tw|hk|mo/.test(c) ? "zh-Hant" : "zh-Hans";
-                  else if (L.indexOf(c.split("-")[0]) >= 0) l = c.split("-")[0];
-                }
-                document.querySelector(".js-hero").src = "assets/hero/" + (l || "en") + ".webp";
-              })();
-            </script>
-            <noscript><img src="assets/hero/en.webp" width="1400" height="985" alt=""></noscript>
-          </div>
-          <p class="spread__sides" aria-hidden="true"><span data-i18n="hero.them">Them · Vietnamese</span><span data-i18n="hero.you">You · English</span></p>
-          <figcaption data-i18n="hero.caption">An opened iPhone Duo, one side each. On other iPhones the screen splits top and bottom.</figcaption>
-        </figure>
+        <div class="story__stage">
+          <figure class="table">
+            <p class="side side--them" data-i18n="hero.them">Them · Vietnamese</p>
+            <div class="table__seam" aria-hidden="true"></div>
+            <div class="device js-device" data-step="4" role="img" aria-label="A live demonstration of Tabletop: a taxi conversation arriving on two halves of one screen, theirs in Vietnamese turned to face them, yours in English." data-i18n-aria="hero.alt">
+              <div class="dv">
+                <div class="dv__theirs" lang="vi">
+                  <p class="dv__cue js-dv-tcue">[Đang nghe, xin mời nói]</p>
+                  <p class="dv__big js-dv-tbig">Khoảng một tiếng.</p>
+                  <p class="dv__prev js-dv-tprev">Vâng, đi cao tốc. Mất bao lâu ạ?</p>
+                </div>
+                <div class="dv__seam"></div>
+                <div class="dv__mine">
+                  <p class="dv__bar"><span class="js-dv-pair">English ↔ Vietnamese</span><span class="dv__off js-dv-off">Offline · on this device</span><span class="js-dv-end">End</span><span class="dv__pause js-dv-pause">Pause</span></p>
+                  <ol class="dv__lines js-dv-lines">
+                    <li class="dv__line is-in" data-n="1"><b>YOU</b><span class="dv__text">Please take me to the airport.</span><span class="dv__gloss">Cho tôi đến sân bay.</span><i class="dv__mark"></i></li>
+                    <li class="dv__line dv__line--them is-in" data-n="2"><b>VIETNAMESE</b><span class="dv__text">Shall I take the highway?</span><span class="dv__gloss">Mình đi đường cao tốc nhé?</span><i class="dv__mark"></i></li>
+                    <li class="dv__line is-in" data-n="3"><b>YOU</b><span class="dv__text">Yes, please. How long will it take?</span><span class="dv__gloss">Vâng, đi cao tốc. Mất bao lâu ạ?</span><i class="dv__mark"></i></li>
+                    <li class="dv__line dv__line--them is-in" data-n="4"><b>VIETNAMESE</b><span class="dv__text">About an hour.</span><span class="dv__gloss">Khoảng một tiếng.</span><i class="dv__mark"></i></li>
+                    <li class="dv__line dv__line--returned" data-n="5"><b>YOU</b><span class="dv__text js-dv-rtext">Is there a toll?</span><span class="dv__gloss js-dv-rnote">Not translated. Please say it again.</span><i class="dv__mark"></i></li>
+                  </ol>
+                  <p class="dv__listen js-dv-listen">[Listening]</p>
+                </div>
+                <div class="dv__letter">
+                  <p class="dv__lt js-dv-lt">No. 12 · To the airport</p>
+                  <p class="dv__lh js-dv-lh">Minutes</p>
+                  <p class="dv__pt"><span class="js-dv-p1">You asked to go to the airport.</span><b>↓1</b></p>
+                  <p class="dv__pt"><span class="js-dv-p2">They suggested the highway: about an hour.</span><b>↓4</b></p>
+                  <p class="dv__lh js-dv-nx">Next</p>
+                  <p class="dv__pt"><span class="js-dv-p3">→ Ask about the toll again.</span><b>↓5</b></p>
+                  <p class="dv__lh js-dv-cv">Conversation</p>
+                  <p class="dv__cl"><b>1</b><span class="js-dv-c1">Please take me to the airport.</span></p>
+                  <p class="dv__cl"><b>2</b><span class="js-dv-c2">Shall I take the highway?</span></p>
+                  <p class="dv__cl"><b>3</b><span class="js-dv-c3">Yes, please. How long will it take?</span></p>
+                  <p class="dv__cl"><b>4</b><span class="js-dv-c4">About an hour.</span></p>
+                  <p class="dv__cl dv__cl--returned"><b>5</b><span class="js-dv-c5">Is there a toll?</span></p>
+                  <p class="dv__kept"><span class="js-dv-kno">No. 12</span><strong>11:23</strong><span class="js-dv-kk">KEPT</span></p>
+                </div>
+              </div>
+            </div>
+            <p class="side side--you" data-i18n="hero.you">You · English</p>
+          </figure>
+        </div>
+        <article class="chapter" id="ch1" data-step="3">
+          <h2 data-i18n="feat.1.t">No turns</h2>
+          <p data-i18n="feat.1.d">Two listeners run at once, one per language. Nobody taps to take a turn and nobody passes the phone around.</p>
+        </article>
+        <article class="chapter" id="ch2" data-step="4">
+          <h2 data-i18n="feat.2.t">Their half faces them</h2>
+          <p data-i18n="feat.2.d">Large captions in their own language, readable at arm’s length, at a size they choose themselves. They can scroll back to re-read a price or a time.</p>
+        </article>
+        <article class="chapter" id="ch3" data-step="5">
+          <h2 data-i18n="feat.4.t">Never shows an unchecked line</h2>
+          <p data-i18n="feat.4.d">If a translation can't be confirmed, Tabletop hides it rather than risk a wrong number, and tells both of you who should say it again.</p>
+        </article>
+        <article class="chapter" id="ch4" data-step="6">
+          <h2 data-i18n="feat.5.t">Private, and offline once set up</h2>
+          <p data-i18n="feat.5.d">Speech recognition and translation run on your device. After a one-time language pack download it works with no connection.</p>
+        </article>
+        <article class="chapter" id="ch5" data-step="7">
+          <h2 data-i18n="story.5.t">Keep it. Get the minutes.</h2>
+          <p data-i18n="story.5.d">Keep a conversation as a letter and read it again later. With Tabletop Pro, minutes are written on your device: who asked what, the figures, and what to do next, each linked to the line it came from.</p>
+          <p class="chapter__cta"><a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="assets/badges/en.svg" width="150" height="50" alt="Download on the App Store" data-i18n-alt="cta.store"></a></p>
+        </article>
       </div>
     </section>
 
     <div class="airmail" role="presentation"></div>
 
-    <!-- The problem, stated once. -->
-    <section class="section problem">
-      <div class="wrap narrow">
-        <h2 data-i18n="problem.title">The phone shouldn't be the one doing the talking.</h2>
-        <p data-i18n="problem.body">With most translator apps, two people take turns: tap, speak, turn the screen round, wait, turn it back. The conversation stops after every sentence and both people end up staring at a phone. Tabletop stays between you and keeps up, so you can keep looking at each other.</p>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="section sheet" id="how">
-      <div class="wrap">
-        <h2 data-i18n="how.title">Three steps, then just talk</h2>
-        <ol class="steps">
-          <li>
-            <span class="step__no" aria-hidden="true" data-i18n="step.1">No. 1</span>
-            <h3 data-i18n="how.s1.t">Choose two languages</h3>
-            <p data-i18n="how.s1.d">The one you speak and the one they speak. Download the language packs once, over Wi‑Fi.</p>
-          </li>
-          <li>
-            <span class="step__no" aria-hidden="true" data-i18n="step.2">No. 2</span>
-            <h3 data-i18n="how.s2.t">Hold it between you, or set it down</h3>
-            <p data-i18n="how.s2.d">Their half turns to face them and greets them politely in their language. Yours faces you.</p>
-          </li>
-          <li>
-            <span class="step__no" aria-hidden="true" data-i18n="step.3">No. 3</span>
-            <h3 data-i18n="how.s3.t">Talk the way you normally would</h3>
-            <p data-i18n="how.s3.d">Either of you can speak at any time. The language spoken decides whose side a line belongs to.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
 
     <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
          once it is on screen, never under Reduce Motion, and Pause stops it. -->
@@ -189,43 +190,25 @@
     <section class="section">
       <div class="wrap">
         <h2 data-i18n="feat.title">Built for the person across from you</h2>
-        <div class="features features--lead">
+        <div class="also">
           <article>
-            <h3 data-i18n="feat.1.t">No turns</h3>
-            <p data-i18n="feat.1.d">Two listeners run at once, one per language. Nobody taps to take a turn and nobody passes the phone around.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.2.t">Their half faces them</h3>
-            <p data-i18n="feat.2.d">Large captions in their own language, readable at arm’s length, at a size they choose themselves. They can scroll back to re-read a price or a time.</p>
-          </article>
-          <article>
-            <h3 data-i18n="feat.4.t">Never shows an unchecked line</h3>
-            <p data-i18n="feat.4.d">If a translation can't be confirmed, Tabletop hides it rather than risk a wrong number, and tells both of you who should say it again.</p>
-          </article>
-        </div>
-        <div class="features features--more">
-          <article>
-            <h3 class="h4" data-i18n="feat.3.t">Polite in every language</h3>
+            <h3 data-i18n="feat.3.t">Polite in every language</h3>
             <p data-i18n="feat.3.d">Ready-made requests such as “Please repeat” and “Please speak more slowly” are written by people, in a courteous register, in all 19 languages.</p>
           </article>
           <article>
-            <h3 class="h4" data-i18n="feat.5.t">Private, and offline once set up</h3>
-            <p data-i18n="feat.5.d">Speech recognition and translation run on your device. After a one-time language pack download it works with no connection.</p>
-          </article>
-          <article>
-            <h3 class="h4" data-i18n="feat.6.t">Names kept as written</h3>
+            <h3 data-i18n="feat.6.t">Names kept as written</h3>
             <p data-i18n="feat.6.d">Add the names and terms that must never be translated, so “Mai” stays Mai and your company stays your company.</p>
           </article>
           <article>
-            <h3 class="h4" data-i18n="feat.7.t">Phrases ready before you go</h3>
+            <h3 data-i18n="feat.7.t">Phrases ready before you go</h3>
             <p data-i18n="feat.7.d">Write an address or a booking ahead of time and show it full screen, upright and as large as it fits. Or have a sentence translated on your device and check what they will read.</p>
           </article>
           <article>
-            <h3 class="h4" data-i18n="feat.8.t">Listen, when someone talks to you</h3>
+            <h3 data-i18n="feat.8.t">Listen, when someone talks to you</h3>
             <p data-i18n="feat.8.d">One-way captions in your language for a guide, an announcement or someone explaining. Tap Talk Back when you want to answer.</p>
           </article>
           <article>
-            <h3 class="h4" data-i18n="feat.9.t">One press to start</h3>
+            <h3 data-i18n="feat.9.t">One press to start</h3>
             <p data-i18n="feat.9.d">Start from Control Center, the Lock Screen or the Action button. Tabletop keeps interpreting if you switch apps or lock the phone, with Pause and End on the Lock Screen.</p>
           </article>
         </div>
@@ -381,7 +364,6 @@
     <!-- Final CTA -->
     <section class="section final" id="get">
       <div class="wrap narrow center">
-        <p class="cue" data-i18n="final.cue">[Ready when you are]</p>
         <h2 data-i18n="final.title">Set it between you. Start talking.</h2>
         <p class="lede" data-i18n="final.lede">Free to download, and every conversation is free. Pro, if you want it, writes the minutes. Take it into a real conversation, and tell us how it went.</p>
         <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="assets/badges/en.svg" width="150" height="50" alt="Download on the App Store" data-i18n-alt="cta.store"></a>

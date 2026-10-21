@@ -11,7 +11,7 @@ window.TABLETOP_I18N = {
     "aria.language": "Ngôn ngữ",
     "cta.short": "App Store",
     "hero.cue": "[Đang nghe — cứ nói bất cứ lúc nào]",
-    "hero.lede": "Cầm máy giữa hai người, hoặc đặt lên bàn. Tabletop nghe cả hai ngôn ngữ cùng lúc, nhận ra ngôn ngữ vừa được nói, và cho mỗi người đọc cuộc trò chuyện trên nửa màn hình của mình: nửa của bạn quay về phía bạn, nửa của họ quay về phía họ.",
+    "hero.lede": "Đặt máy giữa hai người: Tabletop nhận ra ngôn ngữ vừa nói và cho mỗi người một nửa màn hình của riêng mình.",
     "cta.store": "Tải trên App Store",
     "cta.how": "Xem cách dùng",
     "hero.fact1": "Không cần bấm, không chờ lượt",
@@ -106,7 +106,7 @@ window.TABLETOP_I18N = {
     "foot.support": "Hỗ trợ",
     "foot.terms": "Điều khoản sử dụng",
     "hero.title": "Cứ nói tự nhiên.<br>Mỗi người đọc ngôn&nbsp;ngữ của mình.",
-    "hero.alt": "Tabletop trên iPhone Duo đang mở, trên taxi. Bên trái là nửa của người đối diện, quay về phía họ, bằng tiếng Nhật. Bên phải là nửa của bạn: cùng cuộc trò chuyện bằng tiếng Việt.",
+    "hero.alt": "Bản minh hoạ trực tiếp của Tabletop: một cuộc trò chuyện trên taxi hiện trên hai nửa màn hình, nửa của người đối diện bằng tiếng Nhật quay về phía họ, nửa của bạn bằng tiếng Việt.",
     "gallery.a1": "Đặt máy xuống. Hai người cứ nói.",
     "gallery.a2": "Nửa màn hình quay về phía họ.",
     "gallery.a3": "Riêng tư. Không cần mạng.",
@@ -140,7 +140,9 @@ window.TABLETOP_I18N = {
     "motion.gallery.pause": "Tạm dừng ảnh màn hình",
     "motion.gallery.play": "Phát ảnh màn hình",
     "motion.video.pause": "Tạm dừng video",
-    "motion.video.play": "Phát video"
+    "motion.video.play": "Phát video",
+    "story.5.t": "Lưu lại. Có cả biên bản.",
+    "story.5.d": "Lưu cuộc trò chuyện thành thư để đọc lại sau. Với Tabletop Pro, biên bản được viết ngay trên máy: ai hỏi gì, các con số và việc cần làm tiếp, mỗi ý dẫn về đúng câu đã nói."
   },
   "ja": {
     "skip": "本文へスキップ",
@@ -150,7 +152,7 @@ window.TABLETOP_I18N = {
     "aria.language": "言語",
     "cta.short": "App Store",
     "hero.cue": "［聞き取り中 — いつでもお話しください］",
-    "hero.lede": "端末を二人のあいだで持つか、テーブルに置いてください。Tabletopは二つの言語を同時に聞き取り、どちらの言語が話されたかを判断して、画面のそれぞれの半分に会話を表示します。あなたの側はあなたに、相手の側は相手に向けて。",
+    "hero.lede": "二人のあいだに置くだけ。話された言語を聞き分け、それぞれに自分の側を表示します。",
     "cta.store": "App Storeからダウンロード",
     "cta.how": "使い方を見る",
     "hero.fact1": "順番待ちもタップも不要",
@@ -245,7 +247,7 @@ window.TABLETOP_I18N = {
     "foot.support": "サポート",
     "foot.terms": "利用規約",
     "hero.title": "ただ話すだけ。<br>それぞれが、自分の言語で読めます。",
-    "hero.alt": "開いたiPhone Duo上のTabletop。左は相手の側で、相手のほうを向き、英語で表示されています。右はあなたの側で、同じ会話が日本語で表示されています。",
+    "hero.alt": "Tabletopのライブデモ：タクシーでの会話が一つの画面の二つの半分に届きます。相手側は英語で相手の向きに、あなたの側は日本語で表示されます。",
     "gallery.a1": "置くだけ。あとは話すだけ。",
     "gallery.a2": "相手の側は、相手の向きに。",
     "gallery.a3": "プライベート。オフラインでも。",
@@ -279,7 +281,9 @@ window.TABLETOP_I18N = {
     "motion.gallery.pause": "スクリーンショットを一時停止",
     "motion.gallery.play": "スクリーンショットを再生",
     "motion.video.pause": "ビデオを一時停止",
-    "motion.video.play": "ビデオを再生"
+    "motion.video.play": "ビデオを再生",
+    "story.5.t": "残せる。議事メモも。",
+    "story.5.d": "会話をレターとして保存し、あとで読み返せます。Tabletop Proなら、議事メモをデバイス上で作成します。誰が何を尋ねたか、数字、次にすること。各項目は元の発言につながります。"
   },
   "ko": {
     "skip": "본문으로 건너뛰기",
@@ -289,7 +293,7 @@ window.TABLETOP_I18N = {
     "aria.language": "언어",
     "cta.short": "App Store",
     "hero.cue": "[듣고 있어요 — 언제든 말씀하세요]",
-    "hero.lede": "기기를 두 사람 사이에 들거나 테이블 위에 내려놓으세요. Tabletop은 두 언어를 동시에 듣고 어느 언어로 말했는지 알아낸 뒤, 화면을 반씩 나누어 각자에게 대화를 보여 줍니다. 내 쪽은 나를, 상대 쪽은 상대를 향하도록요.",
+    "hero.lede": "두 사람 사이에 두세요. Tabletop이 어느 언어로 말했는지 알아듣고 각자에게 자기 쪽 화면을 보여 줍니다.",
     "cta.store": "App Store에서 다운로드",
     "cta.how": "사용 방법 보기",
     "hero.fact1": "차례도, 탭도 필요 없어요",
@@ -384,7 +388,7 @@ window.TABLETOP_I18N = {
     "foot.support": "지원",
     "foot.terms": "이용 약관",
     "hero.title": "그냥 말하세요.<br>각자 자기 언어로 읽습니다.",
-    "hero.alt": "펼친 iPhone Duo에서 실행 중인 Tabletop. 왼쪽은 상대를 향해 돌아간 상대 쪽 화면으로, 일본어로 표시됩니다. 오른쪽은 내 쪽 화면으로, 같은 대화가 한국어로 표시됩니다.",
+    "hero.alt": "Tabletop 라이브 데모: 택시 안의 대화가 한 화면의 두 절반에 도착합니다. 상대 쪽은 일본어로 상대를 향하고, 내 쪽은 한국어로 보입니다.",
     "gallery.a1": "내려놓고, 그냥 말하세요.",
     "gallery.a2": "상대 쪽 화면은 상대를 향해요.",
     "gallery.a3": "프라이버시. 오프라인에서도.",
@@ -418,7 +422,9 @@ window.TABLETOP_I18N = {
     "motion.gallery.pause": "스크린샷 일시 정지",
     "motion.gallery.play": "스크린샷 재생",
     "motion.video.pause": "동영상 일시 정지",
-    "motion.video.play": "동영상 재생"
+    "motion.video.play": "동영상 재생",
+    "story.5.t": "남기고, 회의록까지.",
+    "story.5.d": "대화를 편지로 보관하고 나중에 다시 읽을 수 있습니다. Tabletop Pro를 쓰면 기기에서 회의록이 작성됩니다. 누가 무엇을 물었는지, 숫자, 다음에 할 일까지, 각 항목은 원래 말한 문장으로 연결됩니다."
   },
   "zh-Hans": {
     "skip": "跳到正文",
@@ -428,7 +434,7 @@ window.TABLETOP_I18N = {
     "aria.language": "语言",
     "cta.short": "App Store",
     "hero.cue": "［正在收听，随时可以说］",
-    "hero.lede": "把设备拿在你们两人中间，或者放在桌上。Tabletop 同时收听两种语言，判断说的是哪一种，并在屏幕的两半上分别为每个人显示对话：你的一半朝向你，对方的一半转向对方。",
+    "hero.lede": "放在你们两人之间：Tabletop 听出说的是哪种语言，让你们各自看自己的那一半屏幕。",
     "cta.store": "在 App Store 下载",
     "cta.how": "了解使用方法",
     "hero.fact1": "无需轮流，无需点按",
@@ -523,7 +529,7 @@ window.TABLETOP_I18N = {
     "foot.support": "支持",
     "foot.terms": "使用条款",
     "hero.title": "直接开口说。<br>各自读自己的语言。",
-    "hero.alt": "展开的 iPhone Duo 上的 Tabletop。左侧是对方那一半，转向对方，显示英语。右侧是你的一半：同一段对话，显示中文。",
+    "hero.alt": "Tabletop 实时演示：一段出租车上的对话出现在同一屏幕的两半，对方那一半用英语朝向对方，你的那一半用中文。",
     "gallery.a1": "放下手机，直接开口说。",
     "gallery.a2": "对方那一半，朝向对方。",
     "gallery.a3": "隐私安全，离线可用。",
@@ -557,7 +563,9 @@ window.TABLETOP_I18N = {
     "motion.gallery.pause": "暂停截图",
     "motion.gallery.play": "播放截图",
     "motion.video.pause": "暂停视频",
-    "motion.video.play": "播放视频"
+    "motion.video.play": "播放视频",
+    "story.5.t": "存下来，还有纪要。",
+    "story.5.d": "把对话存为信件，之后随时重读。使用 Tabletop Pro，纪要会在你的设备上生成：谁问了什么、相关数字、下一步要做的事，每一条都链接到原话。"
   },
   "zh-Hant": {
     "skip": "跳至內容",
@@ -567,7 +575,7 @@ window.TABLETOP_I18N = {
     "aria.language": "語言",
     "cta.short": "App Store",
     "hero.cue": "［聆聽中 — 隨時都可以說］",
-    "hero.lede": "把裝置拿在兩人之間，或放在桌上。Tabletop 會同時聆聽兩種語言，判斷說的是哪一種，並在螢幕上各自的那一半顯示對話：你的一半朝向你，對方的一半轉向對方。",
+    "hero.lede": "放在你們兩人之間：Tabletop 聽出說的是哪種語言，讓你們各自看自己的那一半螢幕。",
     "cta.store": "在 App Store 下載",
     "cta.how": "看看使用方式",
     "hero.fact1": "不必輪流，不必點按",
@@ -662,7 +670,7 @@ window.TABLETOP_I18N = {
     "foot.support": "支援",
     "foot.terms": "使用條款",
     "hero.title": "直接開口說。<br>各自讀自己的語言。",
-    "hero.alt": "Tabletop 在打開的 iPhone Duo 上。左邊是對方的那一半，轉向對方，以日文顯示。右邊是你的那一半：同一段對話，以中文顯示。",
+    "hero.alt": "Tabletop 即時示範：一段計程車上的對話出現在同一螢幕的兩半，對方那一半用日文朝向對方，你的那一半用中文。",
     "gallery.a1": "放下手機，直接開口說。",
     "gallery.a2": "對方那一半，朝向對方。",
     "gallery.a3": "隱私安全，離線可用。",
@@ -696,6 +704,8 @@ window.TABLETOP_I18N = {
     "motion.gallery.pause": "暫停截圖",
     "motion.gallery.play": "播放截圖",
     "motion.video.pause": "暫停影片",
-    "motion.video.play": "播放影片"
+    "motion.video.play": "播放影片",
+    "story.5.t": "存下來，還有會議紀錄。",
+    "story.5.d": "把對話存成信件，之後隨時重讀。使用 Tabletop Pro，會議紀錄會在你的裝置上產生：誰問了什麼、相關數字、下一步要做的事，每一條都連結到原話。"
   }
 };
