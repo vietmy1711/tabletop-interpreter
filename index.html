@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tabletop Interpreter — Face-to-face translation for iPhone</title>
-  <meta name="description" content="Hold your iPhone between you and just talk. Tabletop listens in both languages at once and shows each person the conversation in their own language, on their own half of the screen. Private, on the device, works offline once language packs are downloaded.">
+  <title>Tabletop Interpreter — Face-to-face translation, on your device</title>
+  <meta name="description" content="Hold your device between you, or set it on the table, and just talk. Tabletop listens in both languages at once and shows each person the conversation in their own language, on their own half of the screen. Private, on the device, works offline once language packs are downloaded.">
   <meta name="apple-itunes-app" content="app-id=6821405972">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#F8F9FB">
@@ -12,13 +12,21 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Tabletop Interpreter">
-  <meta property="og:description" content="Two people, one iPhone, one conversation. Just talk. Each of you reads your own language.">
+  <meta property="og:description" content="Two people, one device, one conversation. Just talk. Each of you reads your own language.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://trytabletop.app/assets/og.jpg">
   <meta property="og:url" content="https://trytabletop.app/">
   <link rel="canonical" href="https://trytabletop.app/">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="alternate" hreflang="en" href="./?lang=en">
-  <link rel="alternate" hreflang="vi" href="./?lang=vi">
+  <link rel="alternate" hreflang="x-default" href="https://trytabletop.app/">
+  <link rel="alternate" hreflang="en" href="https://trytabletop.app/?lang=en">
+  <link rel="alternate" hreflang="vi" href="https://trytabletop.app/?lang=vi">
+  <link rel="alternate" hreflang="ja" href="https://trytabletop.app/?lang=ja">
+  <link rel="alternate" hreflang="ko" href="https://trytabletop.app/?lang=ko">
+  <link rel="alternate" hreflang="zh-Hans" href="https://trytabletop.app/?lang=zh-Hans">
+  <link rel="alternate" hreflang="zh-Hant" href="https://trytabletop.app/?lang=zh-Hant">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="duo.css">
   <script type="application/ld+json">
@@ -30,8 +38,9 @@
     "applicationCategory": "TravelApplication",
     "url": "https://trytabletop.app/",
     "installUrl": "https://apps.apple.com/app/tabletop-interpreter/id6821405972",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "A face-to-face interpreter for iPhone: one phone between two people, each reading the conversation in their own language on their own half of the screen."
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD",
+                "description": "Free to download; every conversation is free. Optional Tabletop Pro (in-app purchase) writes minutes of the conversations you keep." },
+    "description": "A face-to-face interpreter: one device between two people, each reading the conversation in their own language on their own half of the screen."
   }
   </script>
 </head>
@@ -40,23 +49,30 @@
 
   <header class="top">
     <div class="wrap top__row">
-      <a class="brand" href="#" aria-label="Tabletop">
+      <a class="brand" href="/" aria-label="Tabletop">
         <picture>
           <img src="assets/logo-light.svg" alt="" width="36" height="36">
         </picture>
         <span>Tabletop</span>
       </a>
-      <nav class="top__nav" aria-label="Main">
+      <nav class="top__nav" aria-label="Main" data-i18n-aria="aria.main">
         <a href="#how" data-i18n="nav.how">How it works</a>
         <a href="#privacy" data-i18n="nav.privacy">Privacy</a>
         <a href="#faq" data-i18n="nav.faq">Questions</a>
       </nav>
       <div class="top__actions">
-        <div class="lang" role="group" aria-label="Language">
-          <button type="button" data-lang="en" aria-pressed="true">EN</button>
-          <button type="button" data-lang="vi" aria-pressed="false">VI</button>
-        </div>
-        <a class="btn btn--small js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972" data-i18n="cta.get">Get the App</a>
+        <label class="lang">
+          <span class="sr-only" data-i18n="aria.language">Language</span>
+          <select class="js-lang">
+            <option value="en" lang="en">English</option>
+            <option value="vi" lang="vi">Tiếng Việt</option>
+            <option value="ja" lang="ja">日本語</option>
+            <option value="ko" lang="ko">한국어</option>
+            <option value="zh-Hans" lang="zh-Hans">简体中文</option>
+            <option value="zh-Hant" lang="zh-Hant">繁體中文</option>
+          </select>
+        </label>
+        <a class="btn btn--small js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972" data-i18n="cta.short">App Store</a>
       </div>
     </div>
   </header>
@@ -68,30 +84,27 @@
         <div class="hero__copy">
           <p class="cue" data-i18n="hero.cue">[Listening — speak any time]</p>
           <h1 data-i18n-html="hero.title">Just talk.<br>Each of you reads your own language.</h1>
-          <p class="lede" data-i18n="hero.lede">Hold your iPhone up between you. Tabletop listens in both languages at once, works out which one was spoken, and shows each person the conversation on their own half of the screen: yours facing you, theirs turned to face them.</p>
+          <p class="lede" data-i18n="hero.lede">Hold your device between you, or set it on the table. Tabletop listens in both languages at once, works out which one was spoken, and shows each person the conversation on their own half of the screen: yours facing you, theirs turned to face them.</p>
           <div class="hero__ctas">
             <a class="btn js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972" data-i18n="cta.store">Download on the App Store</a>
             <a class="btn btn--quiet" href="#how" data-i18n="cta.how">See how it works</a>
           </div>
-          <ul class="facts" aria-label="Key facts">
+          <ul class="facts" aria-label="Key facts" data-i18n-aria="aria.facts">
             <li data-i18n="hero.fact1">No turns, no tapping</li>
-            <li data-i18n="hero.fact2">Runs on your iPhone</li>
+            <li data-i18n="hero.fact2">Free to download</li>
             <li data-i18n="hero.fact3">19 languages</li>
           </ul>
         </div>
-        <figure class="hero__shot held">
-          <!-- An iPhone Duo unfolding like a book, a 3D mockup (appsforiphoneduo.com/tools/3d-mockup) of Tabletop's
-               real screens: closed, the outer display; open, the other person's half turned toward them. The video plays
-               open then closed; under Reduce Motion a still of it open shows instead. See duo.css. -->
-          <div class="fold">
-            <video class="duo-video" autoplay muted loop playsinline preload="auto" width="1080" height="810"
-                   poster="assets/duo/duo-unfold-dau.webp" aria-labelledby="fold-desc">
-              <source src="assets/duo/duo-unfold.mp4" type="video/mp4">
-            </video>
-            <img class="duo-still" src="assets/duo/duo-unfold-mo.webp" width="1080" height="810" alt="" aria-hidden="true">
-            <span class="sr-only" id="fold-desc" data-i18n="duo.alt">Video: an iPhone Duo unfolds like a book. Closed, its outer display splits the conversation top and bottom, the other person's half turned toward them. Open, the other person's side faces them in their language and your side shows yours.</span>
+        <figure class="hero__shot">
+          <!-- The opened iPhone Duo's inner display, captured from the app (assets/appstore in the app repo), in the
+               page language's own pair: their half on the left, turned to face them; yours on the right. -->
+          <div class="spread">
+            <img class="js-hero" src="assets/hero/en.webp" width="1400" height="985" fetchpriority="high"
+                 alt="Tabletop on an opened iPhone Duo. On the left, the other person's half, turned to face them, in Spanish. On the right, your half: the same conversation in English."
+                 data-i18n-alt="hero.alt">
           </div>
-          <figcaption data-i18n="duo.caption">Tabletop on iPhone Duo, closed and then unfolding. The screens are the app; the device is a 3D mockup. On every other iPhone, the screen splits top and bottom.</figcaption>
+          <p class="spread__sides" aria-hidden="true"><span data-i18n="hero.them">Them · Spanish</span><span data-i18n="hero.you">You · English</span></p>
+          <figcaption data-i18n="hero.caption">An opened iPhone Duo, one side each. On other iPhones the screen splits top and bottom.</figcaption>
         </figure>
       </div>
     </section>
@@ -102,7 +115,7 @@
     <section class="section problem">
       <div class="wrap narrow">
         <h2 data-i18n="problem.title">The phone shouldn't be the one doing the talking.</h2>
-        <p data-i18n="problem.body">With most translator apps, two people take turns: tap, speak, turn the screen round, wait, turn it back. The conversation stops after every sentence and both people end up staring at a phone. Tabletop stays in your hand and keeps up with you, so you can keep looking at each other.</p>
+        <p data-i18n="problem.body">With most translator apps, two people take turns: tap, speak, turn the screen round, wait, turn it back. The conversation stops after every sentence and both people end up staring at a phone. Tabletop stays between you and keeps up, so you can keep looking at each other.</p>
       </div>
     </section>
 
@@ -118,8 +131,8 @@
           </li>
           <li>
             <span class="step__no" aria-hidden="true">No. 2</span>
-            <h3 data-i18n="how.s2.t">Hold it between you</h3>
-            <p data-i18n="how.s2.d">Tilt the top of the phone toward them. Their half is turned to face them and greets them politely in their language.</p>
+            <h3 data-i18n="how.s2.t">Hold it between you, or set it down</h3>
+            <p data-i18n="how.s2.d">Their half turns to face them and greets them politely in their language. Yours faces you.</p>
           </li>
           <li>
             <span class="step__no" aria-hidden="true">No. 3</span>
@@ -153,7 +166,7 @@
           </article>
           <article>
             <h3 data-i18n="feat.5.t">Private, and offline once set up</h3>
-            <p data-i18n="feat.5.d">Speech recognition and translation run on your iPhone. After a one-time language pack download it works with no connection.</p>
+            <p data-i18n="feat.5.d">Speech recognition and translation run on your device. After a one-time language pack download it works with no connection.</p>
           </article>
           <article>
             <h3 data-i18n="feat.6.t">Names kept as written</h3>
@@ -161,7 +174,7 @@
           </article>
           <article>
             <h3 data-i18n="feat.7.t">Phrases ready before you go</h3>
-            <p data-i18n="feat.7.d">Write an address or a booking ahead of time and show it full screen, upright and as large as it fits. Or have a sentence translated on your iPhone and check what they will read.</p>
+            <p data-i18n="feat.7.d">Write an address or a booking ahead of time and show it full screen, upright and as large as it fits. Or have a sentence translated on your device and check what they will read.</p>
           </article>
           <article>
             <h3 data-i18n="feat.8.t">Listen, when someone talks to you</h3>
@@ -181,13 +194,23 @@
         <h2 id="gallery-title" data-i18n="gallery.title">See it in your hand</h2>
         <p class="muted" data-i18n="gallery.note">App Store screenshots. The other person's half is upside down to you, so it reads the right way up for them.</p>
       </div>
-      <div class="gallery" tabindex="0" aria-label="Screenshots">
+      <div class="gallery" id="gallery" tabindex="0" role="region" aria-label="Screenshots" data-i18n-aria="aria.gallery">
         <img class="js-shot" data-shot="1" src="assets/shots/en-1.webp" width="660" height="1434" loading="lazy" alt="Set it down. Both of you just talk." data-i18n-alt="gallery.a1">
         <img class="js-shot" data-shot="2" src="assets/shots/en-2.webp" width="660" height="1434" loading="lazy" alt="Their half faces them." data-i18n-alt="gallery.a2">
         <img class="js-shot" data-shot="3" src="assets/shots/en-3.webp" width="660" height="1434" loading="lazy" alt="Private. Works offline." data-i18n-alt="gallery.a3">
         <img class="js-shot" data-shot="4" src="assets/shots/en-4.webp" width="660" height="1434" loading="lazy" alt="Never shows an unchecked line." data-i18n-alt="gallery.a4">
-        <img class="js-shot" data-shot="5" src="assets/shots/en-5.webp" width="660" height="1434" loading="lazy" alt="Or just listen." data-i18n-alt="gallery.a5">
-        <img class="js-shot" data-shot="6" src="assets/shots/en-6.webp" width="660" height="1434" loading="lazy" alt="19 languages, face to face." data-i18n-alt="gallery.a6">
+        <img class="js-shot" data-shot="5" src="assets/shots/en-5.webp" width="660" height="1434" loading="lazy" alt="Keep it. Get the minutes." data-i18n-alt="gallery.a5">
+        <img class="js-shot" data-shot="6" src="assets/shots/en-6.webp" width="660" height="1434" loading="lazy" alt="Or just listen." data-i18n-alt="gallery.a6">
+        <img class="js-shot" data-shot="7" src="assets/shots/en-7.webp" width="660" height="1434" loading="lazy" alt="19 languages, face to face." data-i18n-alt="gallery.a7">
+      </div>
+      <div class="wrap controls" aria-controls="gallery">
+        <button type="button" class="ctl js-prev" aria-label="Previous screenshot" data-i18n-aria="gallery.prev">
+          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="ctl ctl--text js-gallery-pause" aria-pressed="false"><span data-i18n="motion.pause">Pause</span></button>
+        <button type="button" class="ctl js-next" aria-label="Next screenshot" data-i18n-aria="gallery.next">
+          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
     </section>
 
@@ -199,7 +222,7 @@
         <div class="scenes">
           <article class="scene">
             <h3 data-i18n="scenes.1.t">A pharmacy in Tokyo</h3>
-            <p class="line"><span class="who" data-i18n="who.ja">JAPANESE</span><span lang="ja">一日三回、食後に飲んでください。</span></p>
+            <p class="line"><span class="who" data-i18n="scenes.1.who">JAPANESE</span><span lang="ja" data-i18n="scenes.1.src" data-i18n-lang="scenes.1.lang">一日三回、食後に飲んでください。</span></p>
             <p class="line line--mine"><span class="who" data-i18n="scenes.you">YOU READ</span><span data-i18n="scenes.1.r">Take it three times a day, after meals.</span></p>
           </article>
           <article class="scene">
@@ -208,13 +231,13 @@
             <p class="line line--mine"><span class="who" data-i18n="scenes.you">YOU READ</span><span data-i18n="scenes.2.r">It's about twenty minutes to the hotel.</span></p>
           </article>
           <article class="scene">
-            <h3 data-i18n="scenes.3.t">A hotel desk in Seoul</h3>
-            <p class="line"><span class="who" data-i18n="who.ko">KOREAN</span><span lang="ko">체크아웃은 오전 11시입니다.</span></p>
-            <p class="line line--mine"><span class="who" data-i18n="scenes.you">YOU READ</span><span data-i18n="scenes.3.r">Check-out is at 11 a.m.</span></p>
+            <h3 data-i18n="scenes.3.t">A Korean partner in Hanoi</h3>
+            <p class="line"><span class="who" data-i18n="scenes.3.who">KOREAN</span><span lang="ko" data-i18n="scenes.3.src" data-i18n-lang="scenes.3.lang">샘플은 다음 주 화요일까지 하노이로 보내 드리겠습니다.</span></p>
+            <p class="line line--mine"><span class="who" data-i18n="scenes.you">YOU READ</span><span data-i18n="scenes.3.r">We'll send the samples to Hanoi by next Tuesday.</span></p>
           </article>
           <article class="scene">
             <h3 data-i18n="scenes.4.t">A supplier meeting in Shenzhen</h3>
-            <p class="line"><span class="who" data-i18n="who.zh">CHINESE</span><span lang="zh-Hans">五百件的话，下周五可以交货。</span></p>
+            <p class="line"><span class="who" data-i18n="scenes.4.who">CHINESE</span><span lang="zh-Hans" data-i18n="scenes.4.src" data-i18n-lang="scenes.4.lang">五百件的话，下周五可以交货。</span></p>
             <p class="line line--mine"><span class="who" data-i18n="scenes.you">YOU READ</span><span data-i18n="scenes.4.r">For five hundred pieces, we can deliver next Friday.</span></p>
           </article>
         </div>
@@ -231,7 +254,7 @@
           <p class="lede" data-i18n="privacy.lede">A stranger's words are not yours to send anywhere. Tabletop keeps them on the phone.</p>
         </div>
         <ul class="checks">
-          <li data-i18n="privacy.1">Speech recognition and translation run on your iPhone.</li>
+          <li data-i18n="privacy.1">Speech recognition and translation run on your device.</li>
           <li data-i18n="privacy.2">Conversations are not sent to a server. App Store privacy label: Data Not Collected.</li>
           <li data-i18n="privacy.3">Works offline once the language packs are downloaded: in a taxi, at a market, abroad without data.</li>
           <li data-i18n="privacy.4">Keeping conversations is off until you turn it on, and the other person is told when it is.</li>
@@ -255,11 +278,28 @@
       </div>
     </section>
 
-    <!-- iPhone Duo -->
+    <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
+         once it is on screen, never under Reduce Motion, and Pause stops it. -->
     <section class="section duo">
-      <div class="wrap narrow">
-        <h2 data-i18n="duo.title">Designed with iPhone Duo in mind. Works on every iPhone.</h2>
-        <p data-i18n="duo.body">Open a Duo and the two halves sit naturally on either side of the fold. On any iPhone with iOS 26 or later, the screen splits the same way. Siri and Shortcuts can start and end a conversation; VoiceOver and Dynamic Type are supported on both halves.</p>
+      <div class="wrap duo__grid">
+        <div>
+          <h2 data-i18n="duo.title">Designed with iPhone Duo in mind. Works on every iPhone.</h2>
+          <p data-i18n="duo.body">Open a Duo and the two halves sit naturally on either side of the fold. On any iPhone with iOS 26 or later, the screen splits the same way. Siri and Shortcuts can start and end a conversation; VoiceOver and Dynamic Type are supported on both halves.</p>
+        </div>
+        <figure class="held">
+          <div class="fold">
+            <video class="duo-video js-duo-video" muted loop playsinline preload="none" width="1080" height="810"
+                   poster="assets/duo/duo-unfold-dau.webp" aria-labelledby="fold-desc">
+              <source src="assets/duo/duo-unfold.mp4" type="video/mp4">
+            </video>
+            <img class="duo-still" src="assets/duo/duo-unfold-mo.webp" width="1080" height="810" alt="" aria-hidden="true" loading="lazy">
+            <span class="sr-only" id="fold-desc" data-i18n="duo.alt">Video: an iPhone Duo unfolds like a book. Closed, its outer display splits the conversation top and bottom, the other person's half turned toward them. Open, the other person's side faces them in their language and your side shows yours.</span>
+          </div>
+          <div class="controls controls--center">
+            <button type="button" class="ctl ctl--text js-video-pause" aria-pressed="false"><span data-i18n="motion.pause">Pause</span></button>
+          </div>
+          <figcaption data-i18n="duo.caption">Tabletop on iPhone Duo, closed and then unfolding. The screens are the app; the device is a 3D mockup.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -281,19 +321,19 @@
         </details>
         <details>
           <summary data-i18n="faq.4.q">What does it cost?</summary>
-          <p data-i18n="faq.4.a">Tabletop is free on the App Store. The other person will never meet a paywall.</p>
+          <p data-i18n="faq.4.a">Tabletop is free to download, and every conversation is free, with no limit: Listen, the camera and phrases too, and the other person never meets a paywall. Tabletop Pro is optional: it writes minutes of the conversations you keep (your first three are free), as a yearly subscription with a free trial or a one-time purchase. Prices are shown in the App Store.</p>
         </details>
         <details>
           <summary data-i18n="faq.5.q">Does the other person need the app?</summary>
           <p data-i18n="faq.5.a">No. Everything happens on your phone. Their half greets them in their language and tells them it is machine translation.</p>
         </details>
         <details>
-          <summary data-i18n="faq.7.q">Does it keep going if I switch apps or lock the phone?</summary>
-          <p data-i18n="faq.7.a">Yes. Once you start a conversation, Tabletop keeps listening and translating until you end it, so you can check a map or a calculator. A Live Activity shows that it is listening, with Pause and End.</p>
-        </details>
-        <details>
           <summary data-i18n="faq.6.q">Is anything recorded?</summary>
           <p data-i18n="faq.6.a">Not by default. If you choose to keep conversations, they are saved on your device and in your own iCloud, and the other person sees that the conversation is being saved.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.7.q">Does it keep going if I switch apps or lock the phone?</summary>
+          <p data-i18n="faq.7.a">Yes. Once you start a conversation, Tabletop keeps listening and translating until you end it, so you can check a map or a calculator. A Live Activity shows that it is listening, with Pause and End.</p>
         </details>
       </div>
     </section>
@@ -302,8 +342,8 @@
     <section class="section final" id="get">
       <div class="wrap narrow center">
         <p class="cue" data-i18n="final.cue">[Ready when you are]</p>
-        <h2 data-i18n="final.title">Hold it up. Start talking.</h2>
-        <p class="lede" data-i18n="final.lede">Tabletop is free on the App Store. Take it into a real conversation, and tell us how it went.</p>
+        <h2 data-i18n="final.title">Set it between you. Start talking.</h2>
+        <p class="lede" data-i18n="final.lede">Free to download, and every conversation is free. Pro, if you want it, writes the minutes. Take it into a real conversation, and tell us how it went.</p>
         <a class="btn js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972" data-i18n="cta.store">Download on the App Store</a>
         <p class="honest" data-i18n="honest">Machine translation, not a certified interpreter.</p>
       </div>
@@ -314,7 +354,7 @@
   <footer class="foot">
     <div class="wrap foot__row">
       <p>© 2026 Tabletop</p>
-      <nav aria-label="Footer">
+      <nav aria-label="Footer" data-i18n-aria="aria.footer">
         <a class="js-privacy" href="privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
         <a class="js-support" href="support.html" data-i18n="foot.support">Support</a>
         <a class="js-terms" href="terms.html" data-i18n="foot.terms">Terms of Use</a>

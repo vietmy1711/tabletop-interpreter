@@ -1,14 +1,9 @@
-/* Hero illustration: an iPhone Duo unfolding like a book, as a video (assets/duo/duo-unfold.mp4).
+/* The iPhone Duo section's illustration (it was the hero's): an iPhone Duo unfolding like a book, as a video (assets/duo/duo-unfold.mp4).
    Made with appsforiphoneduo.com/tools/3d-mockup from Tabletop's real screens
    (marketing/07-tai-nguyen/anh-iphone-duo/man-hinh-3d/), source iphone-duo-unfold.mp4 in that folder.
    Encoded to play forward, hold open, play back and hold closed, so the loop never jumps.
    The video's own background is white fading to light grey: it multiplies into the page ground and its edges
    fade out (the site is light only). Under Reduce Motion a still of it open shows. */
-
-.sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
-}
 
 .held { margin: 0; }
 .fold { width: 100%; max-width: 560px; margin: 0 auto; }
