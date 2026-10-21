@@ -624,3 +624,15 @@ details p { padding: 0 0 22px; color: var(--secondary); max-width: 40em; }
   .dv__letter { padding: 38% 9cqw 9cqw; }
   .dv__cl { display: flex; }
 }
+
+/* Safari doesn't clip transformed or animated children (their half is turned 180°) to a rounded box with overflow:
+   hidden: the table showed through the screen's corners. A clip-path of the same rounded shape clips everything inside
+   (a mask did too, but left a faint square at the frame's corner). */
+.dv { clip-path: inset(0 round 11% / 5.3%); }
+@media (max-width: 900px) { .dv { clip-path: inset(0 round 13% / 6%); } }
+
+/* A tall, wide window (an iPad upright, a tall desktop window): sized from the height, the device came out wider than
+   its column and was cut at its edge. It takes whichever is smaller, the height's share or the column's width. */
+@media (min-width: 901px) {
+  .device { height: auto; width: min(86%, calc((100svh - var(--bar)) * 0.40)); aspect-ratio: 9 / 18.6; }
+}
