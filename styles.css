@@ -310,8 +310,6 @@ p, summary, li { text-wrap: pretty; }
 .dv__pause { border: 1px solid var(--par-avion); color: var(--par-avion); border-radius: 999px; padding: 0.8cqw 2.6cqw; }
 .dv__off { display: none; align-items: center; gap: 1.6cqw; background: var(--par-avion); color: var(--on-par-avion); border-radius: 999px; padding: 0.9cqw 2.8cqw 0.9cqw 2cqw; font-weight: 700; }
 .dv__off svg { width: 3.6cqw; height: 3.6cqw; fill: currentColor; }
-.device[data-focus="air"] .dv__pair { display: none; }
-.device[data-focus="air"] .dv__off { display: inline-flex; }
 .dv__lines { list-style: none; margin: 2cqw 0 0; padding: 0; flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
 .dv__line { display: none; position: relative; padding: 1.8cqw 9cqw 1.8cqw 0; }
 .dv__line.is-in { display: block; animation: dv-arrive .35s ease-out both; }
@@ -635,4 +633,69 @@ details p { padding: 0 0 22px; color: var(--secondary); max-width: 40em; }
    its column and was cut at its edge. It takes whichever is smaller, the height's share or the column's width. */
 @media (min-width: 901px) {
   .device { height: auto; width: min(86%, calc((100svh - var(--bar)) * 0.40)); aspect-ratio: 9 / 18.6; }
+}
+
+/* ---------- Critique round 3 ---------- */
+/* Private by default: a Par Avion postmark struck across the phone, its plane at the centre: a mark on the page's
+   paper, never a control the app doesn't have. */
+.dv__private {
+  position: absolute; z-index: 4; left: 50%; top: 56%; width: 46cqw; aspect-ratio: 1; margin-left: -23cqw;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.2cqw;
+  border-radius: 50%; border: 0.9cqw solid var(--par-avion); box-shadow: inset 0 0 0 1.3cqw var(--ground), inset 0 0 0 1.8cqw var(--par-avion);
+  background: color-mix(in srgb, var(--ground) 82%, transparent); color: var(--par-avion);
+  font: 800 3.4cqw/1.15 var(--display); letter-spacing: 0.06em; text-align: center; padding: 0 5cqw;
+  opacity: 0; transform: rotate(-12deg) scale(.9); pointer-events: none;
+}
+.dv__private svg { width: 8cqw; height: 8cqw; fill: currentColor; }
+:lang(ja) .dv__private, :lang(ko) .dv__private, :lang(zh-Hans) .dv__private, :lang(zh-Hant) .dv__private { letter-spacing: 0; }
+.device[data-focus="air"] .dv__private { opacity: 1; transform: rotate(-12deg); animation: dv-strike .5s cubic-bezier(.16, 1, .3, 1) .15s both; }
+@keyframes dv-strike { from { opacity: 0; transform: rotate(-30deg) scale(1.5); } to { opacity: 1; transform: rotate(-12deg) scale(1); } }
+.device[data-focus="air"] .dv__lines { opacity: .55; transition: opacity .3s ease-out; }
+@media (prefers-reduced-motion: reduce) { .device[data-focus="air"] .dv__private { animation: none; } }
+
+/* The Duo, named in the first screen. */
+.hero__duo { margin-top: 22px; font-size: 15px; font-weight: 600; }
+.hero__duo a { color: var(--par-avion); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
+.hero__duo a:hover { text-decoration: underline; }
+.hero__duo svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 900px) { .hero__duo { margin-top: 8px; } }
+
+/* A stamp chosen: said where the visitor is. */
+.langs__note { margin: 4px 0 18px; padding: 12px 14px; background: var(--ground); border-radius: 12px; font-size: 15px; color: var(--ink); }
+.langs__note a { display: inline-flex; align-items: center; gap: 4px; font-weight: 700; color: var(--par-avion); text-decoration: none; }
+.langs__note a:hover { text-decoration: underline; }
+.langs__note svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.lstamp__n { overflow-wrap: anywhere; hyphens: auto; }
+@media (max-width: 900px) { .lstamp__n { font-size: 15px; } }
+
+/* The end, back on the table: an airmail letter lying across the seam, a postage stamp in its corner. */
+.final { padding: calc(var(--section) * .6) var(--gutter) calc(var(--section) * .8); }
+.final__table { position: relative; max-width: 1120px; margin: 0 auto; background: var(--sheet); border-radius: 36px; padding: clamp(56px, 8vw, 104px) var(--gutter); display: flex; justify-content: center; overflow: hidden; }
+.final__seam { position: absolute; left: 0; right: 0; top: 50%; height: 12px; margin-top: -6px;
+  background: repeating-linear-gradient(-45deg, var(--border-red) 0 12px, var(--sheet) 12px 17px, var(--border-blue) 17px 29px, var(--sheet) 29px 34px); }
+.final__letter {
+  position: relative; width: min(100%, 560px); padding: clamp(40px, 6vw, 64px) clamp(28px, 5vw, 56px); text-align: center;
+  background: var(--ground); border: 10px solid transparent; transform: rotate(-1.5deg);
+  border-image: repeating-linear-gradient(-45deg, var(--border-red) 0 12px, var(--ground) 12px 17px, var(--border-blue) 17px 29px, var(--ground) 29px 34px) 14;
+  box-shadow: 0 18px 36px rgba(10, 18, 36, .14);
+}
+.final__letter h2 { margin: 0 0 28px; font-size: clamp(28px, 3.4vw, 42px); }
+.final__stamp { position: absolute; top: 14px; right: 16px; width: 54px; transform: rotate(6deg); filter: drop-shadow(0 3px 5px rgba(10,18,36,.16)); }
+.final__stamp svg { display: block; width: 100%; height: auto; -webkit-mask: var(--perf); mask: var(--perf); }
+@media (max-width: 600px) { .final__table { border-radius: 24px; } .final__letter { transform: rotate(-1deg); } .final__stamp { width: 44px; } }
+
+/* The letter's KEPT postmark under its lines, not alone at the bottom. */
+.dv__kept { position: relative; right: auto; bottom: auto; margin: 6cqw 0 0 auto; display: flex; }
+.device[data-view="kept"] .dv__kept { margin-right: 2cqw; }
+
+/* Chapters waiting their turn stay legible. */
+.js .chapter { opacity: 0.55; }
+
+/* Phones: the demo's controls at a size a thumb trusts; the page's places say they scroll. */
+@media (max-width: 900px) {
+  .pick__k { font-size: 4.6cqw; }
+  .pick__v { font-size: 7.6cqw; }
+  .dv__start { font-size: 5.6cqw; }
+  .dv__more { font-size: 4.6cqw; }
+  .top__nav { -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); mask-image: linear-gradient(to right, #000 85%, transparent); padding-right: 24px; }
 }

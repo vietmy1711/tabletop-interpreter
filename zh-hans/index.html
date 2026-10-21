@@ -92,6 +92,7 @@
             <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/zh-Hans.svg" width="150" height="50" alt="在 App Store 下载" data-i18n-alt="cta.store"></a>
             <a class="btn btn--quiet" href="#ch1" data-i18n="cta.try">试一试</a>
           </div>
+          <p class="hero__duo"><a href="#duo"><span data-i18n="hero.duo">为 iPhone Duo 而做</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></a></p>
         </div>
         <div class="story__stage">
           <figure class="table">
@@ -126,7 +127,7 @@
                 </div>
                 <div class="dv__seam"></div>
                 <div class="dv__mine">
-                  <p class="dv__bar"><span class="dv__pair js-dv-pair">English ↔ Vietnamese</span><span class="dv__off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V8.5l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-5z"/></svg><span class="js-dv-off">Airplane mode</span></span><span class="dv__end js-dv-end">End</span><span class="dv__pause js-dv-pause">Pause</span></p>
+                  <p class="dv__bar"><span class="dv__pair js-dv-pair">English ↔ Vietnamese</span><span class="dv__end js-dv-end">End</span><span class="dv__pause js-dv-pause">Pause</span></p>
                   <ol class="dv__lines js-dv-lines">
                     <li class="dv__line is-in" data-n="1"><b>YOU</b><span class="dv__text">Please take me to the airport.</span><span class="dv__gloss">Cho tôi đến sân bay.</span><i class="dv__mark"></i></li>
                     <li class="dv__line dv__line--them is-in" data-n="2"><b>VIETNAMESE</b><span class="dv__text">Shall I take the highway?</span><span class="dv__gloss">Mình đi đường cao tốc nhé?</span><i class="dv__mark"></i></li>
@@ -158,6 +159,8 @@
                   <p class="dv__cl"><b>4</b><span class="js-dv-c4">About an hour.</span></p>
                   <p class="dv__kept"><span class="js-dv-kno">No. 12</span><strong>11:23</strong><span class="js-dv-kk">KEPT</span></p>
                 </div>
+                <!-- Private by default: a postmark struck on the phone, not a control the app doesn't have -->
+                <p class="dv__private" aria-hidden="true"><span class="js-dv-priv1">ON THIS PHONE</span><svg viewBox="0 0 24 24"><path d="M21 15.5v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V8.5l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-5z"/></svg><span class="js-dv-priv2">NO ACCOUNT</span></p>
                 <!-- The highlight: captioning brackets around what the chapter is about -->
                 <span class="dv__focus" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
                 <span class="dv__focus" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
@@ -203,6 +206,30 @@
 
     <div class="airmail" role="presentation"></div>
 
+    <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
+         once it is on screen, never under Reduce Motion, and Pause stops it. -->
+    <section class="section duo" id="duo" aria-labelledby="duo-title">
+      <div class="wrap duo__grid">
+        <div>
+          <h2 id="duo-title" data-i18n="duo.title">为 iPhone Duo 而做</h2>
+          <p data-i18n="duo.body">像书一样打开，一人一边。在其他 iPhone 上，屏幕一分为二。</p>
+        </div>
+        <figure class="held">
+          <div class="fold">
+            <video class="duo-video js-duo-video" muted loop playsinline preload="none" width="1080" height="810"
+                   poster="/assets/duo/duo-unfold-dau.webp" aria-labelledby="fold-desc">
+              <source src="/assets/duo/duo-unfold.mp4" type="video/mp4">
+            </video>
+            <img class="duo-still" src="/assets/duo/duo-unfold-mo.webp" width="1080" height="810" alt="" aria-hidden="true" loading="lazy">
+            <span class="sr-only" id="fold-desc" data-i18n="duo.alt">视频：一台 iPhone Duo 像书一样展开。合上时，外屏将对话分为上下两半，对方那一半转向对方。展开后，对方那一侧以对方的语言朝向对方，你这一侧显示你的语言。</span>
+          </div>
+          <div class="controls controls--center">
+            <button type="button" class="ctl ctl--text js-video-pause" aria-label="暂停视频" data-i18n-aria="motion.video.pause"><span data-i18n="motion.pause">暂停</span></button>
+          </div>
+        </figure>
+      </div>
+    </section>
+
     <!-- Languages: a sheet of stamps. Tapping one puts it on the phone above as the other person's language. -->
     <section class="section sheet langs" id="languages" aria-labelledby="langs-title">
       <div class="wrap langs__grid">
@@ -221,6 +248,7 @@
           </svg>
           <h2 id="langs-title" data-i18n="langs.title">19 种语言，任选两种。</h2>
           <p class="lede" data-i18n="langs.lede">点一张邮票，就能在手机上试。</p>
+          <p class="langs__note js-stamp-note" aria-live="polite" hidden><span class="js-stamp-msg"></span> <a href="#story-title" class="js-stamp-see"><span data-i18n="stamp.see">在手机上看</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 7.5 6 4l3.5 3.5"/></svg></a><span class="js-stamp-tpl" hidden data-i18n="stamp.on">{lang}已设在手机上。</span></p>
           <p class="small langs__ui" data-i18n-html="langs.ui">App 本身支持 <span class="nw">English</span>、<span class="nw">Tiếng Việt</span>、<span class="nw">日本語</span>、<span class="nw">한국어</span>、<span class="nw">简体中文</span> 和 <span class="nw">繁體中文</span>。</p>
         </div>
         <ul class="stamps js-stamps">
@@ -268,20 +296,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr><th scope="row" data-i18n="cmp.r1">对方那一半朝向对方</th>
-                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="u"></td><td data-v="u"></td></tr>
-              <tr><th scope="row" data-i18n="cmp.r2">不用按键就能说</th>
-                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="u"></td><td data-v="n"></td></tr>
-              <tr><th scope="row" data-i18n="cmp.r3">离线也能对话</th>
-                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="n"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td><td data-v="n"></td></tr>
               <tr><th scope="row" data-i18n="cmp.r4">在手机上翻译</th>
                 <td class="cmp__us" data-v="y"></td><td data-v="p"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td><td data-v="n"></td></tr>
-              <tr><th scope="row" data-i18n="cmp.r5">不确定时请对方再说，而不是猜</th>
-                <td class="cmp__us" data-v="y"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r3">离线也能对话</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="n"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td><td data-v="n"></td></tr>
               <tr><th scope="row" data-i18n="cmp.r6">保存对话</th>
                 <td class="cmp__us" data-v="y"></td><td data-v="u"></td><td data-v="n"></td><td data-v="p"></td><td data-v="u"></td><td data-v="u"></td><td data-v="y"></td></tr>
               <tr><th scope="row" data-i18n="cmp.r7">写纪要</th>
                 <td class="cmp__us" data-v="y"></td><td data-v="n"></td><td data-v="n"></td><td data-v="n"></td><td data-v="u"></td><td data-v="u"></td><td data-v="n"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r5">绝不显示未经确认的译文</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td><td data-v="u"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r1">对方那一半朝向对方</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="u"></td><td data-v="u"></td></tr>
+              <tr><th scope="row" data-i18n="cmp.r2">不用按键就能说</th>
+                <td class="cmp__us" data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="y"></td><td data-v="u"></td><td data-v="n"></td></tr>
               <tr><th scope="row" data-i18n="cmp.r8">价格</th>
                 <td class="cmp__us cmp__txt" data-i18n-html="cmp.free.us"><span class="nw">免费 ·</span> <span class="nw">Pro 可选</span></td><td class="cmp__txt" data-i18n="cmp.free">免费</td><td class="cmp__txt" data-i18n="cmp.free">免费</td><td class="cmp__txt" data-i18n="cmp.free">免费</td><td class="cmp__txt" data-i18n="cmp.paid">付费方案</td><td class="cmp__txt" data-i18n="cmp.free">免费</td><td class="cmp__txt" data-i18n="cmp.sub">订阅</td></tr>
             </tbody>
@@ -314,7 +342,7 @@
             <p class="access__who" data-i18n="acc.them">为对方</p>
             <figure class="aa-demo js-aa" aria-labelledby="aa-caption">
               <div class="aa-demo__sheet">
-                <p class="aa-demo__text js-aa-text" lang="en" data-i18n="acc.sample" data-i18n-lang="acc.sampleLang">Please take me to the airport.</p>
+                <p class="aa-demo__text js-aa-text" lang="vi" data-i18n="acc.sample" data-i18n-lang="acc.sampleLang">Cho tôi đến sân bay.</p>
               </div>
               <div class="aa-demo__bar">
                 <button type="button" class="aa js-aa-button" aria-label="对方的文字大小" data-i18n-aria="acc.aa">
@@ -348,30 +376,6 @@
 
     <div class="airmail" role="presentation"></div>
 
-    <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
-         once it is on screen, never under Reduce Motion, and Pause stops it. -->
-    <section class="section duo">
-      <div class="wrap duo__grid">
-        <div>
-          <h2 data-i18n="duo.title">为 iPhone Duo 而做</h2>
-          <p data-i18n="duo.body">像书一样打开，一人一边。在其他 iPhone 上，屏幕一分为二。</p>
-        </div>
-        <figure class="held">
-          <div class="fold">
-            <video class="duo-video js-duo-video" muted loop playsinline preload="none" width="1080" height="810"
-                   poster="/assets/duo/duo-unfold-dau.webp" aria-labelledby="fold-desc">
-              <source src="/assets/duo/duo-unfold.mp4" type="video/mp4">
-            </video>
-            <img class="duo-still" src="/assets/duo/duo-unfold-mo.webp" width="1080" height="810" alt="" aria-hidden="true" loading="lazy">
-            <span class="sr-only" id="fold-desc" data-i18n="duo.alt">视频：一台 iPhone Duo 像书一样展开。合上时，外屏将对话分为上下两半，对方那一半转向对方。展开后，对方那一侧以对方的语言朝向对方，你这一侧显示你的语言。</span>
-          </div>
-          <div class="controls controls--center">
-            <button type="button" class="ctl ctl--text js-video-pause" aria-label="暂停视频" data-i18n-aria="motion.video.pause"><span data-i18n="motion.pause">暂停</span></button>
-          </div>
-        </figure>
-      </div>
-    </section>
-
     <!-- Also: one line each, said once -->
     <section class="section also-section">
       <div class="wrap">
@@ -394,7 +398,7 @@
         <div class="plans">
           <div class="plan">
             <h3 data-i18n="pro.free.t">免费</h3>
-            <p data-i18n="pro.free.d">所有对话，不限次数，还有相机、收听和常用语。</p>
+            <p data-i18n="pro.free.d">所有对话，不限次数。除了纪要，本页的一切都免费。</p>
           </div>
           <div class="plan plan--pro">
             <h3 data-i18n="pro.pro.t">Tabletop Pro</h3>
@@ -433,10 +437,15 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="section final" id="get">
-      <div class="wrap narrow center">
-        <h2 data-i18n="final.title">准备好下一次对话了吗？</h2>
-        <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/zh-Hans.svg" width="150" height="50" alt="在 App Store 下载" data-i18n-alt="cta.store"></a>
+    <!-- The end, back on the table: an airmail letter lying across the seam, addressed to the next conversation. -->
+    <section class="final" id="get" aria-labelledby="final-title">
+      <div class="final__table">
+        <div class="final__seam" aria-hidden="true"></div>
+        <div class="final__letter">
+          <span class="final__stamp" aria-hidden="true"><svg viewBox="0 0 120 144"><use href="#stamp-globe"/></svg></span>
+          <h2 id="final-title" data-i18n="final.title">为你的下一程出租车、下一次酒店前台、下一场会议。</h2>
+          <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/zh-Hans.svg" width="150" height="50" alt="在 App Store 下载" data-i18n-alt="cta.store"></a>
+        </div>
       </div>
     </section>
   </main>

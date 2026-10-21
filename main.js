@@ -221,22 +221,22 @@ function tabletopLabelPause(button, paused, what) {
   };
   // The owner's side in the page's language (the app's own words); its default partner.
   var OWNER = {
-    en: { them: "vi", you: "YOU", end: "End", pause: "Pause", listen: "[Listening]", off: "Airplane mode", read: "Read This Page",
+    en: { them: "vi", you: "YOU", end: "End", pause: "Pause", listen: "[Listening]", priv1: "ON THIS PHONE", priv2: "NO ACCOUNT", read: "Read This Page",
           lt: "No. 12 · To the airport", lh: "Minutes", cv: "Conversation", kk: "KEPT", kno: "No. 12",
           p1: "You asked to go to the airport.", p2: "They suggested the highway: about an hour." },
-    vi: { them: "ja", you: "BẠN", end: "Kết thúc", pause: "Tạm dừng", listen: "[Đang nghe]", off: "Chế độ máy bay", read: "Đọc trang này",
+    vi: { them: "ja", you: "BẠN", end: "Kết thúc", pause: "Tạm dừng", listen: "[Đang nghe]", priv1: "TRÊN MÁY NÀY", priv2: "KHÔNG TÀI KHOẢN", read: "Đọc trang này",
           lt: "Số 12 · Ra sân bay", lh: "Biên bản", cv: "Cuộc trò chuyện", kk: "ĐÃ LƯU", kno: "Số 12",
           p1: "Bạn nhờ đưa đến sân bay.", p2: "Tài xế đề nghị đi cao tốc: khoảng một tiếng." },
-    ja: { them: "en", you: "自分", end: "終了", pause: "一時停止", listen: "［聞き取り中］", off: "機内モード", read: "このページを読む",
+    ja: { them: "vi", you: "自分", end: "終了", pause: "一時停止", listen: "［聞き取り中］", priv1: "この端末で", priv2: "アカウント不要", read: "このページを読む",
           lt: "No. 12 · 空港まで", lh: "議事メモ", cv: "会話", kk: "保存", kno: "No. 12",
           p1: "空港までお願いしました。", p2: "高速道路を提案されました。約1時間です。" },
-    ko: { them: "ja", you: "나", end: "종료", pause: "일시 정지", listen: "[듣는 중]", off: "에어플레인 모드", read: "이 페이지 읽기",
+    ko: { them: "vi", you: "나", end: "종료", pause: "일시 정지", listen: "[듣는 중]", priv1: "이 휴대폰에서", priv2: "계정 없음", read: "이 페이지 읽기",
           lt: "No. 12 · 공항까지", lh: "회의록", cv: "대화", kk: "보관", kno: "No. 12",
           p1: "공항까지 가 달라고 했습니다.", p2: "고속도로를 제안받았습니다. 약 한 시간입니다." },
-    "zh-Hans": { them: "en", you: "我", end: "结束", pause: "暂停", listen: "［正在收听］", off: "飞行模式", read: "读这一页",
+    "zh-Hans": { them: "vi", you: "我", end: "结束", pause: "暂停", listen: "［正在收听］", priv1: "仅在本机", priv2: "无需账号", read: "读这一页",
           lt: "第 12 号 · 去机场", lh: "纪要", cv: "对话", kk: "已保存", kno: "第 12 号",
           p1: "你请司机送你去机场。", p2: "司机建议走高速，大约一小时。" },
-    "zh-Hant": { them: "ja", you: "我", end: "結束", pause: "暫停", listen: "［聆聽中］", off: "飛航模式", read: "讀這一頁",
+    "zh-Hant": { them: "vi", you: "我", end: "結束", pause: "暫停", listen: "［聆聽中］", priv1: "僅在本機", priv2: "不需帳號", read: "讀這一頁",
           lt: "第 12 號 · 去機場", lh: "會議紀錄", cv: "對話", kk: "已儲存", kno: "第 12 號",
           p1: "你請司機送你去機場。", p2: "司機建議走高速公路，大約一小時。" }
   };
@@ -290,7 +290,8 @@ function tabletopLabelPause(button, paused, what) {
     document.querySelector(".js-side-you").textContent = nameOf(mine);
     var theirs = $(".dv__theirs"); theirs.lang = them; theirs.dir = dirOf(them);
     text(".js-dv-pair", nameOf(mine) + " ↔ " + nameOf(them));
-    text(".js-dv-end", o.end); text(".js-dv-pause", o.pause); text(".js-dv-listen", o.listen); text(".js-dv-off", o.off);
+    text(".js-dv-end", o.end); text(".js-dv-pause", o.pause); text(".js-dv-listen", o.listen);
+    text(".js-dv-priv1", o.priv1); text(".js-dv-priv2", o.priv2);
     text(".js-dv-lt", o.lt); text(".js-dv-lh", o.lh); text(".js-dv-cv", o.cv); text(".js-dv-kk", o.kk); text(".js-dv-kno", o.kno);
     text(".js-dv-p1", o.p1); text(".js-dv-p2", o.p2);
     text(".js-cam-s1", L.s1[them], them); text(".js-cam-s2", L.s2[them], them);
@@ -375,7 +376,7 @@ function tabletopLabelPause(button, paused, what) {
   var dv = $(".dv"), brackets = device.querySelectorAll(".dv__focus");
   // One set of brackets per region: "both" frames their newest line and your delivered lines apart.
   var TARGETS = { pick: [[".dv__quick .pick"]], both: [[".dv__big"], [".dv__line.is-in:not(.is-gone)"]], theirs: [[".dv__big", ".dv__prev"]],
-                  cam: [[".cam__slip"]], air: [[".dv__off"]], letter: [[".dv__lt", ".dv__pt"]] };
+                  cam: [[".cam__slip"]], air: [[".dv__private"]], letter: [[".dv__lt", ".dv__pt"]] };
   // Where an element sits in the screen, from layout (not the transition in progress). Their half is turned 180°,
   // so a box inside it is mirrored within it.
   var theirs = $(".dv__theirs");
@@ -426,15 +427,25 @@ function tabletopLabelPause(button, paused, what) {
   $(".js-swap").addEventListener("click", function () { var m = mine; mine = them; them = m; render(); });
   $(".js-start").addEventListener("click", function () { talkTo(2, "both"); });
 
-  // The stamps: their language onto the phone, Quick Start ready, back at the top.
+  // The stamps: their language onto the phone, Quick Start ready. The visitor stays where they are: a line by the
+  // stamps says so, and "See it on the phone" takes them up only if they choose.
   var story = document.querySelector(".story");
+  var note = document.querySelector(".js-stamp-note");
   document.querySelectorAll(".lstamp").forEach(function (b) {
     b.addEventListener("click", function () {
       pick("them", b.dataset.code);
       show("quick", step, "pick", false);
-      story.scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth" });
-      $(".js-start").focus({ preventScroll: true });
+      if (note) {
+        var tpl = note.querySelector(".js-stamp-tpl").textContent;
+        note.querySelector(".js-stamp-msg").textContent = tpl.replace("{lang}", nameOf(b.dataset.code));
+        note.hidden = false;
+      }
     });
+  });
+  if (note) note.querySelector(".js-stamp-see").addEventListener("click", function (e) {
+    e.preventDefault();
+    story.scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth" });
+    $(".js-start").focus({ preventScroll: true });
   });
 
   render();
