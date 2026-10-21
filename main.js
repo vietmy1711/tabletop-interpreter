@@ -5,6 +5,9 @@
   // work before this script runs.
   var STORE_URL = "https://apps.apple.com/app/tabletop-interpreter/id6821405972";
   var LANGS = ["en", "vi", "ja", "ko", "zh-Hans", "zh-Hant"];
+  // Each language is its own page (built by tools/build-locales.mjs), so search engines index every one.
+  var PATHS = { en: "/", vi: "/vi/", ja: "/ja/", ko: "/ko/", "zh-Hans": "/zh-hans/", "zh-Hant": "/zh-hant/" };
+  var pageLang = LANGS.indexOf(document.documentElement.lang) >= 0 ? document.documentElement.lang : "en";
 
   var dict = window.TABLETOP_I18N || {};
   // English for the words this script writes itself (the rest is read from the page).
@@ -18,7 +21,6 @@
     aria: document.querySelectorAll("[data-i18n-aria]")
   };
   var metaDesc = document.querySelector('meta[name="description"]');
-  var canonical = document.querySelector('link[rel="canonical"]');
   var select = document.querySelector(".js-lang");
   var current = "en";
 
@@ -47,17 +49,16 @@
     nodes.aria.forEach(function (el) { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
     document.title = t("meta.title");
     if (metaDesc) metaDesc.content = t("meta.description");
-    if (canonical) canonical.href = "https://trytabletop.app/" + (current === "en" ? "" : "?lang=" + current);
 
     // The hero and the screenshots are the app itself in this language, with its own language pair.
     document.querySelectorAll(".js-hero").forEach(function (img) {
-      var src = "assets/hero/" + current + ".webp";
+      var src = "/assets/hero/" + current + ".webp";
       if (img.getAttribute("src") !== src) img.src = src;
     });
     // Apple's own badge, in the page's language.
-    document.querySelectorAll(".js-badge").forEach(function (img) { img.src = "assets/badges/" + current + ".svg"; });
+    document.querySelectorAll(".js-badge").forEach(function (img) { img.src = "/assets/badges/" + current + ".svg"; });
     document.querySelectorAll(".js-shot").forEach(function (img) {
-      img.src = "assets/shots/" + current + "-" + img.dataset.shot + ".webp";
+      img.src = "/assets/shots/" + current + "-" + img.dataset.shot + ".webp";
     });
     // The support, privacy and terms pages show one language at a time, chosen by its anchor (#en, #vi, #ja…).
     document.querySelectorAll(".js-privacy, .js-support, .js-terms").forEach(function (a) {
@@ -65,7 +66,6 @@
     });
     if (select) select.value = current;
     document.dispatchEvent(new CustomEvent("tabletop:lang"));
-    try { localStorage.setItem("tabletop.lang", current); } catch (e) {}
   }
 
   function fromTag(tag) {
@@ -75,12 +75,16 @@
     return LANGS.indexOf(base) >= 0 ? base : null;
   }
 
-  function initialLang() {
+  // The language the visitor asked for: an old ?lang= link, the anchor the support, privacy and terms pages
+  // once linked home with (index.html#vi), and on the English home page only, a choice made in the menu, else the
+  // browser's languages. Search engines crawl in English with nothing saved, so they stay on each page.
+  function wantedLang() {
     var q = new URLSearchParams(location.search).get("lang");
     if (q && LANGS.indexOf(q) >= 0) return q;
-    // The support, privacy and terms pages link home with their language as the anchor (index.html#vi).
     var h = location.hash.slice(1);
     if (LANGS.indexOf(h) >= 0) return h;
+    // A language's own page is what was linked or searched for: it stays.
+    if (pageLang !== "en") return pageLang;
     try {
       var saved = localStorage.getItem("tabletop.lang");
       if (LANGS.indexOf(saved) >= 0) return saved;
@@ -93,13 +97,15 @@
     return "en";
   }
 
+  function go(lang) {
+    var hash = LANGS.indexOf(location.hash.slice(1)) >= 0 ? "" : location.hash;
+    location.replace(PATHS[lang] + hash);
+  }
+
   if (select) {
     select.addEventListener("change", function () {
-      apply(select.value);
-      var url = new URL(location.href);
-      url.searchParams.set("lang", current);
-      url.hash = "";
-      try { history.replaceState(null, "", url); } catch (e) {}
+      try { localStorage.setItem("tabletop.lang", select.value); } catch (e) {}
+      go(select.value);
     });
   }
 
@@ -108,7 +114,12 @@
     a.rel = "noopener";
   });
 
-  apply(initialLang());
+  var lang = wantedLang();
+  if (lang !== pageLang) { go(lang); return; }
+  if (location.search || LANGS.indexOf(location.hash.slice(1)) >= 0) {
+    try { history.replaceState(null, "", location.pathname); } catch (e) {}
+  }
+  apply(pageLang);
 })();
 
 // A Pause button's words follow its state, in the page's language: "Pause" or "Play" on the button, and what it

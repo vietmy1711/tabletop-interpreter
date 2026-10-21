@@ -1,0 +1,393 @@
+<!doctype html>
+<!-- Generated from /index.html and /i18n.js by _build/build-locales.mjs: edit those, not this page. -->
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabletop: 対面通訳・翻訳 — 二人の会話を、それぞれの言語で</title>
+  <meta name="description" content="端末を二人のあいだで持つか、テーブルに置いて、あとは話すだけ。Tabletopは二つの言語を同時に聞き取り、それぞれの人に、画面の自分の側で、自分の言語の会話を表示します。端末上で動作するプライベートな設計で、言語パックをダウンロードすればオフラインでも使えます。">
+  <meta name="apple-itunes-app" content="app-id=6821405972">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#F8F9FB">
+  <link rel="icon" href="/assets/logo-light.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tabletop: 対面通訳・翻訳 — 二人の会話を、それぞれの言語で">
+  <meta property="og:description" content="端末を二人のあいだで持つか、テーブルに置いて、あとは話すだけ。Tabletopは二つの言語を同時に聞き取り、それぞれの人に、画面の自分の側で、自分の言語の会話を表示します。端末上で動作するプライベートな設計で、言語パックをダウンロードすればオフラインでも使えます。">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://trytabletop.app/assets/og.jpg">
+  <meta property="og:url" content="https://trytabletop.app/ja/">
+  <link rel="canonical" href="https://trytabletop.app/ja/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="x-default" href="https://trytabletop.app/">
+  <link rel="alternate" hreflang="en" href="https://trytabletop.app/">
+  <link rel="alternate" hreflang="vi" href="https://trytabletop.app/vi/">
+  <link rel="alternate" hreflang="ja" href="https://trytabletop.app/ja/">
+  <link rel="alternate" hreflang="ko" href="https://trytabletop.app/ko/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://trytabletop.app/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://trytabletop.app/zh-hant/">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/duo.css">
+  <script type="application/ld+json">
+  {
+    "inLanguage": "ja",
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Tabletop Interpreter",
+    "operatingSystem": "iOS 26 or later",
+    "applicationCategory": "TravelApplication",
+    "url": "https://trytabletop.app/ja/",
+    "installUrl": "https://apps.apple.com/app/tabletop-interpreter/id6821405972",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD",
+                "description": "Free to download; every conversation is free. Optional Tabletop Pro (in-app purchase) writes minutes of the conversations you keep." },
+    "description": "A face-to-face interpreter: one device between two people, each reading the conversation in their own language on their own half of the screen."
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">本文へスキップ</a>
+
+  <header class="top">
+    <div class="wrap top__row">
+      <a class="brand" href="/ja/" aria-label="Tabletop">
+        <picture>
+          <img src="/assets/logo-light.svg" alt="" width="36" height="36">
+        </picture>
+        <span>Tabletop</span>
+      </a>
+      <nav class="top__nav" aria-label="メイン" data-i18n-aria="aria.main">
+        <a href="#ch1" data-i18n="nav.how">使い方</a>
+        <a href="#privacy" data-i18n="nav.privacy">プライバシー</a>
+        <a href="#pro" data-i18n="nav.pro">Pro</a>
+        <a href="#faq" data-i18n="nav.faq">よくある質問</a>
+      </nav>
+      <div class="top__actions">
+        <label class="lang">
+          <span class="sr-only" data-i18n="aria.language">言語</span>
+          <select class="js-lang">
+            <option value="en" lang="en">English</option>
+            <option value="vi" lang="vi">Tiếng Việt</option>
+            <option value="ja" lang="ja" selected>日本語</option>
+            <option value="ko" lang="ko">한국어</option>
+            <option value="zh-Hans" lang="zh-Hans">简体中文</option>
+            <option value="zh-Hant" lang="zh-Hant">繁體中文</option>
+          </select>
+        </label>
+        <a class="btn btn--small js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972" data-i18n="cta.short">App Store</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- One conversation, scrolled: the device on the table receives the conversation line by line, and each chapter
+         delivers the next line. Drawn in HTML from the app's own taxi scene, in the page language's pair (main.js). -->
+    <section class="story" aria-labelledby="story-title">
+      <div class="wrap story__grid">
+        <div class="story__copy">
+          <h1 id="story-title" data-i18n-html="hero.title">ただ話すだけ。<br>それぞれが、自分の言語で読めます。</h1>
+          <p class="lede" data-i18n="hero.lede">二人のあいだに置くだけ。話された言語を聞き分け、それぞれに自分の側を表示します。</p>
+          <div class="hero__ctas">
+            <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/ja.svg" width="150" height="50" alt="App Storeからダウンロード" data-i18n-alt="cta.store"></a>
+            <a class="btn btn--quiet" href="#ch1" data-i18n="cta.how">使い方を見る</a>
+          </div>
+        </div>
+        <div class="story__stage">
+          <figure class="table">
+            <p class="side side--them" data-i18n="hero.them">相手 · 英語</p>
+            <div class="table__seam" aria-hidden="true"></div>
+            <div class="device js-device" data-step="4" role="img" aria-label="Tabletopのライブデモ：タクシーでの会話が一つの画面の二つの半分に届きます。相手側は英語で相手の向きに、あなたの側は日本語で表示されます。" data-i18n-aria="hero.alt">
+              <div class="dv">
+                <div class="dv__theirs" lang="vi">
+                  <p class="dv__cue js-dv-tcue">[Đang nghe, xin mời nói]</p>
+                  <p class="dv__big js-dv-tbig">Khoảng một tiếng.</p>
+                  <p class="dv__prev js-dv-tprev">Vâng, đi cao tốc. Mất bao lâu ạ?</p>
+                </div>
+                <div class="dv__seam"></div>
+                <div class="dv__mine">
+                  <p class="dv__bar"><span class="js-dv-pair">English ↔ Vietnamese</span><span class="dv__off js-dv-off">Offline · on this device</span><span class="js-dv-end">End</span><span class="dv__pause js-dv-pause">Pause</span></p>
+                  <ol class="dv__lines js-dv-lines">
+                    <li class="dv__line is-in" data-n="1"><b>YOU</b><span class="dv__text">Please take me to the airport.</span><span class="dv__gloss">Cho tôi đến sân bay.</span><i class="dv__mark"></i></li>
+                    <li class="dv__line dv__line--them is-in" data-n="2"><b>VIETNAMESE</b><span class="dv__text">Shall I take the highway?</span><span class="dv__gloss">Mình đi đường cao tốc nhé?</span><i class="dv__mark"></i></li>
+                    <li class="dv__line is-in" data-n="3"><b>YOU</b><span class="dv__text">Yes, please. How long will it take?</span><span class="dv__gloss">Vâng, đi cao tốc. Mất bao lâu ạ?</span><i class="dv__mark"></i></li>
+                    <li class="dv__line dv__line--them is-in" data-n="4"><b>VIETNAMESE</b><span class="dv__text">About an hour.</span><span class="dv__gloss">Khoảng một tiếng.</span><i class="dv__mark"></i></li>
+                    <li class="dv__line dv__line--returned" data-n="5"><b>YOU</b><span class="dv__text js-dv-rtext">Is there a toll?</span><span class="dv__gloss js-dv-rnote">Not translated. Please say it again.</span><i class="dv__mark"></i></li>
+                  </ol>
+                  <p class="dv__listen js-dv-listen">[Listening]</p>
+                </div>
+                <div class="dv__letter">
+                  <p class="dv__lt js-dv-lt">No. 12 · To the airport</p>
+                  <p class="dv__lh js-dv-lh">Minutes</p>
+                  <p class="dv__pt"><span class="js-dv-p1">You asked to go to the airport.</span><b>↓1</b></p>
+                  <p class="dv__pt"><span class="js-dv-p2">They suggested the highway: about an hour.</span><b>↓4</b></p>
+                  <p class="dv__lh js-dv-nx">Next</p>
+                  <p class="dv__pt"><span class="js-dv-p3">→ Ask about the toll again.</span><b>↓5</b></p>
+                  <p class="dv__lh js-dv-cv">Conversation</p>
+                  <p class="dv__cl"><b>1</b><span class="js-dv-c1">Please take me to the airport.</span></p>
+                  <p class="dv__cl"><b>2</b><span class="js-dv-c2">Shall I take the highway?</span></p>
+                  <p class="dv__cl"><b>3</b><span class="js-dv-c3">Yes, please. How long will it take?</span></p>
+                  <p class="dv__cl"><b>4</b><span class="js-dv-c4">About an hour.</span></p>
+                  <p class="dv__cl dv__cl--returned"><b>5</b><span class="js-dv-c5">Is there a toll?</span></p>
+                  <p class="dv__kept"><span class="js-dv-kno">No. 12</span><strong>11:23</strong><span class="js-dv-kk">KEPT</span></p>
+                </div>
+              </div>
+            </div>
+            <p class="side side--you" data-i18n="hero.you">自分 · 日本語</p>
+          </figure>
+        </div>
+        <article class="chapter" id="ch1" data-step="3">
+          <h2 data-i18n="feat.1.t">順番待ちなし</h2>
+          <p data-i18n="feat.1.d">言語ごとに一つずつ、二つの聞き取りが同時に動きます。順番を取るためにタップする必要も、スマートフォンを渡し合う必要もありません。</p>
+        </article>
+        <article class="chapter" id="ch2" data-step="4">
+          <h2 data-i18n="feat.2.t">相手の側は、相手の向きに</h2>
+          <p data-i18n="feat.2.d">相手の言語の大きな字幕を、腕を伸ばした距離から読める大きさで、相手が自分で選んだサイズで表示します。値段や時刻を読み返したいときは、さかのぼって確かめられます。</p>
+        </article>
+        <article class="chapter" id="ch3" data-step="5">
+          <h2 data-i18n="feat.4.t">未確認の訳は表示しません</h2>
+          <p data-i18n="feat.4.d">翻訳を確認できなかったときは、誤った数字を伝えてしまわないよう表示せず、どちらがもう一度言えばよいかを二人に伝えます。</p>
+        </article>
+        <article class="chapter" id="ch4" data-step="6">
+          <h2 data-i18n="feat.5.t">プライベート。準備がすめばオフラインでも</h2>
+          <p data-i18n="feat.5.d">音声認識と翻訳は端末上で行われます。言語パックを一度ダウンロードすれば、通信がなくても使えます。</p>
+        </article>
+        <article class="chapter" id="ch5" data-step="7">
+          <h2 data-i18n="story.5.t">残せる。議事メモも。</h2>
+          <p data-i18n="story.5.d">会話をレターとして保存し、あとで読み返せます。Tabletop Proなら、議事メモをデバイス上で作成します。誰が何を尋ねたか、数字、次にすること。各項目は元の発言につながります。</p>
+          <p class="chapter__cta"><a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/ja.svg" width="150" height="50" alt="App Storeからダウンロード" data-i18n-alt="cta.store"></a></p>
+        </article>
+      </div>
+    </section>
+
+    <div class="airmail" role="presentation"></div>
+
+
+    <!-- iPhone Duo: the unfolding video (a 3D mockup of Tabletop's real screens, see duo.css). It loads and plays only
+         once it is on screen, never under Reduce Motion, and Pause stops it. -->
+    <section class="section duo">
+      <div class="wrap duo__grid">
+        <div>
+          <h2 data-i18n="duo.title">iPhone Duoを念頭に設計。すべてのiPhoneで使えます。</h2>
+          <p data-i18n="duo.body">Duoを開くと、二つの半分が折り目の両側に自然に並びます。iOS 26以降のどのiPhoneでも、画面は同じように分かれます。Siriやショートカットで会話を開始・終了でき、VoiceOverとDynamic Typeには両方の側で対応しています。</p>
+        </div>
+        <figure class="held">
+          <div class="fold">
+            <video class="duo-video js-duo-video" muted loop playsinline preload="none" width="1080" height="810"
+                   poster="/assets/duo/duo-unfold-dau.webp" aria-labelledby="fold-desc">
+              <source src="/assets/duo/duo-unfold.mp4" type="video/mp4">
+            </video>
+            <img class="duo-still" src="/assets/duo/duo-unfold-mo.webp" width="1080" height="810" alt="" aria-hidden="true" loading="lazy">
+            <span class="sr-only" id="fold-desc" data-i18n="duo.alt">動画：iPhone Duoが本のように開きます。閉じているときは外側のディスプレイで会話が上下に分かれ、相手の側は相手に向いています。開くと、相手の側は相手の言語で相手に向き、あなたの側はあなたの言語を表示します。</span>
+          </div>
+          <div class="controls controls--center">
+            <button type="button" class="ctl ctl--text js-video-pause" aria-label="ビデオを一時停止" data-i18n-aria="motion.video.pause"><span data-i18n="motion.pause">一時停止</span></button>
+          </div>
+          <figcaption data-i18n="duo.caption">閉じた状態から開いていく、iPhone Duo上のTabletop。画面はアプリそのもので、端末は3Dモックアップです。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <div class="wrap">
+        <h2 data-i18n="feat.title">向かいに座る相手のために</h2>
+        <div class="also">
+          <article>
+            <h3 data-i18n="feat.3.t">どの言語でも丁寧に</h3>
+            <p data-i18n="feat.3.d">「もう一度お願いします」「もう少しゆっくり話してください」などの定型のお願いは、人の手で、丁寧な言葉づかいで、19の言語すべてに用意しています。</p>
+          </article>
+          <article>
+            <h3 data-i18n="feat.6.t">名前はそのままに</h3>
+            <p data-i18n="feat.6.d">翻訳してはいけない名前や用語を登録しておけば、「Mai」はMaiのまま、会社名は会社名のままです。</p>
+          </article>
+          <article>
+            <h3 data-i18n="feat.7.t">出かける前にフレーズを準備</h3>
+            <p data-i18n="feat.7.d">住所や予約内容を前もって書いておき、正しい向きで、収まるかぎり大きく全画面で見せられます。文を端末上で翻訳して、相手が読む内容を確かめておくこともできます。</p>
+          </article>
+          <article>
+            <h3 data-i18n="feat.8.t">話しかけられたときは、聞き取り</h3>
+            <p data-i18n="feat.8.d">ガイドやアナウンス、説明してくれる人の言葉を、あなたの言語の一方向の字幕で表示します。答えたいときは「返事をする」をタップしてください。</p>
+          </article>
+          <article>
+            <h3 data-i18n="feat.9.t">ワンタッチで開始</h3>
+            <p data-i18n="feat.9.d">コントロールセンター、ロック画面、アクションボタンから始められます。ほかのアプリに切り替えても、iPhoneをロックしても通訳は続き、ロック画面から「一時停止」と「終了」を操作できます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section sheet gallery-section" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <h2 id="gallery-title" data-i18n="gallery.title">手に取ったときの姿</h2>
+        <p class="muted" data-i18n="gallery.note">App Storeのスクリーンショットです。相手の側はあなたから見て逆さまなので、相手には正しい向きで読めます。</p>
+      </div>
+      <div class="gallery" id="gallery" tabindex="0" role="region" aria-label="スクリーンショット" data-i18n-aria="aria.gallery">
+        <img class="js-shot" data-shot="1" src="/assets/shots/ja-1.webp" width="660" height="1434" loading="lazy" alt="置くだけ。あとは話すだけ。" data-i18n-alt="gallery.a1">
+        <img class="js-shot" data-shot="2" src="/assets/shots/ja-2.webp" width="660" height="1434" loading="lazy" alt="相手の側は、相手の向きに。" data-i18n-alt="gallery.a2">
+        <img class="js-shot" data-shot="3" src="/assets/shots/ja-3.webp" width="660" height="1434" loading="lazy" alt="プライベート。オフラインでも。" data-i18n-alt="gallery.a3">
+        <img class="js-shot" data-shot="4" src="/assets/shots/ja-4.webp" width="660" height="1434" loading="lazy" alt="未確認の訳は表示しません。" data-i18n-alt="gallery.a4">
+        <img class="js-shot" data-shot="5" src="/assets/shots/ja-5.webp" width="660" height="1434" loading="lazy" alt="残せる。議事メモも。" data-i18n-alt="gallery.a5">
+        <img class="js-shot" data-shot="6" src="/assets/shots/ja-6.webp" width="660" height="1434" loading="lazy" alt="聞き取りだけでも。" data-i18n-alt="gallery.a6">
+        <img class="js-shot" data-shot="7" src="/assets/shots/ja-7.webp" width="660" height="1434" loading="lazy" alt="19の言語で、向かい合って。" data-i18n-alt="gallery.a7">
+      </div>
+      <div class="wrap controls">
+        <button type="button" class="ctl js-prev" aria-controls="gallery" aria-label="前のスクリーンショット" data-i18n-aria="gallery.prev">
+          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="ctl ctl--text js-gallery-pause" aria-controls="gallery" aria-label="スクリーンショットを一時停止" data-i18n-aria="motion.gallery.pause"><span data-i18n="motion.pause">一時停止</span></button>
+        <span class="count js-count" aria-hidden="true">1 / 7</span>
+        <button type="button" class="ctl js-next" aria-controls="gallery" aria-label="次のスクリーンショット" data-i18n-aria="gallery.next">
+          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Scenes: scripted demonstrations, labelled as such -->
+    <section class="section" id="scenes">
+      <div class="wrap">
+        <h2 data-i18n="scenes.title">実際の会話のために</h2>
+        <p class="muted" data-i18n="scenes.note">デモンストレーションです。お客様の事例ではありません。</p>
+        <div class="scenes">
+          <article class="scene">
+            <h3 data-i18n="scenes.1.t">ハノイのホテルのフロント</h3>
+            <p class="line"><span class="who" data-i18n="scenes.1.who">ベトナム語</span><span lang="vi" data-i18n="scenes.1.src" data-i18n-lang="scenes.1.lang">Giờ trả phòng là 11 giờ sáng ạ.</span></p>
+            <p class="line line--mine"><span class="who" data-i18n="scenes.you">あなたが読む</span><span data-i18n="scenes.1.r">チェックアウトは午前11時です。</span></p>
+          </article>
+          <article class="scene">
+            <h3 data-i18n="scenes.2.t">ホーチミン市のタクシー</h3>
+            <p class="line"><span class="who" data-i18n="scenes.2.who">ベトナム語</span><span lang="vi" data-i18n="scenes.2.src" data-i18n-lang="scenes.2.lang">Đến khách sạn khoảng hai mươi phút ạ.</span></p>
+            <p class="line line--mine"><span class="who" data-i18n="scenes.you">あなたが読む</span><span data-i18n="scenes.2.r">ホテルまで20分ほどです。</span></p>
+          </article>
+          <article class="scene">
+            <h3 data-i18n="scenes.3.t">ハノイで韓国の取引先と</h3>
+            <p class="line"><span class="who" data-i18n="scenes.3.who">韓国語</span><span lang="ko" data-i18n="scenes.3.src" data-i18n-lang="scenes.3.lang">샘플은 다음 주 화요일까지 하노이로 보내 드리겠습니다.</span></p>
+            <p class="line line--mine"><span class="who" data-i18n="scenes.you">あなたが読む</span><span data-i18n="scenes.3.r">サンプルは来週の火曜日までにハノイへお送りします。</span></p>
+          </article>
+          <article class="scene">
+            <h3 data-i18n="scenes.4.t">深圳での仕入れ先との打ち合わせ</h3>
+            <p class="line"><span class="who" data-i18n="scenes.4.who">中国語</span><span lang="zh-Hans" data-i18n="scenes.4.src" data-i18n-lang="scenes.4.lang">五百件的话，下周五可以交货。</span></p>
+            <p class="line line--mine"><span class="who" data-i18n="scenes.you">あなたが読む</span><span data-i18n="scenes.4.r">500個でしたら、来週の金曜日に納品できます。</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="airmail" role="presentation"></div>
+
+    <!-- Privacy -->
+    <section class="section privacy" id="privacy">
+      <div class="wrap privacy__grid">
+        <div>
+          <h2 data-i18n="privacy.title">はじめからプライベート</h2>
+          <p class="lede" data-i18n="privacy.lede">初対面の人の言葉は、あなたがどこかへ送ってよいものではありません。Tabletopはそれをデバイスの中にとどめます。</p>
+        </div>
+        <ul class="checks">
+          <li data-i18n="privacy.1">音声認識と翻訳は端末上で行われます。</li>
+          <li data-i18n="privacy.2">会話が当社や第三者のサーバーに送られることはありません。保存を選んだ場合は、デバイスに保存され、あなた自身のiCloudで同期されます。App Storeのプライバシーラベル：データの収集なし。</li>
+          <li data-i18n="privacy.3">言語パックをダウンロードすれば、オフラインでも使えます。タクシーでも、市場でも、データ通信のない海外でも。</li>
+          <li data-i18n="privacy.4">会話の保存は、あなたがオンにするまでオフです。オンのときは、そのことが相手にも伝えられます。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Free and Pro -->
+    <section class="section pricing" id="pro">
+      <div class="wrap">
+        <h2 data-i18n="pro.title">使うのは無料。議事メモが欲しいときはPro。</h2>
+        <div class="plans">
+          <div class="plan">
+            <h3 data-i18n="pro.free.t">無料</h3>
+            <p data-i18n="pro.free.d">すべての会話を回数無制限で。聞き取り、カメラで読む、フレーズ、名前も使えます。相手が支払い画面を目にすることはありません。</p>
+          </div>
+          <div class="plan plan--pro">
+            <h3 data-i18n="pro.pro.t">Tabletop Pro</h3>
+            <p data-i18n="pro.pro.d">保存した会話の議事メモ。誰が何を尋ねたか、数字、次にすることを短くまとめ、各項目は元の発言につながります。デバイス上で作成します。最初の3件は無料です。</p>
+            <p class="small muted" data-i18n="pro.pro.terms">年額（無料トライアルあり）または買い切り。価格はApp Storeに表示されます。ProにはApple Intelligence対応のデバイスが必要です。</p>
+          </div>
+        </div>
+        <p class="small"><a class="js-terms" href="/terms.html#ja" data-i18n="foot.terms">利用規約</a></p>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section sheet" id="languages">
+      <div class="wrap">
+        <h2 data-i18n="lang.title">19の会話言語</h2>
+        <p class="muted" data-i18n="lang.note">お好きな二つを選べます。利用できる言語は、Appleの端末上の言語パックによって異なります。スペイン語とポルトガル語のようによく似た言語は、聞き分けが難しくなります。</p>
+        <ul class="languages">
+          <li lang="en">English</li><li lang="vi">Tiếng Việt</li><li lang="ja">日本語</li><li lang="ko">한국어</li>
+          <li lang="zh-Hans">简体中文</li><li lang="zh-Hant">繁體中文</li><li lang="th">ไทย</li><li lang="id">Bahasa Indonesia</li>
+          <li lang="hi">हिन्दी</li><li lang="ar"><bdi dir="rtl">العربية</bdi></li><li lang="es">Español</li><li lang="fr">Français</li>
+          <li lang="de">Deutsch</li><li lang="it">Italiano</li><li lang="pt">Português</li><li lang="ru">Русский</li>
+          <li lang="tr">Türkçe</li><li lang="nl">Nederlands</li><li lang="pl">Polski</li>
+        </ul>
+        <p class="muted small" data-i18n="lang.ui">アプリ自体は English、Tiếng Việt、日本語、한국어、简体中文、繁體中文 で表示できます。</p>
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section sheet" id="faq">
+      <div class="wrap narrow">
+        <h2 data-i18n="faq.title">よくある質問</h2>
+        <details>
+          <summary data-i18n="faq.1.q">翻訳は正確ですか？</summary>
+          <p data-i18n="faq.1.a">Tabletopは機械翻訳を使っているため、誤りが生じることがあります。確認できなかった文は表示せず、二人ともに、もう一度言ってもらうための丁寧な頼み方を用意しています。医療、法律、安全に関わる会話では、専門の通訳者をご利用ください。</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.2.q">インターネットがなくても使えますか？</summary>
+          <p data-i18n="faq.2.a">はい。両方の言語の音声パックと翻訳パックをダウンロードしていれば使えます。旅行の前に、Wi‑Fiでダウンロードしておいてください。</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.3.q">どのiPhoneで使えますか？</summary>
+          <p data-i18n="faq.3.a">iOS 26以降を搭載したすべてのiPhoneで使えます。設計の中心にした端末はiPhone Duoです。</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.4.q">料金はかかりますか？</summary>
+          <p data-i18n="faq.4.a">Tabletopはダウンロード無料で、会話はすべて無料、回数の制限もありません。聞き取り、カメラ、フレーズも無料で、相手が支払いの画面に出会うことはありません。Tabletop Proは任意です。保存した会話の議事メモを作成します（最初の3件は無料）。無料トライアル付きの年間サブスクリプション、または買い切りでご利用いただけます。価格はApp Storeに表示されます。</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.5.q">相手もアプリが必要ですか？</summary>
+          <p data-i18n="faq.5.a">いいえ。すべてあなたのスマートフォンの中で行われます。相手の側は相手の言語であいさつし、機械翻訳であることを伝えます。</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.6.q">何か録音されますか？</summary>
+          <p data-i18n="faq.6.a">初期設定では何も保存されません。会話を保存することを選んだ場合、会話は端末とあなた自身のiCloudに保存され、相手にも会話が保存されていることが表示されます。</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.7.q">ほかのアプリに切り替えたり、ロックしたりしても続きますか？</summary>
+          <p data-i18n="faq.7.a">はい。会話を始めると、終了するまでTabletopは聞き取りと翻訳を続けるので、地図や計算機を確認できます。ライブアクティビティに聞き取り中であることが表示され、「一時停止」と「終了」を操作できます。</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section final" id="get">
+      <div class="wrap narrow center">
+        <h2 data-i18n="final.title">二人のあいだに置いて、話し始めましょう。</h2>
+        <p class="lede" data-i18n="final.lede">ダウンロード無料で、会話はすべて無料です。必要であれば、Proが議事メモを作成します。実際の会話で使ってみて、いかがだったかお聞かせください。</p>
+        <a class="badge js-store" href="https://apps.apple.com/app/tabletop-interpreter/id6821405972"><img class="js-badge" src="/assets/badges/ja.svg" width="150" height="50" alt="App Storeからダウンロード" data-i18n-alt="cta.store"></a>
+        <p class="honest" data-i18n="honest">機械翻訳です。認定通訳者ではありません。</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="airmail airmail--thin" role="presentation"></div>
+  <footer class="foot">
+    <div class="wrap foot__row">
+      <p>© 2026 Tabletop</p>
+      <nav aria-label="フッター" data-i18n-aria="aria.footer">
+        <a class="js-privacy" href="/privacy.html#ja" data-i18n="foot.privacy">プライバシーポリシー</a>
+        <a class="js-support" href="/support.html#ja" data-i18n="foot.support">サポート</a>
+        <a class="js-terms" href="/terms.html#ja" data-i18n="foot.terms">利用規約</a>
+        <a href="mailto:support@trytabletop.app">support@trytabletop.app</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/i18n.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

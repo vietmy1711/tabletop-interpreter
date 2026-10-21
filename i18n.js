@@ -2,6 +2,8 @@
 // in index.html and is read from the page at load. Voice: calm and polite (PRODUCT.md). Never "AI", "instant",
 // "perfect", "seamless" or accuracy claims. App features use the app's own words in each language.
 // Each scene whose quoted line would be in the page's own language swaps to another language and city.
+// After editing this file or index.html, run `node _build/build-locales.mjs`: it writes each language's own page
+// (/vi/, /ja/, /ko/, /zh-hans/, /zh-hant/) that search engines index.
 window.TABLETOP_I18N = {
   "vi": {
     "skip": "Bỏ qua, đến nội dung",
