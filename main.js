@@ -5,7 +5,7 @@
   // work before this script runs.
   var STORE_URL = "https://apps.apple.com/app/tabletop-interpreter/id6821405972";
   var LANGS = ["en", "vi", "ja", "ko", "zh-Hans", "zh-Hant"];
-  // Each language is its own page (built by tools/build-locales.mjs), so search engines index every one.
+  // Each language is its own page (built by _build/build-locales.mjs), so search engines index every one.
   var PATHS = { en: "/", vi: "/vi/", ja: "/ja/", ko: "/ko/", "zh-Hans": "/zh-hans/", "zh-Hant": "/zh-hant/" };
   var pageLang = LANGS.indexOf(document.documentElement.lang) >= 0 ? document.documentElement.lang : "en";
 
