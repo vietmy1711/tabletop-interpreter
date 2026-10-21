@@ -703,3 +703,21 @@ details p { padding: 0 0 22px; color: var(--secondary); max-width: 40em; }
 /* Phones: the phone's own "Tabletop" title sits in the part that runs off the table; only its last pixels showed, as a
    stray dash at the crop. */
 @media (max-width: 900px) { .dv__brand { display: none; } .dv__quick { padding-top: 44%; } }
+
+/* Safari: each layer of the screen carries the screen's own rounded corners, so nothing is drawn outside them whether
+   or not the screen clips it (their half, turned 180°, showed light blue in the screen's top corners). Their half is
+   the top half: its rounded corners are its bottom ones before the turn, and its vertical radius doubles (it is half
+   the height). */
+.dv__quick, .dv__cam, .dv__letter { border-radius: inherit; }
+.dv__theirs { border-radius: 0 0 11% 11% / 0 0 10.6% 10.6%; }
+@media (max-width: 900px) { .dv__theirs { border-radius: 0 0 13% 13% / 0 0 12% 12%; } }
+
+/* The language menu: Safari clips letters below the line when the line height is exactly 1 ("English" lost its g). */
+.lang select { line-height: 1.25; padding-top: 2px; padding-bottom: 2px; }
+/* Under another view (Quick Start, the camera, the letter) the conversation's layers step out altogether: drawn
+   beneath on the same curve, their light edge showed as a fringe round the screen's corners. */
+.device:not([data-view="talk"]) .dv__theirs, .device:not([data-view="talk"]) .dv__mine, .device:not([data-view="talk"]) .dv__seam {
+  visibility: hidden; transition: visibility 0s linear .35s;
+}
+/* The camera view's dark screen: the screen beneath it dark too, so no light edge shows round its corners. */
+.device[data-view="cam"] .dv { background: #12161F; }
