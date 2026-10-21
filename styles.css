@@ -699,3 +699,7 @@ details p { padding: 0 0 22px; color: var(--secondary); max-width: 40em; }
   .dv__more { font-size: 4.6cqw; }
   .top__nav { -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); mask-image: linear-gradient(to right, #000 85%, transparent); padding-right: 24px; }
 }
+
+/* Phones: the phone's own "Tabletop" title sits in the part that runs off the table; only its last pixels showed, as a
+   stray dash at the crop. */
+@media (max-width: 900px) { .dv__brand { display: none; } .dv__quick { padding-top: 44%; } }
