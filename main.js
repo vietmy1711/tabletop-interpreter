@@ -60,8 +60,8 @@
     document.querySelectorAll(".js-shot").forEach(function (img) {
       img.src = "/assets/shots/" + current + "-" + img.dataset.shot + ".webp";
     });
-    // The support, privacy and terms pages show one language at a time, chosen by its anchor (#en, #vi, #ja…).
-    document.querySelectorAll(".js-privacy, .js-support, .js-terms").forEach(function (a) {
+    // The support, privacy, terms and What's Coming pages show one language at a time, chosen by its anchor (#en, #vi, #ja…).
+    document.querySelectorAll(".js-privacy, .js-support, .js-terms, .js-coming").forEach(function (a) {
       a.href = a.href.split("#")[0] + "#" + current;
     });
     if (select) select.value = current;

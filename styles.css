@@ -520,6 +520,8 @@ details p { padding: 0 0 22px; color: var(--secondary); max-width: 40em; }
 .foot__row { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; }
 .foot nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 .foot a { color: var(--secondary); }
+/* Footer and source links stand alone, so each gets a full 24px+ target (WCAG 2.5.8). */
+.foot nav a, .cmp__src li a { display: inline-block; padding: 4px 0; }
 
 /* The comparison on a phone: a narrow pinned criterion column, so Tabletop and the next apps show side by side and the
    rest peek in from the edge; a line says the table moves. */

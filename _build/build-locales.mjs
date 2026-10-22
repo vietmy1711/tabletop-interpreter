@@ -73,7 +73,7 @@ function localize(lang) {
   out = out
     .replace(/\/assets\/badges\/en\.svg/g, `/assets/badges/${lang}.svg`)
     .replace(/\/assets\/shots\/en-(\d)\.webp/g, `/assets/shots/${lang}-$1.webp`)
-    .replace(/href="\/(privacy|support|terms)\.html"/g, `href="/$1.html#${lang}"`)
+    .replace(/href="\/(privacy|support|terms|whats-coming)\.html"/g, `href="/$1.html#${lang}"`)
     .replace('<a class="brand" href="/"', `<a class="brand" href="/${dir}/"`)
     .replace(`<option value="${lang}" lang="${lang}">`, `<option value="${lang}" lang="${lang}" selected>`);
 

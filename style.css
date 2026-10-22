@@ -2,12 +2,17 @@
 @media (prefers-color-scheme:dark){:root{--ground:#10182A;--sheet:#1A2B4C;--ink:#EEF2F8;--secondary:#AEB8CA;--blue:#9DB8F2;--seam:#2A3753}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);font:17px/1.55 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}
-.edge{height:8px;background:repeating-linear-gradient(135deg,var(--red) 0 10px,var(--ground) 10px 14px,#1F3F8C 14px 24px,var(--ground) 24px 28px)}
+.edge{height:8px;background:repeating-linear-gradient(135deg,var(--red) 0 10px,var(--ground) 10px 14px,var(--blue) 14px 24px,var(--ground) 24px 28px)}
 main{max-width:680px;margin:0 auto;padding:40px 20px 64px}
 h1{font-size:32px;line-height:1.2;margin:0 0 6px}
 h2{font-size:20px;margin:36px 0 8px}
-p,li{color:var(--ink)} .quiet{color:var(--secondary)}
-a{color:var(--blue)}
+p,li{color:var(--ink)} .quiet,.quiet p,.quiet li{color:var(--secondary)}
+a{color:var(--blue);text-underline-offset:.18em}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+::selection{background:var(--sheet);color:var(--ink)}
+:lang(ko){word-break:keep-all}
+:lang(ja),:lang(zh-Hans),:lang(zh-Hant){line-break:strict}
+:lang(ja) h1,:lang(ja) h2,:lang(ja) p,:lang(ja) li,:lang(ja) span{word-break:auto-phrase}
 nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:28px;font-size:15px}
 nav a,.langs a{white-space:nowrap}
 
