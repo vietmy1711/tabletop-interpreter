@@ -11,12 +11,13 @@ L["en"] = dict(home="/", support="Support", privacy="Privacy Policy", terms="Ter
   title="What's Coming",
   lede="One app for the whole trip: before you go, at the counter, and after. Here is what we're building next. Plans change with what you tell us.",
   updated="Updated October 2026",
-  stages=[("Being built now", [
-      ("Better hearing", "In noisy places, and on one-word replies like “yes” or “OK”, so each reply is understood in the right language."),
+  shipped=("New in 1.1", [
+      ("Better hearing", "In noisy places, and on one-word replies like “yes” or “OK”, so each reply is understood in the right language. A beta: turn on Hearing Better in Settings › Conversations."),
       ("Getting ready for a trip", "Say where you're going. Tabletop downloads what it needs, suggests phrases for the trip, and checks everything works offline before you leave."),
-      ("Split Earbuds", "Share one pair of earbuds, and each of you hears your own language in one ear.")]),
+      ("Split Earbuds", "Share one pair of earbuds, and each of you hears your own language in one ear. A beta: turn it on in Settings › Conversations.")]),
+  stages=[("Being built now", [
+      ("Reminders from what you were told", "Follow-ups from a conversation, like a pharmacist's dose or a supplier's delivery date, become reminders, with the numbers checked against what was said.")]),
     ("Coming next", [
-      ("Reminders from what you were told", "Follow-ups from a conversation, like a pharmacist's dose or a supplier's delivery date, become reminders, with the numbers checked against what was said."),
       ("Translation for words, labels and things", "Type a word, or point the camera at a label or an object, to see what it's called, how to say it and how it's used. Save it to your words. Pictures are never kept."),
       ("Phrases from your conversations", "The best things the other person said, kept as phrases you can learn."),
       ("Translation with context", "Each line translated with what was said just before it, for fewer wrong words.")]),
@@ -37,12 +38,13 @@ L["vi"] = dict(home="/vi/", support="Hỗ trợ", privacy="Chính sách quyền 
   title="Những gì sắp tới",
   lede="Một ứng dụng cho cả chuyến đi: trước khi đi, tại quầy và sau đó. Đây là những gì chúng tôi đang làm tiếp theo. Kế hoạch sẽ thay đổi theo góp ý của bạn.",
   updated="Cập nhật tháng 10 năm 2026",
-  stages=[("Đang làm", [
-      ("Nghe rõ hơn", "Ở nơi ồn ào và với những câu trả lời một chữ như “vâng” hay “OK”, để mỗi câu được hiểu đúng ngôn ngữ."),
+  shipped=("Mới trong 1.1", [
+      ("Nghe rõ hơn", "Ở nơi ồn ào và với những câu trả lời một chữ như “vâng” hay “OK”, để mỗi câu được hiểu đúng ngôn ngữ. Bản thử nghiệm: bật Nghe rõ hơn trong Cài đặt › Cuộc trò chuyện."),
       ("Chuẩn bị cho chuyến đi", "Cho biết bạn sắp đi đâu. Tabletop tải sẵn những gì cần thiết, gợi ý các câu dùng trong chuyến đi và kiểm tra để chắc mọi thứ chạy được khi không có mạng trước lúc bạn lên đường."),
-      ("Chia tai nghe", "Dùng chung một cặp tai nghe, mỗi người nghe ngôn ngữ của mình ở một bên tai.")]),
+      ("Chia tai nghe", "Dùng chung một cặp tai nghe, mỗi người nghe ngôn ngữ của mình ở một bên tai. Bản thử nghiệm: bật trong Cài đặt › Cuộc trò chuyện.")]),
+  stages=[("Đang làm", [
+      ("Lời nhắc từ những gì bạn được dặn", "Việc cần làm từ cuộc trò chuyện, như liều thuốc dược sĩ dặn hay ngày giao hàng của nhà cung cấp, trở thành lời nhắc, với các con số được đối chiếu với những gì đã nói.")]),
     ("Sắp tới", [
-      ("Lời nhắc từ những gì bạn được dặn", "Việc cần làm từ cuộc trò chuyện, như liều thuốc dược sĩ dặn hay ngày giao hàng của nhà cung cấp, trở thành lời nhắc, với các con số được đối chiếu với những gì đã nói."),
       ("Dịch từ, nhãn và đồ vật", "Gõ một từ, hoặc hướng camera vào một nhãn hay một đồ vật, để biết nó gọi là gì, nói thế nào và dùng ra sao. Lưu vào danh sách từ của bạn. Không bao giờ lưu hình ảnh."),
       ("Câu học từ cuộc trò chuyện", "Những câu hay nhất người kia đã nói, giữ lại thành câu để bạn học."),
       ("Bản dịch theo ngữ cảnh", "Mỗi câu được dịch cùng với câu vừa nói trước đó, để ít dịch sai hơn.")]),
@@ -63,12 +65,13 @@ L["ja"] = dict(home="/ja/", support="サポート", privacy="プライバシー�
   title="今後の予定",
   lede="旅のすべてをひとつのアプリで。出発前も、カウンターでも、そのあとも。次に取り組んでいることをご紹介します。いただいたご意見によって計画は変わります。",
   updated="2026年10月更新",
-  stages=[("開発中", [
-      ("聞き取りの向上", "騒がしい場所でも、「はい」や「OK」のようなひと言の返事でも、正しい言語で聞き取れるように。"),
+  shipped=("1.1の新機能", [
+      ("聞き取りの向上", "騒がしい場所でも、「はい」や「OK」のようなひと言の返事でも、正しい言語で聞き取れるように。ベータ版：［設定］›［会話］で［聞き取り改善］をオンにしてください。"),
       ("旅の準備", "行き先を伝えるだけで、必要なものをダウンロードし、旅で使えるフレーズを提案し、出発前にオフラインで動くことを確認します。"),
-      ("イヤホンを分け合う", "1組のイヤホンを共有し、片耳ずつそれぞれの言語で聞けます。")]),
+      ("イヤホンを分け合う", "1組のイヤホンを共有し、片耳ずつそれぞれの言語で聞けます。ベータ版：［設定］›［会話］でオンにできます。")]),
+  stages=[("開発中", [
+      ("言われたことをリマインダーに", "薬剤師に言われた飲み方や仕入れ先の納品日など、会話から生まれたやることをリマインダーに。数字は実際の発言と照らし合わせて確認します。")]),
     ("次に予定", [
-      ("言われたことをリマインダーに", "薬剤師に言われた飲み方や仕入れ先の納品日など、会話から生まれたやることをリマインダーに。数字は実際の発言と照らし合わせて確認します。"),
       ("言葉・ラベル・物の翻訳", "言葉を入力するか、ラベルや物にカメラを向けるだけで、呼び方、言い方、使い方がわかります。単語として保存もできます。画像は保存しません。"),
       ("会話から学ぶフレーズ", "相手が言った印象的なひと言を、覚えたいフレーズとして残せます。"),
       ("文脈を踏まえた翻訳", "直前の発言を踏まえて訳すので、誤訳が減ります。")]),
@@ -89,12 +92,13 @@ L["ko"] = dict(home="/ko/", support="지원", privacy="개인정보 처리방침
   title="앞으로의 계획",
   lede="여행의 모든 순간을 하나의 앱으로. 떠나기 전에도, 카운터 앞에서도, 그 후에도. 다음으로 만들고 있는 것을 소개합니다. 계획은 여러분의 의견에 따라 바뀝니다.",
   updated="2026년 10월 업데이트",
-  stages=[("개발 중", [
-      ("더 정확한 듣기", "시끄러운 곳에서도, “네”나 “OK” 같은 한마디 대답도 올바른 언어로 알아듣도록."),
+  shipped=("1.1의 새 기능", [
+      ("더 정확한 듣기", "시끄러운 곳에서도, “네”나 “OK” 같은 한마디 대답도 올바른 언어로 알아듣도록. 베타: 설정 › 대화에서 더 잘 듣기를 켜세요."),
       ("여행 준비", "어디로 가는지 알려 주세요. Tabletop이 필요한 것을 내려받고, 여행에 쓸 문장을 제안하고, 떠나기 전에 오프라인에서 잘 작동하는지 확인합니다."),
-      ("이어폰 나눠 쓰기", "이어폰 한 쌍을 함께 쓰고, 한쪽 귀로 각자의 언어를 듣습니다.")]),
+      ("이어폰 나눠 쓰기", "이어폰 한 쌍을 함께 쓰고, 한쪽 귀로 각자의 언어를 듣습니다. 베타: 설정 › 대화에서 켤 수 있습니다.")]),
+  stages=[("개발 중", [
+      ("들은 내용을 알림으로", "약사가 알려 준 복용법이나 공급업체의 납품일처럼, 대화에서 나온 할 일을 알림으로 만듭니다. 숫자는 실제로 한 말과 대조해 확인합니다.")]),
     ("다음 계획", [
-      ("들은 내용을 알림으로", "약사가 알려 준 복용법이나 공급업체의 납품일처럼, 대화에서 나온 할 일을 알림으로 만듭니다. 숫자는 실제로 한 말과 대조해 확인합니다."),
       ("단어·라벨·물건 번역", "단어를 입력하거나, 라벨이나 물건에 카메라를 대면 이름, 말하는 법, 쓰는 법을 알려 줍니다. 단어장에 저장할 수 있습니다. 사진은 저장하지 않습니다."),
       ("대화에서 배우는 문장", "상대가 한 좋은 말을 배울 문장으로 남겨 둡니다."),
       ("맥락을 고려한 번역", "바로 앞에 한 말을 함께 고려해 번역하므로 오역이 줄어듭니다.")]),
@@ -115,12 +119,13 @@ L["zh-Hans"] = dict(home="/zh-hans/", support="支持", privacy="隐私政策", 
   title="接下来的计划",
   lede="一个 App 陪你走完整趟旅程：出发前、柜台前，以及之后。以下是我们接下来要做的。计划会根据你的反馈调整。",
   updated="2026 年 10 月更新",
-  stages=[("正在开发", [
-      ("听得更清楚", "在嘈杂的地方，或是“好”“OK”这样只有一个词的回答，也能听成正确的语言。"),
+  shipped=("1.1 新功能", [
+      ("听得更清楚", "在嘈杂的地方，或是“好”“OK”这样只有一个词的回答，也能听成正确的语言。测试版：在“设置”›“对话”中打开“聆听增强”。"),
       ("旅行准备", "告诉 Tabletop 你要去哪里。它会下载所需的内容，推荐旅途中用得上的句子，并在你出发前确认离线也能正常使用。"),
-      ("分享耳机", "两人共用一副耳机，各自一只耳朵听自己的语言。")]),
+      ("分享耳机", "两人共用一副耳机，各自一只耳朵听自己的语言。测试版：可在“设置”›“对话”中打开。")]),
+  stages=[("正在开发", [
+      ("把交代的事变成提醒", "对话中的待办事项，比如药剂师交代的用法或供应商的交货日期，会变成提醒，数字会与实际说过的话核对。")]),
     ("接下来", [
-      ("把交代的事变成提醒", "对话中的待办事项，比如药剂师交代的用法或供应商的交货日期，会变成提醒，数字会与实际说过的话核对。"),
       ("翻译词语、标签和物品", "输入一个词，或用相机对准标签或物品，就能知道它叫什么、怎么说、怎么用。可以保存到你的单词里。绝不保存图片。"),
       ("从对话中学句子", "把对方说过的精彩句子留下来，作为要学的句子。"),
       ("结合上下文的翻译", "每句话都结合前一句一起翻译，减少误译。")]),
@@ -141,12 +146,13 @@ L["zh-Hant"] = dict(home="/zh-hant/", support="支援", privacy="隱私權政策
   title="接下來的計畫",
   lede="一個 App 陪你走完整趟旅程：出發前、櫃檯前，以及之後。以下是我們接下來要做的。計畫會依照你的回饋調整。",
   updated="2026 年 10 月更新",
-  stages=[("正在開發", [
-      ("聽得更清楚", "在吵雜的地方，或是「好」「OK」這樣只有一個詞的回答，也能聽成正確的語言。"),
+  shipped=("1.1 新功能", [
+      ("聽得更清楚", "在吵雜的地方，或是「好」「OK」這樣只有一個詞的回答，也能聽成正確的語言。測試版：在「設定」›「對話」中開啟「聆聽增強」。"),
       ("旅行準備", "告訴 Tabletop 你要去哪裡。它會下載所需的內容，推薦旅途中用得到的句子，並在你出發前確認離線也能正常使用。"),
-      ("共用耳機", "兩人共用一副耳機，各自一隻耳朵聽自己的語言。")]),
+      ("共用耳機", "兩人共用一副耳機，各自一隻耳朵聽自己的語言。測試版：可在「設定」›「對話」中開啟。")]),
+  stages=[("正在開發", [
+      ("把交代的事變成提醒", "對話中的待辦事項，例如藥師交代的用法或供應商的交貨日期，會變成提醒，數字會與實際說過的話核對。")]),
     ("接下來", [
-      ("把交代的事變成提醒", "對話中的待辦事項，例如藥師交代的用法或供應商的交貨日期，會變成提醒，數字會與實際說過的話核對。"),
       ("翻譯詞語、標籤和物品", "輸入一個詞，或用相機對準標籤或物品，就能知道它叫什麼、怎麼說、怎麼用。可以儲存到你的單字裡。絕不儲存圖片。"),
       ("從對話中學句子", "把對方說過的精彩句子留下來，作為要學的句子。"),
       ("結合上下文的翻譯", "每句話都結合前一句一起翻譯，減少誤譯。")]),
@@ -178,6 +184,9 @@ def section(code):
            f'<h1>{E(t["title"])}</h1>',
            f'<p class="lede">{E(t["lede"])}</p>',
            f'<p class="updated"><time datetime="2026-10">{E(t["updated"])}</time></p>']
+    head, shipped = t["shipped"]
+    out.append(f'<h2 class="cue">{E(head)}</h2>')
+    out.append('<ul class="coming shipped">' + "".join(f'<li><strong>{E(a)}</strong><span>{E(b)}</span></li>' for a, b in shipped) + '</ul>')
     for i, (stage, items) in enumerate(t["stages"]):
         cls = "coming now" if i == 0 else "coming"
         out.append(f'<h2 class="cue">{E(stage)}</h2>')
