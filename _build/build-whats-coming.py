@@ -16,15 +16,15 @@ L["en"] = dict(home="/", support="Support", privacy="Privacy Policy", terms="Ter
       ("Getting ready for a trip", "Say where you're going. Tabletop downloads what it needs, suggests phrases for the trip, and checks everything works offline before you leave."),
       ("Split Earbuds", "Share one pair of earbuds, and each of you hears your own language in one ear. A beta: turn it on in Settings › Conversations.")]),
   stages=[("Being built now", [
-      ("Reminders from what you were told", "Follow-ups from a conversation, like a pharmacist's dose or a supplier's delivery date, become reminders, with the numbers checked against what was said.")]),
+      ("Reminders from what you were told", "Follow-ups from a conversation, like a pharmacist's dose or a supplier's delivery date, become reminders, with the numbers checked against what was said."),
+      ("Tabletop for iPad", "The same conversation on a larger screen lying flat between you, with room for bigger text on both sides.")]),
     ("Coming next", [
       ("Translation for words, labels and things", "Type a word, or point the camera at a label or an object, to see what it's called, how to say it and how it's used. Save it to your words. Pictures are never kept."),
       ("Phrases from your conversations", "The best things the other person said, kept as phrases you can learn."),
       ("Translation with context", "Each line translated with what was said just before it, for fewer wrong words.")]),
     ("Later", [
       ("Typing in a conversation", "For a room too loud to hear you, or when speaking isn't possible. Either person can type, and Tabletop can read it aloud."),
-      ("Captions only", "No voice and larger text, for deaf and hard-of-hearing people and for quiet rooms."),
-      ("Tabletop for iPad", "The same conversation on a larger screen lying flat between you, with room for bigger text on both sides.")])],
+      ("Captions only", "No voice and larger text, for deaf and hard-of-hearing people and for quiet rooms.")])],
   ideas_h="Ideas we're weighing",
   ideas=["Tabletop for Android", "Polite forms of address", "Practising a conversation again", "More languages, such as Cantonese, Malay and Ukrainian", "Conversations with three people"],
   ask_h="Tell us what you'd use",
@@ -43,15 +43,15 @@ L["vi"] = dict(home="/vi/", support="Hỗ trợ", privacy="Chính sách quyền 
       ("Chuẩn bị cho chuyến đi", "Cho biết bạn sắp đi đâu. Tabletop tải sẵn những gì cần thiết, gợi ý các câu dùng trong chuyến đi và kiểm tra để chắc mọi thứ chạy được khi không có mạng trước lúc bạn lên đường."),
       ("Chia tai nghe", "Dùng chung một cặp tai nghe, mỗi người nghe ngôn ngữ của mình ở một bên tai. Bản thử nghiệm: bật trong Cài đặt › Cuộc trò chuyện.")]),
   stages=[("Đang làm", [
-      ("Lời nhắc từ những gì bạn được dặn", "Việc cần làm từ cuộc trò chuyện, như liều thuốc dược sĩ dặn hay ngày giao hàng của nhà cung cấp, trở thành lời nhắc, với các con số được đối chiếu với những gì đã nói.")]),
+      ("Lời nhắc từ những gì bạn được dặn", "Việc cần làm từ cuộc trò chuyện, như liều thuốc dược sĩ dặn hay ngày giao hàng của nhà cung cấp, trở thành lời nhắc, với các con số được đối chiếu với những gì đã nói."),
+      ("Tabletop cho iPad", "Cùng cuộc trò chuyện trên màn hình lớn hơn, đặt nằm giữa hai người, đủ chỗ cho chữ lớn hơn ở cả hai bên.")]),
     ("Sắp tới", [
       ("Dịch từ, nhãn và đồ vật", "Gõ một từ, hoặc hướng camera vào một nhãn hay một đồ vật, để biết nó gọi là gì, nói thế nào và dùng ra sao. Lưu vào danh sách từ của bạn. Không bao giờ lưu hình ảnh."),
       ("Câu học từ cuộc trò chuyện", "Những câu hay nhất người kia đã nói, giữ lại thành câu để bạn học."),
       ("Bản dịch theo ngữ cảnh", "Mỗi câu được dịch cùng với câu vừa nói trước đó, để ít dịch sai hơn.")]),
     ("Sau này", [
       ("Gõ chữ trong cuộc trò chuyện", "Khi phòng quá ồn, hoặc khi không thể nói. Cả hai người đều có thể gõ, và Tabletop có thể đọc to lên."),
-      ("Chỉ phụ đề", "Không đọc thành tiếng, chữ lớn hơn, dành cho người khiếm thính và cho nơi cần yên lặng."),
-      ("Tabletop cho iPad", "Cùng cuộc trò chuyện trên màn hình lớn hơn, đặt nằm giữa hai người, đủ chỗ cho chữ lớn hơn ở cả hai bên.")])],
+      ("Chỉ phụ đề", "Không đọc thành tiếng, chữ lớn hơn, dành cho người khiếm thính và cho nơi cần yên lặng.")])],
   ideas_h="Những ý tưởng đang cân nhắc",
   ideas=["Tabletop cho Android", "Cách xưng hô lịch sự", "Luyện lại một cuộc trò chuyện", "Thêm ngôn ngữ, như tiếng Quảng Đông, tiếng Mã Lai và tiếng Ukraina", "Trò chuyện ba người"],
   ask_h="Cho chúng tôi biết bạn sẽ dùng gì",
@@ -70,15 +70,15 @@ L["ja"] = dict(home="/ja/", support="サポート", privacy="プライバシー�
       ("旅の準備", "行き先を伝えるだけで、必要なものをダウンロードし、旅で使えるフレーズを提案し、出発前にオフラインで動くことを確認します。"),
       ("イヤホンを分け合う", "1組のイヤホンを共有し、片耳ずつそれぞれの言語で聞けます。ベータ版：［設定］›［会話］でオンにできます。")]),
   stages=[("開発中", [
-      ("言われたことをリマインダーに", "薬剤師に言われた飲み方や仕入れ先の納品日など、会話から生まれたやることをリマインダーに。数字は実際の発言と照らし合わせて確認します。")]),
+      ("言われたことをリマインダーに", "薬剤師に言われた飲み方や仕入れ先の納品日など、会話から生まれたやることをリマインダーに。数字は実際の発言と照らし合わせて確認します。"),
+      ("iPad版Tabletop", "同じ会話を、二人のあいだに置いた大きな画面で。どちらの側も文字を大きく表示できます。")]),
     ("次に予定", [
       ("言葉・ラベル・物の翻訳", "言葉を入力するか、ラベルや物にカメラを向けるだけで、呼び方、言い方、使い方がわかります。単語として保存もできます。画像は保存しません。"),
       ("会話から学ぶフレーズ", "相手が言った印象的なひと言を、覚えたいフレーズとして残せます。"),
       ("文脈を踏まえた翻訳", "直前の発言を踏まえて訳すので、誤訳が減ります。")]),
     ("その先", [
       ("会話中の文字入力", "声が届かないほど騒がしいときや、話すことができないときに。どちらの人も入力でき、Tabletopが読み上げることもできます。"),
-      ("字幕のみ", "音声なし、より大きな文字で。耳の不自由な方や、静かな場所のために。"),
-      ("iPad版Tabletop", "同じ会話を、二人のあいだに置いた大きな画面で。どちらの側も文字を大きく表示できます。")])],
+      ("字幕のみ", "音声なし、より大きな文字で。耳の不自由な方や、静かな場所のために。")])],
   ideas_h="検討中のアイデア",
   ideas=["Android版Tabletop", "ていねいな呼びかけ", "会話のおさらい練習", "広東語、マレー語、ウクライナ語などの言語の追加", "3人での会話"],
   ask_h="使いたい機能を教えてください",
@@ -97,15 +97,15 @@ L["ko"] = dict(home="/ko/", support="지원", privacy="개인정보 처리방침
       ("여행 준비", "어디로 가는지 알려 주세요. Tabletop이 필요한 것을 내려받고, 여행에 쓸 문장을 제안하고, 떠나기 전에 오프라인에서 잘 작동하는지 확인합니다."),
       ("이어폰 나눠 쓰기", "이어폰 한 쌍을 함께 쓰고, 한쪽 귀로 각자의 언어를 듣습니다. 베타: 설정 › 대화에서 켤 수 있습니다.")]),
   stages=[("개발 중", [
-      ("들은 내용을 알림으로", "약사가 알려 준 복용법이나 공급업체의 납품일처럼, 대화에서 나온 할 일을 알림으로 만듭니다. 숫자는 실제로 한 말과 대조해 확인합니다.")]),
+      ("들은 내용을 알림으로", "약사가 알려 준 복용법이나 공급업체의 납품일처럼, 대화에서 나온 할 일을 알림으로 만듭니다. 숫자는 실제로 한 말과 대조해 확인합니다."),
+      ("iPad용 Tabletop", "두 사람 사이에 놓인 더 큰 화면에서 같은 대화를 나눕니다. 양쪽 모두 글자를 더 크게 볼 수 있습니다.")]),
     ("다음 계획", [
       ("단어·라벨·물건 번역", "단어를 입력하거나, 라벨이나 물건에 카메라를 대면 이름, 말하는 법, 쓰는 법을 알려 줍니다. 단어장에 저장할 수 있습니다. 사진은 저장하지 않습니다."),
       ("대화에서 배우는 문장", "상대가 한 좋은 말을 배울 문장으로 남겨 둡니다."),
       ("맥락을 고려한 번역", "바로 앞에 한 말을 함께 고려해 번역하므로 오역이 줄어듭니다.")]),
     ("그 이후", [
       ("대화 중 입력", "목소리가 들리지 않을 만큼 시끄럽거나, 말을 할 수 없을 때. 두 사람 모두 입력할 수 있고, Tabletop이 소리 내어 읽어 줄 수도 있습니다."),
-      ("자막만", "음성 없이 더 큰 글자로. 청각 장애가 있는 분과 조용한 곳을 위해."),
-      ("iPad용 Tabletop", "두 사람 사이에 놓인 더 큰 화면에서 같은 대화를 나눕니다. 양쪽 모두 글자를 더 크게 볼 수 있습니다.")])],
+      ("자막만", "음성 없이 더 큰 글자로. 청각 장애가 있는 분과 조용한 곳을 위해.")])],
   ideas_h="검토 중인 아이디어",
   ideas=["Android용 Tabletop", "정중한 호칭", "대화 다시 연습하기", "광둥어, 말레이어, 우크라이나어 등 언어 추가", "세 사람 대화"],
   ask_h="어떤 기능을 쓰고 싶은지 알려 주세요",
@@ -124,15 +124,15 @@ L["zh-Hans"] = dict(home="/zh-hans/", support="支持", privacy="隐私政策", 
       ("旅行准备", "告诉 Tabletop 你要去哪里。它会下载所需的内容，推荐旅途中用得上的句子，并在你出发前确认离线也能正常使用。"),
       ("分享耳机", "两人共用一副耳机，各自一只耳朵听自己的语言。测试版：可在“设置”›“对话”中打开。")]),
   stages=[("正在开发", [
-      ("把交代的事变成提醒", "对话中的待办事项，比如药剂师交代的用法或供应商的交货日期，会变成提醒，数字会与实际说过的话核对。")]),
+      ("把交代的事变成提醒", "对话中的待办事项，比如药剂师交代的用法或供应商的交货日期，会变成提醒，数字会与实际说过的话核对。"),
+      ("iPad 版 Tabletop", "同样的对话，放在你们之间更大的屏幕上，两边的文字都能更大。")]),
     ("接下来", [
       ("翻译词语、标签和物品", "输入一个词，或用相机对准标签或物品，就能知道它叫什么、怎么说、怎么用。可以保存到你的单词里。绝不保存图片。"),
       ("从对话中学句子", "把对方说过的精彩句子留下来，作为要学的句子。"),
       ("结合上下文的翻译", "每句话都结合前一句一起翻译，减少误译。")]),
     ("之后", [
       ("对话中打字", "环境太吵听不见你，或是无法开口时。双方都能打字，Tabletop 也可以朗读出来。"),
-      ("仅字幕", "不发声，文字更大，适合听障人士和安静的场所。"),
-      ("iPad 版 Tabletop", "同样的对话，放在你们之间更大的屏幕上，两边的文字都能更大。")])],
+      ("仅字幕", "不发声，文字更大，适合听障人士和安静的场所。")])],
   ideas_h="正在考虑的想法",
   ideas=["Android 版 Tabletop", "礼貌的称呼", "重新练习一次对话", "增加更多语言，如粤语、马来语和乌克兰语", "三人对话"],
   ask_h="告诉我们你会用哪些",
@@ -151,15 +151,15 @@ L["zh-Hant"] = dict(home="/zh-hant/", support="支援", privacy="隱私權政策
       ("旅行準備", "告訴 Tabletop 你要去哪裡。它會下載所需的內容，推薦旅途中用得到的句子，並在你出發前確認離線也能正常使用。"),
       ("共用耳機", "兩人共用一副耳機，各自一隻耳朵聽自己的語言。測試版：可在「設定」›「對話」中開啟。")]),
   stages=[("正在開發", [
-      ("把交代的事變成提醒", "對話中的待辦事項，例如藥師交代的用法或供應商的交貨日期，會變成提醒，數字會與實際說過的話核對。")]),
+      ("把交代的事變成提醒", "對話中的待辦事項，例如藥師交代的用法或供應商的交貨日期，會變成提醒，數字會與實際說過的話核對。"),
+      ("iPad 版 Tabletop", "同樣的對話，放在你們之間更大的螢幕上，兩邊的文字都能更大。")]),
     ("接下來", [
       ("翻譯詞語、標籤和物品", "輸入一個詞，或用相機對準標籤或物品，就能知道它叫什麼、怎麼說、怎麼用。可以儲存到你的單字裡。絕不儲存圖片。"),
       ("從對話中學句子", "把對方說過的精彩句子留下來，作為要學的句子。"),
       ("結合上下文的翻譯", "每句話都結合前一句一起翻譯，減少誤譯。")]),
     ("之後", [
       ("對話中打字", "環境太吵聽不到你，或是無法開口時。雙方都能打字，Tabletop 也可以朗讀出來。"),
-      ("僅字幕", "不發聲，文字更大，適合聽障人士和安靜的場所。"),
-      ("iPad 版 Tabletop", "同樣的對話，放在你們之間更大的螢幕上，兩邊的文字都能更大。")])],
+      ("僅字幕", "不發聲，文字更大，適合聽障人士和安靜的場所。")])],
   ideas_h="正在考慮的想法",
   ideas=["Android 版 Tabletop", "禮貌的稱呼", "重新練習一次對話", "增加更多語言，例如粵語、馬來語和烏克蘭語", "三人對話"],
   ask_h="告訴我們你會用哪些",
