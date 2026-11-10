@@ -11,21 +11,21 @@ L["en"] = dict(home="/", support="Support", privacy="Privacy Policy", terms="Ter
   title="What's Coming",
   lede="One app for the whole trip: before you go, at the counter, and after. Here is what we're building next. Plans change with what you tell us.",
   updated="Updated November 2026",
-  shipped=("New in 1.3, 1.2 and 1.1", [
+  shipped=("New in 1.4, 1.3, 1.2 and 1.1", [
+      ("Phrases from your conversations", "Keep what the other person said as phrases to learn, with their reading, said slowly and word by word. Say them out loud and Tabletop tells you when it understood. Tabletop Pro, with three phrases to practise free."),
       ("Look Up", "Type or paste a word or sentence, point the camera at print, or say it, and Tabletop explains it in your language, on the device. Tap any word in a sentence to look it up, or share text to it from another app. Tabletop Pro adds the full dictionary entry."),
       ("Tabletop for iPad", "The same conversation on a larger screen lying flat between you, with room for bigger text on both sides."),
       ("Better hearing", "In noisy places, and on one-word replies like “yes” or “OK”, so each reply is understood in the right language. A beta: turn on Hearing Better in Settings › Conversations."),
       ("Getting ready for a trip", "Say where you're going. Tabletop downloads what it needs, suggests phrases for the trip, and checks everything works offline before you leave."),
       ("Split Earbuds", "Share one pair of earbuds, and each of you hears your own language in one ear. A beta: turn it on in Settings › Conversations.")]),
   stages=[("Being built now", [
-      ("Reminders from what you were told", "Follow-ups from a conversation become reminders and calendar events, checked against what was said. Meetings with a date are in beta now (Settings › Conversations).")]),
-    ("Coming next", [
-      ("Name things with the camera", "Point the camera at an object to see what it's called and how to say it. Pictures are never kept."),
-      ("Phrases from your conversations", "The best things the other person said, kept as phrases you can learn."),
-      ("Translation with context", "Each line translated with what was said just before it, for fewer wrong words.")]),
-    ("Later", [
+      ("Reminders from what you were told", "Follow-ups from a conversation become reminders and calendar events, checked against what was said. Meetings with a date are in beta now (Settings › Conversations)."),
       ("Typing in a conversation", "For a room too loud to hear you, or when speaking isn't possible. Either person can type, and Tabletop can read it aloud."),
-      ("Captions only", "No voice and larger text, for deaf and hard-of-hearing people and for quiet rooms.")])],
+      ("Captions only", "No voice and larger text, for deaf and hard-of-hearing people and for quiet rooms.")]),
+    ("Coming next", [
+      ("Name things with the camera", "Point the camera at an object to see what it's called and how to say it. Pictures are never kept.")]),
+    ("Later", [
+      ("Translation with context", "Each line translated with what was said just before it, for fewer wrong words.")])],
   ideas_h="Ideas we're weighing",
   ideas=["Tabletop for Android", "Polite forms of address", "Practising a conversation again", "More languages, such as Cantonese, Malay and Ukrainian", "Conversations with three people"],
   ask_h="Tell us what you'd use",
@@ -39,21 +39,21 @@ L["vi"] = dict(home="/vi/", support="Hỗ trợ", privacy="Chính sách quyền 
   title="Những gì sắp tới",
   lede="Một ứng dụng cho cả chuyến đi: trước khi đi, tại quầy và sau đó. Đây là những gì chúng tôi đang làm tiếp theo. Kế hoạch sẽ thay đổi theo góp ý của bạn.",
   updated="Cập nhật tháng 11 năm 2026",
-  shipped=("Mới trong 1.3, 1.2 và 1.1", [
+  shipped=("Mới trong 1.4, 1.3, 1.2 và 1.1", [
+      ("Câu học từ cuộc trò chuyện", "Giữ những câu người kia đã nói thành câu để học, có cách đọc, nghe chậm và từng từ một. Nói thành tiếng và Tabletop cho bạn biết khi nó đã hiểu. Có trong Tabletop Pro, luyện miễn phí ba câu."),
       ("Tra từ", "Gõ hoặc dán một từ hay một câu, hướng camera vào chữ in, hoặc nói, và Tabletop giải thích bằng ngôn ngữ của bạn, ngay trên máy. Chạm vào bất kỳ từ nào trong câu để tra, hoặc chia sẻ chữ từ ứng dụng khác sang Tabletop. Tabletop Pro có thêm mục từ điển đầy đủ."),
       ("Tabletop cho iPad", "Cùng cuộc trò chuyện trên màn hình lớn hơn, đặt nằm giữa hai người, đủ chỗ cho chữ lớn hơn ở cả hai bên."),
       ("Nghe rõ hơn", "Ở nơi ồn ào và với những câu trả lời một chữ như “vâng” hay “OK”, để mỗi câu được hiểu đúng ngôn ngữ. Bản thử nghiệm: bật Nghe rõ hơn trong Cài đặt › Cuộc trò chuyện."),
       ("Chuẩn bị cho chuyến đi", "Cho biết bạn sắp đi đâu. Tabletop tải sẵn những gì cần thiết, gợi ý các câu dùng trong chuyến đi và kiểm tra để chắc mọi thứ chạy được khi không có mạng trước lúc bạn lên đường."),
       ("Chia tai nghe", "Dùng chung một cặp tai nghe, mỗi người nghe ngôn ngữ của mình ở một bên tai. Bản thử nghiệm: bật trong Cài đặt › Cuộc trò chuyện.")]),
   stages=[("Đang làm", [
-      ("Lời nhắc từ những gì bạn được dặn", "Việc cần làm từ cuộc trò chuyện trở thành lời nhắc và sự kiện trong lịch, được đối chiếu với những gì đã nói. Các cuộc hẹn có ngày cụ thể đã có bản thử nghiệm (Cài đặt › Cuộc trò chuyện).")]),
-    ("Sắp tới", [
-      ("Gọi tên đồ vật bằng camera", "Hướng camera vào một đồ vật để biết nó gọi là gì và nói thế nào. Không bao giờ lưu hình ảnh."),
-      ("Câu học từ cuộc trò chuyện", "Những câu hay nhất người kia đã nói, giữ lại thành câu để bạn học."),
-      ("Bản dịch theo ngữ cảnh", "Mỗi câu được dịch cùng với câu vừa nói trước đó, để ít dịch sai hơn.")]),
-    ("Sau này", [
+      ("Lời nhắc từ những gì bạn được dặn", "Việc cần làm từ cuộc trò chuyện trở thành lời nhắc và sự kiện trong lịch, được đối chiếu với những gì đã nói. Các cuộc hẹn có ngày cụ thể đã có bản thử nghiệm (Cài đặt › Cuộc trò chuyện)."),
       ("Gõ chữ trong cuộc trò chuyện", "Khi phòng quá ồn, hoặc khi không thể nói. Cả hai người đều có thể gõ, và Tabletop có thể đọc to lên."),
-      ("Chỉ phụ đề", "Không đọc thành tiếng, chữ lớn hơn, dành cho người khiếm thính và cho nơi cần yên lặng.")])],
+      ("Chỉ phụ đề", "Không đọc thành tiếng, chữ lớn hơn, dành cho người khiếm thính và cho nơi cần yên lặng.")]),
+    ("Sắp tới", [
+      ("Gọi tên đồ vật bằng camera", "Hướng camera vào một đồ vật để biết nó gọi là gì và nói thế nào. Không bao giờ lưu hình ảnh.")]),
+    ("Sau này", [
+      ("Bản dịch theo ngữ cảnh", "Mỗi câu được dịch cùng với câu vừa nói trước đó, để ít dịch sai hơn.")])],
   ideas_h="Những ý tưởng đang cân nhắc",
   ideas=["Tabletop cho Android", "Cách xưng hô lịch sự", "Luyện lại một cuộc trò chuyện", "Thêm ngôn ngữ, như tiếng Quảng Đông, tiếng Mã Lai và tiếng Ukraina", "Trò chuyện ba người"],
   ask_h="Cho chúng tôi biết bạn sẽ dùng gì",
@@ -67,21 +67,21 @@ L["ja"] = dict(home="/ja/", support="サポート", privacy="プライバシー�
   title="今後の予定",
   lede="旅のすべてをひとつのアプリで。出発前も、カウンターでも、そのあとも。次に取り組んでいることをご紹介します。いただいたご意見によって計画は変わります。",
   updated="2026年11月更新",
-  shipped=("1.3、1.2、1.1の新機能", [
+  shipped=("1.4、1.3、1.2、1.1の新機能", [
+      ("会話から学ぶフレーズ", "相手が話した言葉を、読み方つきで覚えるフレーズに。ゆっくり、単語ごとに聞けます。声に出して言うと、伝わったかどうかをTabletopが教えます。Tabletop Proの機能で、3つのフレーズまで無料で練習できます。"),
       ("調べる", "単語や文を入力・ペーストする、印刷物にカメラを向ける、または話すだけで、あなたの言語で説明します。すべて端末の中で。文の中の単語はタップして調べられ、ほかのアプリから文字を共有することもできます。Tabletop Proでは辞書の全項目が加わります。"),
       ("iPad版Tabletop", "同じ会話を、二人のあいだに置いた大きな画面で。どちらの側も文字を大きく表示できます。"),
       ("聞き取りの向上", "騒がしい場所でも、「はい」や「OK」のようなひと言の返事でも、正しい言語で聞き取れるように。ベータ版：［設定］›［会話］で［聞き取り改善］をオンにしてください。"),
       ("旅の準備", "行き先を伝えるだけで、必要なものをダウンロードし、旅で使えるフレーズを提案し、出発前にオフラインで動くことを確認します。"),
       ("イヤホンを分け合う", "1組のイヤホンを共有し、片耳ずつそれぞれの言語で聞けます。ベータ版：［設定］›［会話］でオンにできます。")]),
   stages=[("開発中", [
-      ("言われたことをリマインダーに", "会話から生まれたフォローアップを、実際の発言と照らし合わせて確認したうえで、リマインダーやカレンダーの予定に。日付のある予定は、いまベータ版で使えます（［設定］›［会話］）。")]),
-    ("次に予定", [
-      ("カメラで物の名前を", "物にカメラを向けると、その呼び方と言い方がわかります。画像は保存しません。"),
-      ("会話から学ぶフレーズ", "相手が言った印象的なひと言を、覚えたいフレーズとして残せます。"),
-      ("文脈を踏まえた翻訳", "直前の発言を踏まえて訳すので、誤訳が減ります。")]),
-    ("その先", [
+      ("言われたことをリマインダーに", "会話から生まれたフォローアップを、実際の発言と照らし合わせて確認したうえで、リマインダーやカレンダーの予定に。日付のある予定は、いまベータ版で使えます（［設定］›［会話］）。"),
       ("会話中の文字入力", "声が届かないほど騒がしいときや、話すことができないときに。どちらの人も入力でき、Tabletopが読み上げることもできます。"),
-      ("字幕のみ", "音声なし、より大きな文字で。耳の不自由な方や、静かな場所のために。")])],
+      ("字幕のみ", "音声なし、より大きな文字で。耳の不自由な方や、静かな場所のために。")]),
+    ("次に予定", [
+      ("カメラで物の名前を", "物にカメラを向けると、その呼び方と言い方がわかります。画像は保存しません。")]),
+    ("その先", [
+      ("文脈を踏まえた翻訳", "直前の発言を踏まえて訳すので、誤訳が減ります。")])],
   ideas_h="検討中のアイデア",
   ideas=["Android版Tabletop", "ていねいな呼びかけ", "会話のおさらい練習", "広東語、マレー語、ウクライナ語などの言語の追加", "3人での会話"],
   ask_h="使いたい機能を教えてください",
@@ -95,21 +95,21 @@ L["ko"] = dict(home="/ko/", support="지원", privacy="개인정보 처리방침
   title="앞으로의 계획",
   lede="여행의 모든 순간을 하나의 앱으로. 떠나기 전에도, 카운터 앞에서도, 그 후에도. 다음으로 만들고 있는 것을 소개합니다. 계획은 여러분의 의견에 따라 바뀝니다.",
   updated="2026년 11월 업데이트",
-  shipped=("1.3, 1.2, 1.1의 새 기능", [
+  shipped=("1.4, 1.3, 1.2, 1.1의 새 기능", [
+      ("대화에서 배우는 문장", "상대가 한 말을 읽는 법과 함께 익힐 문구로 남깁니다. 천천히, 단어별로 들을 수 있습니다. 소리 내어 말하면 Tabletop이 알아들었는지 알려 줍니다. Tabletop Pro 기능이며, 문구 세 개까지 무료로 연습할 수 있습니다."),
       ("찾아보기", "단어나 문장을 입력하거나 붙여넣고, 인쇄된 글자에 카메라를 대거나, 말하면 내 언어로 설명합니다. 모두 기기 안에서. 문장 속 단어를 탭해 찾아보거나, 다른 앱에서 텍스트를 공유할 수도 있습니다. Tabletop Pro는 사전 전체 항목을 더해 줍니다."),
       ("iPad용 Tabletop", "두 사람 사이에 놓인 더 큰 화면에서 같은 대화를 나눕니다. 양쪽 모두 글자를 더 크게 볼 수 있습니다."),
       ("더 정확한 듣기", "시끄러운 곳에서도, “네”나 “OK” 같은 한마디 대답도 올바른 언어로 알아듣도록. 베타: 설정 › 대화에서 더 잘 듣기를 켜세요."),
       ("여행 준비", "어디로 가는지 알려 주세요. Tabletop이 필요한 것을 내려받고, 여행에 쓸 문장을 제안하고, 떠나기 전에 오프라인에서 잘 작동하는지 확인합니다."),
       ("이어폰 나눠 쓰기", "이어폰 한 쌍을 함께 쓰고, 한쪽 귀로 각자의 언어를 듣습니다. 베타: 설정 › 대화에서 켤 수 있습니다.")]),
   stages=[("개발 중", [
-      ("들은 내용을 알림으로", "대화에서 나온 후속 일정을 실제로 한 말과 대조해 확인한 뒤 알림과 캘린더 이벤트로 만듭니다. 날짜가 있는 약속은 지금 베타로 쓸 수 있습니다(설정 › 대화).")]),
-    ("다음 계획", [
-      ("카메라로 물건 이름 알기", "물건에 카메라를 대면 이름과 말하는 법을 알려 줍니다. 사진은 저장하지 않습니다."),
-      ("대화에서 배우는 문장", "상대가 한 좋은 말을 배울 문장으로 남겨 둡니다."),
-      ("맥락을 고려한 번역", "바로 앞에 한 말을 함께 고려해 번역하므로 오역이 줄어듭니다.")]),
-    ("그 이후", [
+      ("들은 내용을 알림으로", "대화에서 나온 후속 일정을 실제로 한 말과 대조해 확인한 뒤 알림과 캘린더 이벤트로 만듭니다. 날짜가 있는 약속은 지금 베타로 쓸 수 있습니다(설정 › 대화)."),
       ("대화 중 입력", "목소리가 들리지 않을 만큼 시끄럽거나, 말을 할 수 없을 때. 두 사람 모두 입력할 수 있고, Tabletop이 소리 내어 읽어 줄 수도 있습니다."),
-      ("자막만", "음성 없이 더 큰 글자로. 청각 장애가 있는 분과 조용한 곳을 위해.")])],
+      ("자막만", "음성 없이 더 큰 글자로. 청각 장애가 있는 분과 조용한 곳을 위해.")]),
+    ("다음 계획", [
+      ("카메라로 물건 이름 알기", "물건에 카메라를 대면 이름과 말하는 법을 알려 줍니다. 사진은 저장하지 않습니다.")]),
+    ("그 이후", [
+      ("맥락을 고려한 번역", "바로 앞에 한 말을 함께 고려해 번역하므로 오역이 줄어듭니다.")])],
   ideas_h="검토 중인 아이디어",
   ideas=["Android용 Tabletop", "정중한 호칭", "대화 다시 연습하기", "광둥어, 말레이어, 우크라이나어 등 언어 추가", "세 사람 대화"],
   ask_h="어떤 기능을 쓰고 싶은지 알려 주세요",
@@ -123,21 +123,21 @@ L["zh-Hans"] = dict(home="/zh-hans/", support="支持", privacy="隐私政策", 
   title="接下来的计划",
   lede="一个 App 陪你走完整趟旅程：出发前、柜台前，以及之后。以下是我们接下来要做的。计划会根据你的反馈调整。",
   updated="2026 年 11 月更新",
-  shipped=("1.3、1.2 和 1.1 新功能", [
+  shipped=("1.4、1.3、1.2 和 1.1 新功能", [
+      ("从对话中学句子", "把对方说过的话留作要学的短语，附读音，可以慢速听、逐词听。大声说出来，Tabletop 会告诉你它是否听懂了。属于 Tabletop Pro，可免费练习三个短语。"),
       ("查询", "输入或粘贴一个词或一句话，把相机对准印刷文字，或者直接说出来，Tabletop 就会在设备上用你的语言解释。点一下句子里的任何词就能查，也可以从其他 App 共享文字过来。Tabletop Pro 提供完整词典条目。"),
       ("iPad 版 Tabletop", "同样的对话，放在你们之间更大的屏幕上，两边的文字都能更大。"),
       ("听得更清楚", "在嘈杂的地方，或是“好”“OK”这样只有一个词的回答，也能听成正确的语言。测试版：在“设置”›“对话”中打开“聆听增强”。"),
       ("旅行准备", "告诉 Tabletop 你要去哪里。它会下载所需的内容，推荐旅途中用得上的句子，并在你出发前确认离线也能正常使用。"),
       ("分享耳机", "两人共用一副耳机，各自一只耳朵听自己的语言。测试版：可在“设置”›“对话”中打开。")]),
   stages=[("正在开发", [
-      ("把交代的事变成提醒", "对话中的后续事项会变成提醒和日历事件，并与实际说过的话核对。写明日期的会面现已推出测试版（“设置”›“对话”）。")]),
-    ("接下来", [
-      ("用相机认识物品", "用相机对准一件物品，就能知道它叫什么、怎么说。绝不保存图片。"),
-      ("从对话中学句子", "把对方说过的精彩句子留下来，作为要学的句子。"),
-      ("结合上下文的翻译", "每句话都结合前一句一起翻译，减少误译。")]),
-    ("之后", [
+      ("把交代的事变成提醒", "对话中的后续事项会变成提醒和日历事件，并与实际说过的话核对。写明日期的会面现已推出测试版（“设置”›“对话”）。"),
       ("对话中打字", "环境太吵听不见你，或是无法开口时。双方都能打字，Tabletop 也可以朗读出来。"),
-      ("仅字幕", "不发声，文字更大，适合听障人士和安静的场所。")])],
+      ("仅字幕", "不发声，文字更大，适合听障人士和安静的场所。")]),
+    ("接下来", [
+      ("用相机认识物品", "用相机对准一件物品，就能知道它叫什么、怎么说。绝不保存图片。")]),
+    ("之后", [
+      ("结合上下文的翻译", "每句话都结合前一句一起翻译，减少误译。")])],
   ideas_h="正在考虑的想法",
   ideas=["Android 版 Tabletop", "礼貌的称呼", "重新练习一次对话", "增加更多语言，如粤语、马来语和乌克兰语", "三人对话"],
   ask_h="告诉我们你会用哪些",
@@ -151,21 +151,21 @@ L["zh-Hant"] = dict(home="/zh-hant/", support="支援", privacy="隱私權政策
   title="接下來的計畫",
   lede="一個 App 陪你走完整趟旅程：出發前、櫃檯前，以及之後。以下是我們接下來要做的。計畫會依照你的回饋調整。",
   updated="2026 年 11 月更新",
-  shipped=("1.3、1.2 和 1.1 新功能", [
+  shipped=("1.4、1.3、1.2 和 1.1 新功能", [
+      ("從對話中學句子", "把對方說過的話留作要學的短語，附讀音，可以慢速聽、逐詞聽。大聲說出來，Tabletop 會告訴你它是否聽懂了。屬於 Tabletop Pro，可免費練習三個短語。"),
       ("查詢", "輸入或貼上一個字詞或一句話，把相機對準印刷文字，或直接說出來，Tabletop 就會在裝置上用你的語言解釋。點一下句子裡的任何字詞就能查，也可以從其他 App 分享文字過來。Tabletop Pro 提供完整詞典條目。"),
       ("iPad 版 Tabletop", "同樣的對話，放在你們之間更大的螢幕上，兩邊的文字都能更大。"),
       ("聽得更清楚", "在吵雜的地方，或是「好」「OK」這樣只有一個詞的回答，也能聽成正確的語言。測試版：在「設定」›「對話」中開啟「聆聽增強」。"),
       ("旅行準備", "告訴 Tabletop 你要去哪裡。它會下載所需的內容，推薦旅途中用得到的句子，並在你出發前確認離線也能正常使用。"),
       ("共用耳機", "兩人共用一副耳機，各自一隻耳朵聽自己的語言。測試版：可在「設定」›「對話」中開啟。")]),
   stages=[("正在開發", [
-      ("把交代的事變成提醒", "對話中的後續事項會變成提醒和行事曆事件，並與實際說過的話核對。寫明日期的會面現已推出測試版（「設定」›「對話」）。")]),
-    ("接下來", [
-      ("用相機認識物品", "用相機對準一件物品，就能知道它叫什麼、怎麼說。絕不儲存圖片。"),
-      ("從對話中學句子", "把對方說過的精彩句子留下來，作為要學的句子。"),
-      ("結合上下文的翻譯", "每句話都結合前一句一起翻譯，減少誤譯。")]),
-    ("之後", [
+      ("把交代的事變成提醒", "對話中的後續事項會變成提醒和行事曆事件，並與實際說過的話核對。寫明日期的會面現已推出測試版（「設定」›「對話」）。"),
       ("對話中打字", "環境太吵聽不到你，或是無法開口時。雙方都能打字，Tabletop 也可以朗讀出來。"),
-      ("僅字幕", "不發聲，文字更大，適合聽障人士和安靜的場所。")])],
+      ("僅字幕", "不發聲，文字更大，適合聽障人士和安靜的場所。")]),
+    ("接下來", [
+      ("用相機認識物品", "用相機對準一件物品，就能知道它叫什麼、怎麼說。絕不儲存圖片。")]),
+    ("之後", [
+      ("結合上下文的翻譯", "每句話都結合前一句一起翻譯，減少誤譯。")])],
   ideas_h="正在考慮的想法",
   ideas=["Android 版 Tabletop", "禮貌的稱呼", "重新練習一次對話", "增加更多語言，例如粵語、馬來語和烏克蘭語", "三人對話"],
   ask_h="告訴我們你會用哪些",
